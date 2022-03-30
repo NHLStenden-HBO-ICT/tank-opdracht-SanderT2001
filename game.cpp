@@ -1,5 +1,7 @@
 #include "precomp.h" // include (only) this in every .cpp file
 
+#include <chrono>
+
 constexpr auto num_tanks_blue = 2048;
 constexpr auto num_tanks_red = 2048;
 
@@ -90,6 +92,7 @@ void Game::shutdown()
 // -----------------------------------------------------------
 // Iterates through all tanks and returns the closest enemy tank for the given tank
 // -----------------------------------------------------------
+// TODO: Dit is een zware. Wordt door alle tanks gelooped
 Tank& Game::find_closest_enemy(Tank& current_tank)
 {
     float closest_distance = numeric_limits<float>::infinity();
@@ -124,6 +127,7 @@ bool Tmpl8::Game::left_of_line(vec2 line_start, vec2 line_end, vec2 point)
 // Collision detection
 // Targeting etc..
 // -----------------------------------------------------------
+// TODO: Multi Threading?
 void Game::update(float deltaTime)
 {
     //Calculate the route to the destination for each tank using BFS
@@ -136,7 +140,15 @@ void Game::update(float deltaTime)
         }
     }
 
+    using std::chrono::high_resolution_clock;
+    using std::chrono::duration_cast;
+    using std::chrono::duration;
+    using std::chrono::milliseconds;
+
+    auto t1 = high_resolution_clock::now();
     //Check tank collision and nudge tanks away from each other
+    // TODO Hier wellicht een mapping bijhouden wie in een radius bij je liggen.
+    // TODO Dit is echt een bastard - comment maar eens uit...
     for (Tank& tank : tanks)
     {
         if (tank.active)
@@ -158,8 +170,15 @@ void Game::update(float deltaTime)
             }
         }
     }
+    auto t2 = high_resolution_clock::now();
 
+    /* Getting number of milliseconds as an integer. */
+    auto ms_int = duration_cast<milliseconds>(t2 - t1);
+    std::cout << "Nudge tanks: " << ms_int.count() << "ms\n";
+
+    t1 = high_resolution_clock::now();
     //Update tanks
+    // TODO: Als we de tank.active check vaker done, moeten we hier een functie voor maken die alleen de active tanks teruggeeft.
     for (Tank& tank : tanks)
     {
         if (tank.active)
@@ -178,8 +197,15 @@ void Game::update(float deltaTime)
             }
         }
     }
+    t2 = high_resolution_clock::now();
+
+    /* Getting number of milliseconds as an integer. */
+    ms_int = duration_cast<milliseconds>(t2 - t1);
+    std::cout << "Update tanks: " << ms_int.count() << "ms\n";
 
     //Update smoke plumes
+    // TODO: Alle zaken opdelen in verschillende functies. Laat die maar weten hoe ze iets moeten updaten.
+    //       Deze functie zou niet meer moeten zijn dan meerdere aanroepen.
     for (Smoke& smoke : smokes)
     {
         smoke.tick();
@@ -189,6 +215,7 @@ void Game::update(float deltaTime)
     forcefield_hull.clear();
 
     //Find first active tank (this loop is a bit disgusting, fix?)
+    // TODO: Dit moet echt anders
     int first_active = 0;
     for (Tank& tank : tanks)
     {
@@ -198,6 +225,8 @@ void Game::update(float deltaTime)
         }
         first_active++;
     }
+
+    // TODO: Dit kunnen we ook met een radius/mapping berekenen
     vec2 point_on_hull = tanks.at(first_active).position;
     //Find left most tank position
     for (Tank& tank : tanks)
@@ -239,6 +268,8 @@ void Game::update(float deltaTime)
     }
 
     //Update rockets
+    t1 = high_resolution_clock::now();
+    // TODO: Dit is ook een bastard.
     for (Rocket& rocket : rockets)
     {
         rocket.tick();
@@ -260,9 +291,15 @@ void Game::update(float deltaTime)
             }
         }
     }
+    t2 = high_resolution_clock::now();
+
+    /* Getting number of milliseconds as an integer. */
+    ms_int = duration_cast<milliseconds>(t2 - t1);
+    std::cout << "Update rockets: " << ms_int.count() << "ms\n";
 
     //Disable rockets if they collide with the "forcefield"
     //Hint: A point to convex hull intersection test might be better here? :) (Disable if outside)
+    t1 = high_resolution_clock::now();
     for (Rocket& rocket : rockets)
     {
         if (rocket.active)
@@ -277,13 +314,17 @@ void Game::update(float deltaTime)
             }
         }
     }
+    t2 = high_resolution_clock::now();
 
-
+    /* Getting number of milliseconds as an integer. */
+    ms_int = duration_cast<milliseconds>(t2 - t1);
+    std::cout << "Disable rockets if collision forcefield: " << ms_int.count() << "ms\n";
 
     //Remove exploded rockets with remove erase idiom
     rockets.erase(std::remove_if(rockets.begin(), rockets.end(), [](const Rocket& rocket) { return !rocket.active; }), rockets.end());
 
     //Update particle beams
+    t1 = high_resolution_clock::now();
     for (Particle_beam& particle_beam : particle_beams)
     {
         particle_beam.tick(tanks);
@@ -300,6 +341,12 @@ void Game::update(float deltaTime)
             }
         }
     }
+    t2 = high_resolution_clock::now();
+
+    /* Getting number of milliseconds as an integer. */
+    ms_int = duration_cast<milliseconds>(t2 - t1);
+    std::cout << "Update particle beams: " << ms_int.count() << "ms\n";
+    std::cout << "\n\n";
 
     //Update explosion sprites and remove when done with remove erase idiom
     for (Explosion& explosion : explosions)
@@ -360,6 +407,12 @@ void Game::draw()
         screen->line(line_start, line_end, 0x0000ff);
     }
 
+    using std::chrono::high_resolution_clock;
+    using std::chrono::duration_cast;
+    using std::chrono::duration;
+    using std::chrono::milliseconds;
+    auto t1 = high_resolution_clock::now();
+
     //Draw sorted health bars
     for (int t = 0; t < 2; t++)
     {
@@ -372,11 +425,17 @@ void Game::draw()
 
         draw_health_bars(sorted_tanks, t);
     }
+
+    auto t2 = high_resolution_clock::now();
+    /* Getting number of milliseconds as an integer. */
+    auto ms_int = duration_cast<milliseconds>(t2 - t1);
+    std::cout << "Sort health bars: " << ms_int.count() << "ms\n";
 }
 
 // -----------------------------------------------------------
 // Sort tanks by health value using insertion sort
 // -----------------------------------------------------------
+// TODO: Fijn is anders maar niet super traag. Wel mooie voor algo
 void Tmpl8::Game::insertion_sort_tanks_health(const std::vector<Tank>& original, std::vector<const Tank*>& sorted_tanks, int begin, int end)
 {
     const int NUM_TANKS = end - begin;
