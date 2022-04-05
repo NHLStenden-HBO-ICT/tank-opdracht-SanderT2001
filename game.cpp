@@ -147,6 +147,7 @@ void Game::update(float deltaTime)
 
     auto t1 = high_resolution_clock::now();
     //Check tank collision and nudge tanks away from each other
+    // TODO: function setTanksPushBack();
     // TODO Hier wellicht een mapping bijhouden wie in een radius bij je liggen.
     // TODO Dit is echt een bastard - comment maar eens uit...
     for (Tank& tank : tanks)
@@ -178,6 +179,8 @@ void Game::update(float deltaTime)
 
     t1 = high_resolution_clock::now();
     //Update tanks
+    // TODO: function updateTanksPositions();
+    // TODO: function shootRocketsToClosestTanks();
     // TODO: Als we de tank.active check vaker done, moeten we hier een functie voor maken die alleen de active tanks teruggeeft.
     for (Tank& tank : tanks)
     {
@@ -204,6 +207,7 @@ void Game::update(float deltaTime)
     std::cout << "Update tanks: " << ms_int.count() << "ms\n";
 
     //Update smoke plumes
+    // TODO: function updateSmokePlumes();
     // TODO: Alle zaken opdelen in verschillende functies. Laat die maar weten hoe ze iets moeten updaten.
     //       Deze functie zou niet meer moeten zijn dan meerdere aanroepen.
     for (Smoke& smoke : smokes)
@@ -211,6 +215,8 @@ void Game::update(float deltaTime)
         smoke.tick();
     }
 
+    // TODO: function clearForcefield();
+    // TODO: function generateForceField();
     //Calculate "forcefield" around active tanks
     forcefield_hull.clear();
 
@@ -269,6 +275,7 @@ void Game::update(float deltaTime)
 
     //Update rockets
     t1 = high_resolution_clock::now();
+    // TODO: function checkRocketCollision();
     // TODO: Dit is ook een bastard.
     for (Rocket& rocket : rockets)
     {
@@ -299,6 +306,7 @@ void Game::update(float deltaTime)
 
     //Disable rockets if they collide with the "forcefield"
     //Hint: A point to convex hull intersection test might be better here? :) (Disable if outside)
+    // TODO: function checkRocketCollisionWithForcefield();
     t1 = high_resolution_clock::now();
     for (Rocket& rocket : rockets)
     {
@@ -321,8 +329,10 @@ void Game::update(float deltaTime)
     std::cout << "Disable rockets if collision forcefield: " << ms_int.count() << "ms\n";
 
     //Remove exploded rockets with remove erase idiom
+    // TODO: function clearExplodedRockets();
     rockets.erase(std::remove_if(rockets.begin(), rockets.end(), [](const Rocket& rocket) { return !rocket.active; }), rockets.end());
 
+    // TODO: function damageTanksHitByParticleBeam();
     //Update particle beams
     t1 = high_resolution_clock::now();
     for (Particle_beam& particle_beam : particle_beams)
@@ -348,12 +358,14 @@ void Game::update(float deltaTime)
     std::cout << "Update particle beams: " << ms_int.count() << "ms\n";
     std::cout << "\n\n";
 
+    // TODO: function updateExplosions();
     //Update explosion sprites and remove when done with remove erase idiom
     for (Explosion& explosion : explosions)
     {
         explosion.tick();
     }
 
+    // TODO: function clearFinishedExplosions();
     explosions.erase(std::remove_if(explosions.begin(), explosions.end(), [](const Explosion& explosion) { return explosion.done(); }), explosions.end());
 }
 
