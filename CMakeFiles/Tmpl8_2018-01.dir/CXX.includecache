@@ -8,13 +8,11 @@
 
 /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/explosion.h
 
-/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/game.cpp
+/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/game.h
+
+/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/grid.cpp
 precomp.h
 /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/precomp.h
-chrono
--
-
-/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/game.h
 
 /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/particle_beam.h
 

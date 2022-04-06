@@ -7,6 +7,7 @@ class Tank;
 class Rocket;
 class Smoke;
 class Particle_beam;
+class St::Grid;
 
 class Game
 {
@@ -15,11 +16,16 @@ class Game
     void init();
     void shutdown();
     void update(float deltaTime);
+    void setTanksPushBack();
+    void setTanksPushBackOriginal();
     void draw();
     void tick(float deltaTime);
     void insertion_sort_tanks_health(const std::vector<Tank>& original, std::vector<const Tank*>& sorted_tanks, int begin, int end);
     void draw_health_bars(const std::vector<const Tank*>& sorted_tanks, const int team);
     void measure_performance();
+    void startFunctionTimer();
+    void stopFunctionTimer();
+    void printFunctionTime();
 
     Tank& find_closest_enemy(Tank& current_tank);
 

@@ -177,6 +177,33 @@ game.cpp.s:
 	$(MAKE) -f CMakeFiles/Tmpl8_2018-01.dir/build.make CMakeFiles/Tmpl8_2018-01.dir/game.cpp.s
 .PHONY : game.cpp.s
 
+grid.o: grid.cpp.o
+
+.PHONY : grid.o
+
+# target to build an object file
+grid.cpp.o:
+	$(MAKE) -f CMakeFiles/Tmpl8_2018-01.dir/build.make CMakeFiles/Tmpl8_2018-01.dir/grid.cpp.o
+.PHONY : grid.cpp.o
+
+grid.i: grid.cpp.i
+
+.PHONY : grid.i
+
+# target to preprocess a source file
+grid.cpp.i:
+	$(MAKE) -f CMakeFiles/Tmpl8_2018-01.dir/build.make CMakeFiles/Tmpl8_2018-01.dir/grid.cpp.i
+.PHONY : grid.cpp.i
+
+grid.s: grid.cpp.s
+
+.PHONY : grid.s
+
+# target to generate assembly for a file
+grid.cpp.s:
+	$(MAKE) -f CMakeFiles/Tmpl8_2018-01.dir/build.make CMakeFiles/Tmpl8_2018-01.dir/grid.cpp.s
+.PHONY : grid.cpp.s
+
 particle_beam.o: particle_beam.cpp.o
 
 .PHONY : particle_beam.o
@@ -381,6 +408,9 @@ help:
 	@echo "... game.o"
 	@echo "... game.i"
 	@echo "... game.s"
+	@echo "... grid.o"
+	@echo "... grid.i"
+	@echo "... grid.s"
 	@echo "... particle_beam.o"
 	@echo "... particle_beam.i"
 	@echo "... particle_beam.s"

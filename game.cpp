@@ -43,6 +43,12 @@ const static vec2 rocket_size(6, 6);
 const static float tank_radius = 3.f;
 const static float rocket_radius = 5.f;
 
+const static int  version      = 2; // 1 => Original function, 2 => Optimized function
+const static bool show_timings = true;
+
+std::chrono::time_point<std::chrono::system_clock> timing1;
+std::chrono::time_point<std::chrono::system_clock> timing2;
+
 // -----------------------------------------------------------
 // Initialize the simulation state
 // This function does not count for the performance multiplier
@@ -80,6 +86,9 @@ void Game::init()
     particle_beams.push_back(Particle_beam(vec2(590, 327), vec2(100, 50), &particle_beam_sprite, particle_beam_hit_value));
     particle_beams.push_back(Particle_beam(vec2(64, 64), vec2(100, 50), &particle_beam_sprite, particle_beam_hit_value));
     particle_beams.push_back(Particle_beam(vec2(1200, 600), vec2(100, 50), &particle_beam_sprite, particle_beam_hit_value));
+
+    St::Grid* henk = new St::Grid();
+    henk->test();
 }
 
 // -----------------------------------------------------------
@@ -140,44 +149,11 @@ void Game::update(float deltaTime)
         }
     }
 
-    using std::chrono::high_resolution_clock;
-    using std::chrono::duration_cast;
-    using std::chrono::duration;
-    using std::chrono::milliseconds;
+    if (show_timings) startFunctionTimer();
+    (version == 1) ? this->setTanksPushBackOriginal() : this->setTanksPushBack();
+    if (show_timings) stopFunctionTimer();
+    if (show_timings) printFunctionTime();
 
-    auto t1 = high_resolution_clock::now();
-    //Check tank collision and nudge tanks away from each other
-    // TODO: function setTanksPushBack();
-    // TODO Hier wellicht een mapping bijhouden wie in een radius bij je liggen.
-    // TODO Dit is echt een bastard - comment maar eens uit...
-    for (Tank& tank : tanks)
-    {
-        if (tank.active)
-        {
-            for (Tank& other_tank : tanks)
-            {
-                if (&tank == &other_tank || !other_tank.active) continue;
-
-                vec2 dir = tank.get_position() - other_tank.get_position();
-                float dir_squared_len = dir.sqr_length();
-
-                float col_squared_len = (tank.get_collision_radius() + other_tank.get_collision_radius());
-                col_squared_len *= col_squared_len;
-
-                if (dir_squared_len < col_squared_len)
-                {
-                    tank.push(dir.normalized(), 1.f);
-                }
-            }
-        }
-    }
-    auto t2 = high_resolution_clock::now();
-
-    /* Getting number of milliseconds as an integer. */
-    auto ms_int = duration_cast<milliseconds>(t2 - t1);
-    std::cout << "Nudge tanks: " << ms_int.count() << "ms\n";
-
-    t1 = high_resolution_clock::now();
     //Update tanks
     // TODO: function updateTanksPositions();
     // TODO: function shootRocketsToClosestTanks();
@@ -200,11 +176,6 @@ void Game::update(float deltaTime)
             }
         }
     }
-    t2 = high_resolution_clock::now();
-
-    /* Getting number of milliseconds as an integer. */
-    ms_int = duration_cast<milliseconds>(t2 - t1);
-    std::cout << "Update tanks: " << ms_int.count() << "ms\n";
 
     //Update smoke plumes
     // TODO: function updateSmokePlumes();
@@ -274,7 +245,6 @@ void Game::update(float deltaTime)
     }
 
     //Update rockets
-    t1 = high_resolution_clock::now();
     // TODO: function checkRocketCollision();
     // TODO: Dit is ook een bastard.
     for (Rocket& rocket : rockets)
@@ -298,16 +268,10 @@ void Game::update(float deltaTime)
             }
         }
     }
-    t2 = high_resolution_clock::now();
-
-    /* Getting number of milliseconds as an integer. */
-    ms_int = duration_cast<milliseconds>(t2 - t1);
-    std::cout << "Update rockets: " << ms_int.count() << "ms\n";
 
     //Disable rockets if they collide with the "forcefield"
     //Hint: A point to convex hull intersection test might be better here? :) (Disable if outside)
     // TODO: function checkRocketCollisionWithForcefield();
-    t1 = high_resolution_clock::now();
     for (Rocket& rocket : rockets)
     {
         if (rocket.active)
@@ -322,11 +286,6 @@ void Game::update(float deltaTime)
             }
         }
     }
-    t2 = high_resolution_clock::now();
-
-    /* Getting number of milliseconds as an integer. */
-    ms_int = duration_cast<milliseconds>(t2 - t1);
-    std::cout << "Disable rockets if collision forcefield: " << ms_int.count() << "ms\n";
 
     //Remove exploded rockets with remove erase idiom
     // TODO: function clearExplodedRockets();
@@ -334,7 +293,6 @@ void Game::update(float deltaTime)
 
     // TODO: function damageTanksHitByParticleBeam();
     //Update particle beams
-    t1 = high_resolution_clock::now();
     for (Particle_beam& particle_beam : particle_beams)
     {
         particle_beam.tick(tanks);
@@ -351,12 +309,6 @@ void Game::update(float deltaTime)
             }
         }
     }
-    t2 = high_resolution_clock::now();
-
-    /* Getting number of milliseconds as an integer. */
-    ms_int = duration_cast<milliseconds>(t2 - t1);
-    std::cout << "Update particle beams: " << ms_int.count() << "ms\n";
-    std::cout << "\n\n";
 
     // TODO: function updateExplosions();
     //Update explosion sprites and remove when done with remove erase idiom
@@ -367,6 +319,102 @@ void Game::update(float deltaTime)
 
     // TODO: function clearFinishedExplosions();
     explosions.erase(std::remove_if(explosions.begin(), explosions.end(), [](const Explosion& explosion) { return explosion.done(); }), explosions.end());
+}
+
+void Game::setTanksPushBack()
+{
+    return;
+    // TODO Hier wellicht een mapping bijhouden wie in een radius bij je liggen.
+    // TODO Dit is echt een bastard - comment maar eens uit...
+    //Check tank collision and nudge tanks away from each other
+    bool first = true;
+    for (Tank& tank : tanks)
+    {
+
+        /**
+if (first) {
+    std::cout << tank.get_position().x << std::endl;
+    std::cout << tank.get_position().y << std::endl;
+}
+*/
+
+        if (tank.active)
+        {
+            for (Tank& other_tank : tanks)
+            {
+                // te maken met dezelfde tank of andere tank niet active, dan skip.
+                if (&tank == &other_tank || !other_tank.active) continue;
+
+                // Totale oppervlakte van beide tank posities.
+                vec2 dir = tank.get_position() - other_tank.get_position();
+                float dir_squared_len = dir.sqr_length();
+
+                /**
+if (first) {
+    std::cout << "\n" << std::endl;
+    std::cout << other_tank.get_position().x << std::endl;
+    std::cout << other_tank.get_position().y << std::endl;
+    std::cout << "\n" << std::endl;
+    std::cout << dir.x << std::endl;
+    std::cout << dir.y << std::endl;
+    std::cout << dir_squared_len << std::endl;
+    std::cout << tank.get_collision_radius() << std::endl;
+    std::cout << other_tank.get_collision_radius() << std::endl;
+}
+*/
+
+                // Collision oppervlakte
+                float col_squared_len = (tank.get_collision_radius() + other_tank.get_collision_radius());
+                col_squared_len *= col_squared_len;
+
+                /**
+if (first) {
+    std::cout << "col_squared_len: " << col_squared_len << std::endl;
+    std::cout << dir.normalized().x << std::endl;
+    std::cout << dir.normalized().y << std::endl;
+    std::cout << "\n\n" << std::endl;
+    first = false;
+}
+*/
+
+                // Zitten de tanks binnen de collision oppervlakte van elkaar, dan nudgen.
+                if (dir_squared_len < col_squared_len)
+                {
+                    tank.push(dir.normalized(), 1.f);
+                }
+            }
+        }
+    }
+}
+
+//Check tank collision and nudge tanks away from each other
+void Game::setTanksPushBackOriginal()
+{
+    for (Tank& tank : tanks)
+    {
+        if (tank.active)
+        {
+            for (Tank& other_tank : tanks)
+            {
+                // te maken met dezelfde tank of andere tank niet active, dan skip.
+                if (&tank == &other_tank || !other_tank.active) continue;
+
+                // Totale oppervlakte van beide tank posities.
+                vec2 dir = tank.get_position() - other_tank.get_position();
+                float dir_squared_len = dir.sqr_length();
+
+                // Collision oppervlakte
+                float col_squared_len = (tank.get_collision_radius() + other_tank.get_collision_radius());
+                col_squared_len *= col_squared_len;
+
+                // Zitten de tanks binnen de collision oppervlakte van elkaar, dan nudgen.
+                if (dir_squared_len < col_squared_len)
+                {
+                    tank.push(dir.normalized(), 1.f);
+                }
+            }
+        }
+    }
 }
 
 // -----------------------------------------------------------
@@ -419,12 +467,6 @@ void Game::draw()
         screen->line(line_start, line_end, 0x0000ff);
     }
 
-    using std::chrono::high_resolution_clock;
-    using std::chrono::duration_cast;
-    using std::chrono::duration;
-    using std::chrono::milliseconds;
-    auto t1 = high_resolution_clock::now();
-
     //Draw sorted health bars
     for (int t = 0; t < 2; t++)
     {
@@ -437,11 +479,6 @@ void Game::draw()
 
         draw_health_bars(sorted_tanks, t);
     }
-
-    auto t2 = high_resolution_clock::now();
-    /* Getting number of milliseconds as an integer. */
-    auto ms_int = duration_cast<milliseconds>(t2 - t1);
-    std::cout << "Sort health bars: " << ms_int.count() << "ms\n";
 }
 
 // -----------------------------------------------------------
@@ -563,4 +600,38 @@ void Game::tick(float deltaTime)
     frame_count++;
     string frame_count_string = "FRAME: " + std::to_string(frame_count);
     frame_count_font->print(screen, frame_count_string.c_str(), 350, 580);
+}
+
+// TODO: Eigen class
+void Game::startFunctionTimer()
+{
+    using std::chrono::high_resolution_clock;
+    using std::chrono::duration_cast;
+    using std::chrono::duration;
+    using std::chrono::milliseconds;
+
+    timing1 = high_resolution_clock::now();
+}
+
+void Game::stopFunctionTimer()
+{
+    using std::chrono::high_resolution_clock;
+    using std::chrono::duration_cast;
+    using std::chrono::duration;
+    using std::chrono::milliseconds;
+
+    timing2 = high_resolution_clock::now();
+}
+
+// TODO: In class getFunctionTime(), die moet niet weten hoe hij moet printen, tostring zou wel een functie kunnen zijn.
+void Game::printFunctionTime()
+{
+    using std::chrono::high_resolution_clock;
+    using std::chrono::duration_cast;
+    using std::chrono::duration;
+    using std::chrono::milliseconds;
+
+    /* Getting number of milliseconds as an integer. */
+    auto ms_int = duration_cast<milliseconds>(timing2 - timing1);
+    std::cout << ms_int.count() << "ms\n";
 }
