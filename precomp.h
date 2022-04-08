@@ -90,6 +90,7 @@ using namespace Tmpl8;
 #include "explosion.h"
 #include "particle_beam.h"
 
+#include "gridcell.h"
 #include "grid.h"
 
 #include "game.h"

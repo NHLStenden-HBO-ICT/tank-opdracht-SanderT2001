@@ -89,6 +89,9 @@ void Game::init()
 
     St::Grid* henk = new St::Grid();
     henk->test();
+
+    St::GridCell* henk_cell = new St::GridCell();
+    henk_cell->test();
 }
 
 // -----------------------------------------------------------

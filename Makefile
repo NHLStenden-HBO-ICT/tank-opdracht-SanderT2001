@@ -204,6 +204,33 @@ grid.cpp.s:
 	$(MAKE) -f CMakeFiles/Tmpl8_2018-01.dir/build.make CMakeFiles/Tmpl8_2018-01.dir/grid.cpp.s
 .PHONY : grid.cpp.s
 
+gridcell.o: gridcell.cpp.o
+
+.PHONY : gridcell.o
+
+# target to build an object file
+gridcell.cpp.o:
+	$(MAKE) -f CMakeFiles/Tmpl8_2018-01.dir/build.make CMakeFiles/Tmpl8_2018-01.dir/gridcell.cpp.o
+.PHONY : gridcell.cpp.o
+
+gridcell.i: gridcell.cpp.i
+
+.PHONY : gridcell.i
+
+# target to preprocess a source file
+gridcell.cpp.i:
+	$(MAKE) -f CMakeFiles/Tmpl8_2018-01.dir/build.make CMakeFiles/Tmpl8_2018-01.dir/gridcell.cpp.i
+.PHONY : gridcell.cpp.i
+
+gridcell.s: gridcell.cpp.s
+
+.PHONY : gridcell.s
+
+# target to generate assembly for a file
+gridcell.cpp.s:
+	$(MAKE) -f CMakeFiles/Tmpl8_2018-01.dir/build.make CMakeFiles/Tmpl8_2018-01.dir/gridcell.cpp.s
+.PHONY : gridcell.cpp.s
+
 particle_beam.o: particle_beam.cpp.o
 
 .PHONY : particle_beam.o
@@ -411,6 +438,9 @@ help:
 	@echo "... grid.o"
 	@echo "... grid.i"
 	@echo "... grid.s"
+	@echo "... gridcell.o"
+	@echo "... gridcell.i"
+	@echo "... gridcell.s"
 	@echo "... particle_beam.o"
 	@echo "... particle_beam.i"
 	@echo "... particle_beam.s"
