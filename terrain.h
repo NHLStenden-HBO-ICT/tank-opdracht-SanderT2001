@@ -40,6 +40,13 @@ namespace Tmpl8
 
         float get_speed_modifier(const vec2& position) const;
 
+        const vec2 getActualTerrainSize()
+        {
+            int width  = this->terrain_width*this->sprite_size;
+            int height = this->terrain_height*this->sprite_size;
+
+            return vec2(width, height);
+        }
 
     private:
 

@@ -43,6 +43,7 @@ const static vec2 rocket_size(6, 6);
 const static float tank_radius = 3.f;
 const static float rocket_radius = 5.f;
 
+// TODO: Moet dit niet in de header file staan?
 const static int  version      = 2; // 1 => Original function, 2 => Optimized function
 const static bool show_timings = true;
 
@@ -87,11 +88,11 @@ void Game::init()
     particle_beams.push_back(Particle_beam(vec2(64, 64), vec2(100, 50), &particle_beam_sprite, particle_beam_hit_value));
     particle_beams.push_back(Particle_beam(vec2(1200, 600), vec2(100, 50), &particle_beam_sprite, particle_beam_hit_value));
 
-    St::Grid* henk = new St::Grid();
-    henk->test();
-
-    St::GridCell* henk_cell = new St::GridCell();
-    henk_cell->test();
+    vec2 terrain_size = background_terrain.getActualTerrainSize();
+    this->gamegrid = new St::Grid(terrain_size.x, terrain_size.y, 16);
+    for (Tank& tank : this->tanks) {
+        this->gamegrid->addTank(&tank);
+    }
 }
 
 // -----------------------------------------------------------
@@ -155,30 +156,14 @@ void Game::update(float deltaTime)
     if (show_timings) startFunctionTimer();
     (version == 1) ? this->setTanksPushBackOriginal() : this->setTanksPushBack();
     if (show_timings) stopFunctionTimer();
+//    if (show_timings) printFunctionTime();
+
+    this->updateTanksPositions();
+
+    if (show_timings) startFunctionTimer();
+    (version == 1) ? this->shootRocketsToClosestTanksOriginal() : this->shootRocketsToClosestTanks();
+    if (show_timings) stopFunctionTimer();
     if (show_timings) printFunctionTime();
-
-    //Update tanks
-    // TODO: function updateTanksPositions();
-    // TODO: function shootRocketsToClosestTanks();
-    // TODO: Als we de tank.active check vaker done, moeten we hier een functie voor maken die alleen de active tanks teruggeeft.
-    for (Tank& tank : tanks)
-    {
-        if (tank.active)
-        {
-            //Move tanks according to speed and nudges (see above) also reload
-            tank.tick(background_terrain);
-
-            //Shoot at closest target if reloaded
-            if (tank.rocket_reloaded())
-            {
-                Tank& target = find_closest_enemy(tank);
-
-                rockets.push_back(Rocket(tank.position, (target.get_position() - tank.position).normalized() * 3, rocket_radius, tank.allignment, ((tank.allignment == RED) ? &rocket_red : &rocket_blue)));
-
-                tank.reload_rocket();
-            }
-        }
-    }
 
     //Update smoke plumes
     // TODO: function updateSmokePlumes();
@@ -264,6 +249,7 @@ void Game::update(float deltaTime)
                 if (tank.hit(rocket_hit_value))
                 {
                     smokes.push_back(Smoke(smoke, tank.position - vec2(7, 24)));
+                    this->gamegrid->removeTank(&tank);
                 }
 
                 rocket.active = false;
@@ -308,6 +294,7 @@ void Game::update(float deltaTime)
                 if (tank.hit(particle_beam.damage))
                 {
                     smokes.push_back(Smoke(smoke, tank.position - vec2(0, 48)));
+                    this->gamegrid->removeTank(&tank);
                 }
             }
         }
@@ -324,67 +311,24 @@ void Game::update(float deltaTime)
     explosions.erase(std::remove_if(explosions.begin(), explosions.end(), [](const Explosion& explosion) { return explosion.done(); }), explosions.end());
 }
 
+//Check tank collision and nudge tanks away from each other
 void Game::setTanksPushBack()
 {
-    return;
-    // TODO Hier wellicht een mapping bijhouden wie in een radius bij je liggen.
-    // TODO Dit is echt een bastard - comment maar eens uit...
-    //Check tank collision and nudge tanks away from each other
-    bool first = true;
-    for (Tank& tank : tanks)
-    {
+    for (Tank& tank : tanks) {
+        if (!tank.active) continue;
 
-        /**
-if (first) {
-    std::cout << tank.get_position().x << std::endl;
-    std::cout << tank.get_position().y << std::endl;
-}
-*/
+        std::vector<Tank*> tanks_in_collision_radius = this->gamegrid->getTanksInRadius(&tank, (tank.get_collision_radius()*2));
+        for (Tank* other_tank_ptr : tanks_in_collision_radius) {
+            Tank other_tank = *other_tank_ptr;
 
-        if (tank.active)
-        {
-            for (Tank& other_tank : tanks)
-            {
-                // te maken met dezelfde tank of andere tank niet active, dan skip.
-                if (&tank == &other_tank || !other_tank.active) continue;
+            vec2 dir = tank.get_position() - other_tank.get_position();
+            float dir_squared_len = dir.sqr_length();
 
-                // Totale oppervlakte van beide tank posities.
-                vec2 dir = tank.get_position() - other_tank.get_position();
-                float dir_squared_len = dir.sqr_length();
+            float col_squared_len = (tank.get_collision_radius() + other_tank.get_collision_radius());
+            col_squared_len *= col_squared_len;
 
-                /**
-if (first) {
-    std::cout << "\n" << std::endl;
-    std::cout << other_tank.get_position().x << std::endl;
-    std::cout << other_tank.get_position().y << std::endl;
-    std::cout << "\n" << std::endl;
-    std::cout << dir.x << std::endl;
-    std::cout << dir.y << std::endl;
-    std::cout << dir_squared_len << std::endl;
-    std::cout << tank.get_collision_radius() << std::endl;
-    std::cout << other_tank.get_collision_radius() << std::endl;
-}
-*/
-
-                // Collision oppervlakte
-                float col_squared_len = (tank.get_collision_radius() + other_tank.get_collision_radius());
-                col_squared_len *= col_squared_len;
-
-                /**
-if (first) {
-    std::cout << "col_squared_len: " << col_squared_len << std::endl;
-    std::cout << dir.normalized().x << std::endl;
-    std::cout << dir.normalized().y << std::endl;
-    std::cout << "\n\n" << std::endl;
-    first = false;
-}
-*/
-
-                // Zitten de tanks binnen de collision oppervlakte van elkaar, dan nudgen.
-                if (dir_squared_len < col_squared_len)
-                {
-                    tank.push(dir.normalized(), 1.f);
-                }
+            if (dir_squared_len < col_squared_len) {
+                tank.push(dir.normalized(), 1.f);
             }
         }
     }
@@ -415,6 +359,50 @@ void Game::setTanksPushBackOriginal()
                 {
                     tank.push(dir.normalized(), 1.f);
                 }
+            }
+        }
+    }
+}
+
+//Move tanks according to speed and nudges (see above) also reload
+void Game::updateTanksPositions()
+{
+    for (Tank& tank : tanks) {
+        if (!tank.active) continue;
+
+        tank.tick(background_terrain);
+        this->gamegrid->updateTank(&tank);
+    }
+}
+
+void Game::shootRocketsToClosestTanks()
+{
+    for (Tank& tank : tanks) {
+        if (!tank.active) continue;
+
+        // TODO: weer aanzetten
+        if (!tank.rocket_reloaded()) continue;
+
+        Tank& target = find_closest_enemy(tank);
+        rockets.push_back(Rocket(tank.position, (target.get_position() - tank.position).normalized() * 3, rocket_radius, tank.allignment, ((tank.allignment == RED) ? &rocket_red : &rocket_blue)));
+        tank.reload_rocket();
+    }
+}
+
+//Shoot at closest target if reloaded
+void Game::shootRocketsToClosestTanksOriginal()
+{
+    for (Tank& tank : tanks)
+    {
+        if (tank.active)
+        {
+            if (tank.rocket_reloaded())
+            {
+                Tank& target = find_closest_enemy(tank);
+
+                rockets.push_back(Rocket(tank.position, (target.get_position() - tank.position).normalized() * 3, rocket_radius, tank.allignment, ((tank.allignment == RED) ? &rocket_red : &rocket_blue)));
+
+                tank.reload_rocket();
             }
         }
     }

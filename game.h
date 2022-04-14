@@ -18,6 +18,9 @@ class Game
     void update(float deltaTime);
     void setTanksPushBack();
     void setTanksPushBackOriginal();
+    void updateTanksPositions();
+    void shootRocketsToClosestTanks();
+    void shootRocketsToClosestTanksOriginal();
     void draw();
     void tick(float deltaTime);
     void insertion_sort_tanks_health(const std::vector<Tank>& original, std::vector<const Tank*>& sorted_tanks, int begin, int end);
@@ -59,6 +62,7 @@ class Game
     vector<Particle_beam> particle_beams;
 
     Terrain background_terrain;
+    St::Grid* gamegrid;
     std::vector<vec2> forcefield_hull;
 
     Font* frame_count_font;
