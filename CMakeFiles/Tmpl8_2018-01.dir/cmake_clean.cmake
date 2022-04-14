@@ -3,6 +3,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Tmpl8_2018-01.dir/game.cpp.o"
   "CMakeFiles/Tmpl8_2018-01.dir/grid.cpp.o"
   "CMakeFiles/Tmpl8_2018-01.dir/gridcell.cpp.o"
+  "CMakeFiles/Tmpl8_2018-01.dir/kdnode.cpp.o"
+  "CMakeFiles/Tmpl8_2018-01.dir/kdtree.cpp.o"
   "CMakeFiles/Tmpl8_2018-01.dir/particle_beam.cpp.o"
   "CMakeFiles/Tmpl8_2018-01.dir/rocket.cpp.o"
   "CMakeFiles/Tmpl8_2018-01.dir/smoke.cpp.o"

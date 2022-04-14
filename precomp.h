@@ -93,6 +93,9 @@ using namespace Tmpl8;
 #include "gridcell.h"
 #include "grid.h"
 
+#include "kdnode.h"
+#include "kdtree.h"
+
 #include "game.h"
 
 // clang-format on

@@ -93,6 +93,9 @@ void Game::init()
     for (Tank& tank : this->tanks) {
         this->gamegrid->addTank(&tank);
     }
+
+    St::KDTree tree;
+    St::KDNode node;
 }
 
 // -----------------------------------------------------------
