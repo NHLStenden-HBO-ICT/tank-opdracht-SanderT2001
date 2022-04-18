@@ -93,9 +93,6 @@ void Game::init()
     for (Tank& tank : this->tanks) {
         this->gamegrid->addTank(&tank);
     }
-
-    St::KDTree tree;
-    St::KDNode node;
 }
 
 // -----------------------------------------------------------
@@ -380,6 +377,46 @@ void Game::updateTanksPositions()
 
 void Game::shootRocketsToClosestTanks()
 {
+    bool must_shoot_rockets = false;
+    for (Tank& tank : tanks) {
+        if (!tank.active) continue;
+
+        if (!tank.rocket_reloaded()) continue;
+
+        must_shoot_rockets = true;
+        break;
+    }
+
+    // Onzin om anders een hele KDTree op te gaan bouwen.
+    if (!must_shoot_rockets) {
+        return;
+    }
+
+    std::cout << "HIER SHOOT!" << std::endl;
+
+    std::vector<Tank*> blue_tanks;
+    std::vector<Tank*> red_tanks;
+    for (Tank& tank : tanks) {
+        (tank.allignment == BLUE) ? blue_tanks.push_back(&tank) : red_tanks.push_back(&tank);
+    }
+
+    std::vector<Tank*> test_tanks;
+    test_tanks.push_back(blue_tanks[0]);
+    test_tanks.push_back(blue_tanks[1]);
+    test_tanks.push_back(blue_tanks[50]);
+    test_tanks.push_back(blue_tanks[100]);
+    test_tanks.push_back(blue_tanks[120]);
+    test_tanks.push_back(blue_tanks[32]);
+    test_tanks.push_back(blue_tanks[55]);
+    test_tanks.push_back(blue_tanks[60]);
+
+    St::KDTree* blue_tanks_tree = new St::KDTree(test_tanks);
+    throw std::exception();
+
+    /**
+    St::KDTree* blue_tanks_tree = new St::KDTree(blue_tanks);
+    St::KDTree* red_tanks_tree = new St::KDTree(red_tanks);
+
     for (Tank& tank : tanks) {
         if (!tank.active) continue;
 
@@ -390,6 +427,7 @@ void Game::shootRocketsToClosestTanks()
         rockets.push_back(Rocket(tank.position, (target.get_position() - tank.position).normalized() * 3, rocket_radius, tank.allignment, ((tank.allignment == RED) ? &rocket_red : &rocket_blue)));
         tank.reload_rocket();
     }
+    */
 }
 
 //Shoot at closest target if reloaded
