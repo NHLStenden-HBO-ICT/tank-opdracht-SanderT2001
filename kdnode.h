@@ -9,6 +9,9 @@ namespace St
             float getValue() { return this->value; }
             void setValue(float value) { this->value = value; }
 
+            Tank* getTank() { return this->tank; }
+            Tank* setTank(Tank* value) { this->tank = value; }
+
             bool hasLeftNode() { return (this->left != NULL); }
             bool hasRightNode() { return (this->right != NULL); }
 
@@ -30,6 +33,8 @@ namespace St
 
         private:
             float value = 0;
+            Tank* tank = NULL;
+
             KDNode* left = NULL;
             KDNode* right = NULL;
     };

@@ -425,6 +425,7 @@ void Game::shootRocketsToClosestTanks()
     test_tanks.push_back(blue_tanks[6]);
 
     St::KDTree* blue_tanks_tree = new St::KDTree(test_tanks);
+    blue_tanks_tree->getClosestTank(blue_tanks[3]);
     throw std::exception();
 
     /**

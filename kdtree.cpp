@@ -7,9 +7,36 @@ namespace St
     {
         this->build(tanks, &this->rootNode, KTypes::X);
 
-        std::cout << this->rootNode.getValue() << std::endl;
-        std::cout << this->rootNode.getLeftNode()->getValue() << std::endl;
-        std::cout << this->rootNode.getRightNode()->getValue() << std::endl;
+        this->print(&this->rootNode, 0, KTypes::X, 0);
+    }
+
+    void KDTree::print(KDNode* root, int depth = 0, KTypes ktype = KTypes::X, int position = 0)
+    {
+        if (position == 0) {
+            std::cout << "[ROOT]\t";
+        } else if (position == 1) {
+            std::cout << "[LEFT]\t";
+        } else if (position == 2) {
+            std::cout << "[RIGHT]\t";
+        }
+
+        std::cout << ((ktype == KTypes::X) ? "[X]\t" : "[Y]\t");
+        std::cout << "[DEPTH " << depth << "]\t";
+        std::cout << root->getTank()->get_position().x << ", " << root->getTank()->get_position().y;
+        std::cout << std::endl;
+
+        KTypes next_type = (ktype == KTypes::X) ? KTypes::Y : KTypes::X;
+        if (root->hasLeftNode()) {
+            this->print(root->getLeftNode(), depth+1, next_type, 1);
+        }
+        if (root->hasRightNode()) {
+            this->print(root->getRightNode(), depth+1, next_type, 2);
+        }
+    }
+
+    void KDTree::getClosestTank(Tank* tank)
+    {
+        std::cout << "get closest tank" << std::endl;
     }
 
     void KDTree::build(std::vector<Tank*> tanks, KDNode* root, KTypes ktype)
@@ -54,6 +81,9 @@ namespace St
             // No "=="||"<="||"=>" because we don't want the median to be included
             if (compare_value < median_value) {
                 left.push_back(tank);
+            } else if (compare_value == median_value) {
+                // TODO: DIT MOET ECHT ANDERS, IS HEEL LAME EN KAN NIET ALTIJD KLOPPEN
+                root->setTank(tank);
             } else if (compare_value > median_value) {
                 right.push_back(tank);
             }
