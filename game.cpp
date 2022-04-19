@@ -401,14 +401,28 @@ void Game::shootRocketsToClosestTanks()
     }
 
     std::vector<Tank*> test_tanks;
+    blue_tanks[0]->position.x = 3;
+    blue_tanks[0]->position.y = 6;
+    blue_tanks[1]->position.x = 17;
+    blue_tanks[1]->position.y = 15;
+    blue_tanks[2]->position.x = 13;
+    blue_tanks[2]->position.y = 15;
+    blue_tanks[3]->position.x = 6;
+    blue_tanks[3]->position.y = 12;
+    blue_tanks[4]->position.x = 9;
+    blue_tanks[4]->position.y = 1;
+    blue_tanks[5]->position.x = 2;
+    blue_tanks[5]->position.y = 7;
+    blue_tanks[6]->position.x = 10;
+    blue_tanks[6]->position.y = 19;
+
     test_tanks.push_back(blue_tanks[0]);
     test_tanks.push_back(blue_tanks[1]);
-    test_tanks.push_back(blue_tanks[50]);
-    test_tanks.push_back(blue_tanks[100]);
-    test_tanks.push_back(blue_tanks[120]);
-    test_tanks.push_back(blue_tanks[32]);
-    test_tanks.push_back(blue_tanks[55]);
-    test_tanks.push_back(blue_tanks[60]);
+    test_tanks.push_back(blue_tanks[2]);
+    test_tanks.push_back(blue_tanks[3]);
+    test_tanks.push_back(blue_tanks[4]);
+    test_tanks.push_back(blue_tanks[5]);
+    test_tanks.push_back(blue_tanks[6]);
 
     St::KDTree* blue_tanks_tree = new St::KDTree(test_tanks);
     throw std::exception();

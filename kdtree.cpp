@@ -5,66 +5,17 @@ namespace St
 {
     KDTree::KDTree(std::vector<Tank*> tanks)
     {
-        std::cout << "KD TREE INIT + " << tanks.size() << std::endl;
-
-        std::cout << "=========================== POSITIONS ===========================" << std::endl;
-        std::cout << " X\t\t|\tY" << std::endl;
-        for (Tank* tank : tanks) {
-            std::cout << tank->get_position().x << " | " << tank->get_position().y << std::endl;
-        }
-        std::cout << "=========================== POSITIONS ===========================" << std::endl;
-
         this->build(tanks, &this->rootNode, KTypes::X);
-        this->print(&this->rootNode, 0, KTypes::X, 0);
 
-        // vector met x/y coordinates
-        // eerst voor de x en balenced maken
-        // mediaan pakken en dan weet je wie de root is en de left/right tree
-        // vervolgens voor beide lijsten de mediaan weer bepalen alleen dan voor y
-
-        // vector van tanks als input
-        // kun je een direction aan meegeven dat is de nieuwe direction
-        // op basis van de tanks ga je dan de 
-
-        // lijst aanleggen en mediaan vinden
-        // vanuit de mediaan gaan we bouwen
-        //
-        // mediaan pakken - delete - opnieuw mediaan berekenen.
-        //
-        // per subtree belanced maken (BALENCED NOTEREN)
-        // sort eerst op x (balenced)
-        // sort dan op y (balenced)
-    }
-
-    void KDTree::print(KDNode* root, int depth = 0, KTypes ktype = KTypes::X, int position = 0)
-    {
-        if (position == 0) {
-            std::cout << "[ROOT]\t";
-        } else if (position == 1) {
-            std::cout << "[LEFT]\t";
-        } else if (position == 2) {
-            std::cout << "[RIGHT]\t";
-        }
-
-        std::cout << ((ktype == KTypes::X) ? "[X]\t" : "[Y]\t");
-        std::cout << "[DEPTH " << depth << "]\t";
-        std::cout << root->getValue();
-        std::cout << std::endl;
-
-        KTypes next_type = (ktype == KTypes::X) ? KTypes::Y : KTypes::X;
-        // TODO: HASLEFTNODE() FUNCTION
-        if (root->getLeftNode()->getValue() > 0) {
-            this->print(root->getLeftNode(), depth+1, next_type, 1);
-        }
-        if (root->getRightNode()->getValue() > 0) {
-            this->print(root->getRightNode(), depth+1, next_type, 2);
-        }
+        std::cout << this->rootNode.getValue() << std::endl;
+        std::cout << this->rootNode.getLeftNode()->getValue() << std::endl;
+        std::cout << this->rootNode.getRightNode()->getValue() << std::endl;
     }
 
     void KDTree::build(std::vector<Tank*> tanks, KDNode* root, KTypes ktype)
     {
         // TODO: Wellicht kunnen we 1malig een list opbouwen :thinking:
-        std::vector<int> coordinates_list;
+        std::vector<float> coordinates_list;
         KTypes next_type;
         for (Tank* tank : tanks) {
             switch (ktype) {
@@ -82,22 +33,30 @@ namespace St
         coordinates_list = this->getSortedList(coordinates_list);
 
         int median_position = coordinates_list.size() / 2;
-        int median_value = coordinates_list[median_position];
-        std::cout << median_value << std::endl;
+        float median_value = coordinates_list[median_position];
         root->setValue(median_value);
 
         std::vector<Tank*> left;
         std::vector<Tank*> right;
 
-        int counter = 0;
         for (Tank* tank : tanks) {
+            float compare_value = 0;
+            switch (ktype) {
+                case KTypes::X:
+                    compare_value = tank->get_position().x;
+                    break;
+
+                case KTypes::Y:
+                    compare_value = tank->get_position().y;
+                    break;
+            }
+
             // No "=="||"<="||"=>" because we don't want the median to be included
-            if (counter < median_position) {
+            if (compare_value < median_value) {
                 left.push_back(tank);
-            } else if (counter > median_position) {
+            } else if (compare_value > median_value) {
                 right.push_back(tank);
             }
-            counter += 1;
         }
 
         if (left.size() > 0) {
@@ -112,15 +71,15 @@ namespace St
     /**
      * TODO: (netjes neerzetten) "Uses QuickSort"
      */
-    std::vector<int> KDTree::getSortedList(std::vector<int> input)
+    std::vector<float> KDTree::getSortedList(std::vector<float> input)
     {
-        int pivot = input.back();
+        float pivot = input.back();
         input.pop_back();
 
-        std::vector<int> left;
-        std::vector<int> right;
+        std::vector<float> left;
+        std::vector<float> right;
 
-        for (int coordinate : input) {
+        for (float coordinate : input) {
             if (coordinate <= pivot) {
                 left.push_back(coordinate);
             } else {
@@ -135,7 +94,7 @@ namespace St
             right = this->getSortedList(right);
         }
 
-        std::vector<int> output;
+        std::vector<float> output;
         output.insert(output.end(), left.begin(), left.end());
         output.push_back(pivot);
         output.insert(output.end(), right.begin(), right.end());

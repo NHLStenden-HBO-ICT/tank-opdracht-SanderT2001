@@ -6,8 +6,11 @@ namespace St
     {
         public:
             KDNode();
-            int getValue() { return this->value; }
-            void setValue(int value) { this->value = value; }
+            float getValue() { return this->value; }
+            void setValue(float value) { this->value = value; }
+
+            bool hasLeftNode() { return (this->left != NULL); }
+            bool hasRightNode() { return (this->right != NULL); }
 
             KDNode* getLeftNode() {
                 if (this->left == NULL) {
@@ -26,7 +29,7 @@ namespace St
             }
 
         private:
-            int value = 0;
+            float value = 0;
             KDNode* left = NULL;
             KDNode* right = NULL;
     };
