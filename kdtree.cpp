@@ -37,6 +37,58 @@ namespace St
     void KDTree::getClosestTank(Tank* tank)
     {
         std::cout << "get closest tank" << std::endl;
+        // stap 1. doorgaan door de tree naar het laagste punt van de leaf.
+        // stap 2. de distance van het laatste punt wordt de search radius.
+        // stap 3. alle nodes verder bekijken
+
+        this->getClosestNodeByPosition(tank->get_position(), &this->rootNode, KTypes::X);
+    }
+
+    KDNode* KDTree::getClosestNodeByPosition(vec2 position, KDNode* root, KTypes ktype = KTypes::X)
+    {
+        float compare_value = 0;
+        switch (ktype) {
+            case KTypes::X:
+                compare_value = position.x;
+                break;
+
+            case KTypes::Y:
+                compare_value = position.y;
+                break;
+        }
+
+        KTypes next_type = (ktype == KTypes::X) ? KTypes::Y : KTypes::X;
+
+        if (compare_value < root->getValue()) {
+            if (root->hasLeftNode()) {
+                if ((root->getLeftNode()->getTank()->get_position().x == position.x) && (root->getLeftNode()->getTank()->get_position().y == position.y)) {
+                    std::cout << "LAST NODE (LEFT)" << std::endl;
+                    std::cout << root->getValue() << std::endl;
+                } else {
+                    return this->getClosestNodeByPosition(position, root->getLeftNode(), next_type);
+                }
+            } else {
+                std::cout << "LAST NODE (LEFT)" << std::endl;
+                std::cout << root->getValue() << std::endl;
+            }
+        } else {
+            if (root->hasRightNode()) {
+                if ((root->getRightNode()->getTank()->get_position().x == position.x) && (root->getRightNode()->getTank()->get_position().y == position.y)) {
+                    std::cout << "LAST NODE (RIGHT)" << std::endl;
+                    std::cout << root->getValue() << std::endl;
+
+                    float distance = fabsf((root->getTank()->get_position() - position).sqr_length());
+                    std::cout << "Distance: " << distance << std::endl;
+                } else {
+                    return this->getClosestNodeByPosition(position, root->getRightNode(), next_type);
+                }
+            } else {
+                std::cout << "LAST NODE (RIGHT)" << std::endl;
+                std::cout << root->getValue() << std::endl;
+            }
+        }
+
+        return root;
     }
 
     void KDTree::build(std::vector<Tank*> tanks, KDNode* root, KTypes ktype)
