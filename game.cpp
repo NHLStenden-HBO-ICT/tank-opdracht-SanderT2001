@@ -419,6 +419,7 @@ void Game::shootRocketsToClosestTanks()
     blue_tanks[7]->position.y = 10;
     blue_tanks[8]->position.x = 7;
     blue_tanks[8]->position.y = 11;
+    //blue_tanks[8]->position.y = 14;
     blue_tanks[9]->position.x = 3;
     blue_tanks[9]->position.y = 12;
 

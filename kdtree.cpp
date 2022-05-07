@@ -41,7 +41,9 @@ namespace St
         float current_closest_distance = this->getDistanceBetweenTanks(tank, deepest_node->getTank());
         std::cout << "Base Closest Distance Pos: " << deepest_node->getTank()->get_position().x << ", " << deepest_node->getTank()->get_position().y << std::endl;
         std::cout << "Base Closest Distance: " << current_closest_distance << std::endl;
-        this->getClosestDistanceNodeByDeepestNode(tank->get_position(), current_closest_distance, deepest_node->getParentNode());
+        KDNode* n = this->getClosestDistanceNodeByDeepestNode(tank->get_position(), deepest_node, deepest_node->getParentNode());
+        std::cout << "UITEINDELIJK:" << std::endl;
+        n->getTank()->print_position();
         std::cout << "-- [END] GET CLOSEST TANK -- " << std::endl;
     }
 
@@ -73,33 +75,40 @@ namespace St
         return root;
     }
 
-    KDNode* KDTree::getClosestDistanceNodeByDeepestNode(vec2 target_position, float current_closest_distance, KDNode* node)
+    KDNode* KDTree::getClosestDistanceNodeByDeepestNode(vec2 target_position, KDNode* root, KDNode* node)
     {
-        float new_closest_distance = this->getClosestDistanceInNode(target_position, current_closest_distance, node);
+        KDNode* new_closest_node = this->getClosestDistanceNodeInNode(target_position, root, node);
 
-        // TODO: ALS JE OMHOOG GAAT, CHECKEN OF DIT ZIN HEEFT! ALS DIST. GROTER IS DAN WAT WE NU HEBBEN, DAN NIET.
-
-        std::cout << "NEW CLOSEST DISTANCE: " << new_closest_distance << std::endl;
+        float new_closest_distance = fabsf((new_closest_node->getTank()->get_position() - target_position).sqr_length());
+        if (new_closest_node->hasParentNode()) {
+            KDNode* new_closest_node_from_parent_node = this->getClosestDistanceNodeInNode(target_position, new_closest_node, new_closest_node->getParentNode());
+            float distance_from_new_closest_node_to_parent = fabsf((new_closest_node_from_parent_node->getTank()->get_position() - target_position).sqr_length());
+            if (distance_from_new_closest_node_to_parent < new_closest_distance) {
+                return this->getClosestDistanceNodeByDeepestNode(target_position, new_closest_node, new_closest_node->getParentNode());
+            }
+        }
+        return new_closest_node;
     }
 
-    float KDTree::getClosestDistanceInNode(vec2 target_position, float current_closest_distance, KDNode* node)
+    KDNode* KDTree::getClosestDistanceNodeInNode(vec2 target_position, KDNode* current_closest_node, KDNode* node)
     {
+        float current_closest_distance = fabsf((current_closest_node->getTank()->get_position() - target_position).sqr_length());
         float distance = fabsf((node->getTank()->get_position() - target_position).sqr_length());
-        float return_distance = (distance < current_closest_distance) ? distance : current_closest_distance;
+        KDNode* return_node = (distance < current_closest_distance) ? node : current_closest_node;
 
-        std::cout << node->getTank()->get_position().x << ", " << node->getTank()->get_position().y << std::endl;
-        std::cout << distance << std::endl;
-        std::cout << "+++++++++++++++++++++++++++" << std::endl;
+        if (distance > current_closest_distance) {
+            return current_closest_node;
+        }
 
         if (node->hasLeftNode()) {
-            return this->getClosestDistanceInNode(target_position, return_distance, node->getLeftNode());
+            return this->getClosestDistanceNodeInNode(target_position, return_node, node->getLeftNode());
         }
 
         if (node->hasRightNode()) {
-            return this->getClosestDistanceInNode(target_position, return_distance, node->getRightNode());
+            return this->getClosestDistanceNodeInNode(target_position, return_node, node->getRightNode());
         }
 
-        return return_distance;
+        return return_node;
     }
 
     void KDTree::build(std::vector<Tank*> tanks, KDNode* root, KTypes ktype)

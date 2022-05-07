@@ -20,6 +20,8 @@ class Tank
     void tick(Terrain& terrain);
 
     vec2 get_position() const { return position; };
+    // TODO: WEGHALEN OP FINAL
+    void print_position() { std::cout << position.x << ", " << position.y << std::endl; };
     float get_collision_radius() const { return collision_radius; };
     bool rocket_reloaded() const { return reloaded; };
 
