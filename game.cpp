@@ -415,14 +415,24 @@ void Game::shootRocketsToClosestTanks()
     blue_tanks[5]->position.y = 7;
     blue_tanks[6]->position.x = 10;
     blue_tanks[6]->position.y = 19;
+    blue_tanks[7]->position.x = 5;
+    blue_tanks[7]->position.y = 10;
+    blue_tanks[8]->position.x = 7;
+    blue_tanks[8]->position.y = 11;
+    blue_tanks[9]->position.x = 3;
+    blue_tanks[9]->position.y = 12;
 
     test_tanks.push_back(blue_tanks[0]);
     test_tanks.push_back(blue_tanks[1]);
     test_tanks.push_back(blue_tanks[2]);
-    test_tanks.push_back(blue_tanks[3]);
+    // TODO: WELLICHT ZWAAR OM TE IGNOREN IN REAL TIME
+//    test_tanks.push_back(blue_tanks[3]);
     test_tanks.push_back(blue_tanks[4]);
     test_tanks.push_back(blue_tanks[5]);
     test_tanks.push_back(blue_tanks[6]);
+    test_tanks.push_back(blue_tanks[7]);
+    test_tanks.push_back(blue_tanks[8]);
+    test_tanks.push_back(blue_tanks[9]);
 
     St::KDTree* blue_tanks_tree = new St::KDTree(test_tanks);
     blue_tanks_tree->getClosestTank(blue_tanks[3]);
