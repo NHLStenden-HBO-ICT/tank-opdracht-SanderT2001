@@ -22,6 +22,8 @@ precomp.h
 
 /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/kdtree.h
 
+/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/ktypes.h
+
 /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/particle_beam.h
 
 /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/precomp.h
@@ -105,6 +107,8 @@ gridcell.h
 /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/gridcell.h
 grid.h
 /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/grid.h
+ktypes.h
+/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/ktypes.h
 kdnode.h
 /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/kdnode.h
 kdtree.h

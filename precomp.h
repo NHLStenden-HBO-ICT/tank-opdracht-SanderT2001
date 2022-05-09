@@ -93,6 +93,7 @@ using namespace Tmpl8;
 #include "gridcell.h"
 #include "grid.h"
 
+#include "ktypes.h"
 #include "kdnode.h"
 #include "kdtree.h"
 

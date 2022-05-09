@@ -2,12 +2,17 @@
 
 namespace St
 {
+    enum St::KTypes;
+
     class KDNode
     {
         public:
             KDNode();
             float getValue() { return this->value; }
             void setValue(float value) { this->value = value; }
+
+            KTypes getKType() { return this->ktype; }
+            void setKType(KTypes value) { this->ktype = value; }
 
             Tank* getTank() { return this->tank; }
             Tank* setTank(Tank* value) { this->tank = value; }
@@ -36,6 +41,7 @@ namespace St
 
         private:
             float value = 0;
+            KTypes ktype = KTypes::X;
             Tank* tank = NULL;
 
             KDNode* parent = NULL;

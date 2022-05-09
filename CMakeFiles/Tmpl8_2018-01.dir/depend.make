@@ -8,6 +8,7 @@ CMakeFiles/Tmpl8_2018-01.dir/explosion.cpp.o: grid.h
 CMakeFiles/Tmpl8_2018-01.dir/explosion.cpp.o: gridcell.h
 CMakeFiles/Tmpl8_2018-01.dir/explosion.cpp.o: kdnode.h
 CMakeFiles/Tmpl8_2018-01.dir/explosion.cpp.o: kdtree.h
+CMakeFiles/Tmpl8_2018-01.dir/explosion.cpp.o: ktypes.h
 CMakeFiles/Tmpl8_2018-01.dir/explosion.cpp.o: particle_beam.h
 CMakeFiles/Tmpl8_2018-01.dir/explosion.cpp.o: precomp.h
 CMakeFiles/Tmpl8_2018-01.dir/explosion.cpp.o: rocket.h
@@ -70,6 +71,7 @@ CMakeFiles/Tmpl8_2018-01.dir/game.cpp.o: grid.h
 CMakeFiles/Tmpl8_2018-01.dir/game.cpp.o: gridcell.h
 CMakeFiles/Tmpl8_2018-01.dir/game.cpp.o: kdnode.h
 CMakeFiles/Tmpl8_2018-01.dir/game.cpp.o: kdtree.h
+CMakeFiles/Tmpl8_2018-01.dir/game.cpp.o: ktypes.h
 CMakeFiles/Tmpl8_2018-01.dir/game.cpp.o: particle_beam.h
 CMakeFiles/Tmpl8_2018-01.dir/game.cpp.o: precomp.h
 CMakeFiles/Tmpl8_2018-01.dir/game.cpp.o: rocket.h
@@ -132,6 +134,7 @@ CMakeFiles/Tmpl8_2018-01.dir/grid.cpp.o: grid.h
 CMakeFiles/Tmpl8_2018-01.dir/grid.cpp.o: gridcell.h
 CMakeFiles/Tmpl8_2018-01.dir/grid.cpp.o: kdnode.h
 CMakeFiles/Tmpl8_2018-01.dir/grid.cpp.o: kdtree.h
+CMakeFiles/Tmpl8_2018-01.dir/grid.cpp.o: ktypes.h
 CMakeFiles/Tmpl8_2018-01.dir/grid.cpp.o: particle_beam.h
 CMakeFiles/Tmpl8_2018-01.dir/grid.cpp.o: precomp.h
 CMakeFiles/Tmpl8_2018-01.dir/grid.cpp.o: rocket.h
@@ -194,6 +197,7 @@ CMakeFiles/Tmpl8_2018-01.dir/gridcell.cpp.o: gridcell.cpp
 CMakeFiles/Tmpl8_2018-01.dir/gridcell.cpp.o: gridcell.h
 CMakeFiles/Tmpl8_2018-01.dir/gridcell.cpp.o: kdnode.h
 CMakeFiles/Tmpl8_2018-01.dir/gridcell.cpp.o: kdtree.h
+CMakeFiles/Tmpl8_2018-01.dir/gridcell.cpp.o: ktypes.h
 CMakeFiles/Tmpl8_2018-01.dir/gridcell.cpp.o: particle_beam.h
 CMakeFiles/Tmpl8_2018-01.dir/gridcell.cpp.o: precomp.h
 CMakeFiles/Tmpl8_2018-01.dir/gridcell.cpp.o: rocket.h
@@ -256,6 +260,7 @@ CMakeFiles/Tmpl8_2018-01.dir/kdnode.cpp.o: gridcell.h
 CMakeFiles/Tmpl8_2018-01.dir/kdnode.cpp.o: kdnode.cpp
 CMakeFiles/Tmpl8_2018-01.dir/kdnode.cpp.o: kdnode.h
 CMakeFiles/Tmpl8_2018-01.dir/kdnode.cpp.o: kdtree.h
+CMakeFiles/Tmpl8_2018-01.dir/kdnode.cpp.o: ktypes.h
 CMakeFiles/Tmpl8_2018-01.dir/kdnode.cpp.o: particle_beam.h
 CMakeFiles/Tmpl8_2018-01.dir/kdnode.cpp.o: precomp.h
 CMakeFiles/Tmpl8_2018-01.dir/kdnode.cpp.o: rocket.h
@@ -318,6 +323,7 @@ CMakeFiles/Tmpl8_2018-01.dir/kdtree.cpp.o: gridcell.h
 CMakeFiles/Tmpl8_2018-01.dir/kdtree.cpp.o: kdnode.h
 CMakeFiles/Tmpl8_2018-01.dir/kdtree.cpp.o: kdtree.cpp
 CMakeFiles/Tmpl8_2018-01.dir/kdtree.cpp.o: kdtree.h
+CMakeFiles/Tmpl8_2018-01.dir/kdtree.cpp.o: ktypes.h
 CMakeFiles/Tmpl8_2018-01.dir/kdtree.cpp.o: particle_beam.h
 CMakeFiles/Tmpl8_2018-01.dir/kdtree.cpp.o: precomp.h
 CMakeFiles/Tmpl8_2018-01.dir/kdtree.cpp.o: rocket.h
@@ -379,6 +385,7 @@ CMakeFiles/Tmpl8_2018-01.dir/particle_beam.cpp.o: grid.h
 CMakeFiles/Tmpl8_2018-01.dir/particle_beam.cpp.o: gridcell.h
 CMakeFiles/Tmpl8_2018-01.dir/particle_beam.cpp.o: kdnode.h
 CMakeFiles/Tmpl8_2018-01.dir/particle_beam.cpp.o: kdtree.h
+CMakeFiles/Tmpl8_2018-01.dir/particle_beam.cpp.o: ktypes.h
 CMakeFiles/Tmpl8_2018-01.dir/particle_beam.cpp.o: particle_beam.cpp
 CMakeFiles/Tmpl8_2018-01.dir/particle_beam.cpp.o: particle_beam.h
 CMakeFiles/Tmpl8_2018-01.dir/particle_beam.cpp.o: precomp.h
@@ -441,6 +448,7 @@ CMakeFiles/Tmpl8_2018-01.dir/rocket.cpp.o: grid.h
 CMakeFiles/Tmpl8_2018-01.dir/rocket.cpp.o: gridcell.h
 CMakeFiles/Tmpl8_2018-01.dir/rocket.cpp.o: kdnode.h
 CMakeFiles/Tmpl8_2018-01.dir/rocket.cpp.o: kdtree.h
+CMakeFiles/Tmpl8_2018-01.dir/rocket.cpp.o: ktypes.h
 CMakeFiles/Tmpl8_2018-01.dir/rocket.cpp.o: particle_beam.h
 CMakeFiles/Tmpl8_2018-01.dir/rocket.cpp.o: precomp.h
 CMakeFiles/Tmpl8_2018-01.dir/rocket.cpp.o: rocket.cpp
@@ -503,6 +511,7 @@ CMakeFiles/Tmpl8_2018-01.dir/smoke.cpp.o: grid.h
 CMakeFiles/Tmpl8_2018-01.dir/smoke.cpp.o: gridcell.h
 CMakeFiles/Tmpl8_2018-01.dir/smoke.cpp.o: kdnode.h
 CMakeFiles/Tmpl8_2018-01.dir/smoke.cpp.o: kdtree.h
+CMakeFiles/Tmpl8_2018-01.dir/smoke.cpp.o: ktypes.h
 CMakeFiles/Tmpl8_2018-01.dir/smoke.cpp.o: particle_beam.h
 CMakeFiles/Tmpl8_2018-01.dir/smoke.cpp.o: precomp.h
 CMakeFiles/Tmpl8_2018-01.dir/smoke.cpp.o: rocket.h
@@ -565,6 +574,7 @@ CMakeFiles/Tmpl8_2018-01.dir/surface.cpp.o: grid.h
 CMakeFiles/Tmpl8_2018-01.dir/surface.cpp.o: gridcell.h
 CMakeFiles/Tmpl8_2018-01.dir/surface.cpp.o: kdnode.h
 CMakeFiles/Tmpl8_2018-01.dir/surface.cpp.o: kdtree.h
+CMakeFiles/Tmpl8_2018-01.dir/surface.cpp.o: ktypes.h
 CMakeFiles/Tmpl8_2018-01.dir/surface.cpp.o: particle_beam.h
 CMakeFiles/Tmpl8_2018-01.dir/surface.cpp.o: precomp.h
 CMakeFiles/Tmpl8_2018-01.dir/surface.cpp.o: rocket.h
@@ -627,6 +637,7 @@ CMakeFiles/Tmpl8_2018-01.dir/tank.cpp.o: grid.h
 CMakeFiles/Tmpl8_2018-01.dir/tank.cpp.o: gridcell.h
 CMakeFiles/Tmpl8_2018-01.dir/tank.cpp.o: kdnode.h
 CMakeFiles/Tmpl8_2018-01.dir/tank.cpp.o: kdtree.h
+CMakeFiles/Tmpl8_2018-01.dir/tank.cpp.o: ktypes.h
 CMakeFiles/Tmpl8_2018-01.dir/tank.cpp.o: particle_beam.h
 CMakeFiles/Tmpl8_2018-01.dir/tank.cpp.o: precomp.h
 CMakeFiles/Tmpl8_2018-01.dir/tank.cpp.o: rocket.h
@@ -689,6 +700,7 @@ CMakeFiles/Tmpl8_2018-01.dir/template.cpp.o: grid.h
 CMakeFiles/Tmpl8_2018-01.dir/template.cpp.o: gridcell.h
 CMakeFiles/Tmpl8_2018-01.dir/template.cpp.o: kdnode.h
 CMakeFiles/Tmpl8_2018-01.dir/template.cpp.o: kdtree.h
+CMakeFiles/Tmpl8_2018-01.dir/template.cpp.o: ktypes.h
 CMakeFiles/Tmpl8_2018-01.dir/template.cpp.o: particle_beam.h
 CMakeFiles/Tmpl8_2018-01.dir/template.cpp.o: precomp.h
 CMakeFiles/Tmpl8_2018-01.dir/template.cpp.o: rocket.h
@@ -751,6 +763,7 @@ CMakeFiles/Tmpl8_2018-01.dir/terrain.cpp.o: grid.h
 CMakeFiles/Tmpl8_2018-01.dir/terrain.cpp.o: gridcell.h
 CMakeFiles/Tmpl8_2018-01.dir/terrain.cpp.o: kdnode.h
 CMakeFiles/Tmpl8_2018-01.dir/terrain.cpp.o: kdtree.h
+CMakeFiles/Tmpl8_2018-01.dir/terrain.cpp.o: ktypes.h
 CMakeFiles/Tmpl8_2018-01.dir/terrain.cpp.o: particle_beam.h
 CMakeFiles/Tmpl8_2018-01.dir/terrain.cpp.o: precomp.h
 CMakeFiles/Tmpl8_2018-01.dir/terrain.cpp.o: rocket.h
