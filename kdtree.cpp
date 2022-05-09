@@ -23,33 +23,33 @@ namespace St
 
     void KDTree::build(std::vector<Tank*> tanks, KDNode* root, KTypes ktype)
     {
-        // Stap 1. Lijst maken van alle X of Y coordinates voor deze Node van Tanks.
-        std::vector<float> coordinates_list = this->getTanksCoordinatesListForKType(tanks, ktype);
-        // Stap 2. Lijst sorteren van klein-groot.
-        coordinates_list = this->getSortedList(coordinates_list);
+        // Stap 1. Tanks sorteren o.b.v. KType positie (x of y) van klein-groot.
+        std::vector<Tank*> sorted_tanks = this->sortTanksVectorOnKTypePosition(tanks, ktype);
 
-        // Stap 3. Middelste value pakken (mediaan).
-        int median_position = coordinates_list.size() / 2;
-        float median_value = coordinates_list[median_position];
+        // Stap 2. Middelste tank pakken (mediaan).
+        int vector_median_position = sorted_tanks.size() / 2;
+        Tank* median_tank = sorted_tanks[vector_median_position];
+        // Stap 3. Middelste value (x/y) bepalen.
+        float median_value = this->getTankPositionValueFromKType(median_tank, ktype);
 
         // Stap 4. Waardes in de KDNode zetten.
         root->setValue(median_value);
         root->setKType(ktype);
+        root->setTank(median_tank);
 
         // Stap 5. Bepalen of er nog sub-nodes zijn, zo ja, deze tanks dan verzamelen per kant (links/rechts) en nodes maken door build opnieuw aan te roepen.
         std::vector<Tank*> left;
         std::vector<Tank*> right;
 
         for (Tank* tank : tanks) {
+            if (tank == median_tank) continue;
+
             float compare_value = this->getTankPositionValueFromKType(tank, ktype);
 
             // No "=="||"<="||"=>" because we don't want the median to be included
             if (compare_value < median_value) {
                 left.push_back(tank);
-            } else if (compare_value == median_value) {
-                // TODO: DIT MOET ECHT ANDERS, IS HEEL LAME EN KAN NIET ALTIJD KLOPPEN
-                root->setTank(tank);
-            } else if (compare_value > median_value) {
+            } else {
                 right.push_back(tank);
             }
         }
@@ -65,15 +65,6 @@ namespace St
             root->getRightNode()->setParentNode(root);
             this->build(right, root->getRightNode(), next_type);
         }
-    }
-
-    std::vector<float> KDTree::getTanksCoordinatesListForKType(std::vector<Tank*> tanks, KTypes ktype)
-    {
-        std::vector<float> coordinates_list;
-        for (Tank* tank : tanks) {
-            coordinates_list.push_back(this->getTankPositionValueFromKType(tank, ktype));
-        }
-        return coordinates_list;
     }
 
     /**
@@ -93,37 +84,41 @@ namespace St
     }
 
     /**
-     * TODO: (netjes neerzetten) "Uses QuickSort"
+     * Sorteert een vector met Tanks (methode: QuickSort) o.b.v. KType positie (x of y) van klein-groot.
      */
-    std::vector<float> KDTree::getSortedList(std::vector<float> input)
+    std::vector<Tank*> KDTree::sortTanksVectorOnKTypePosition(std::vector<Tank*> input, KTypes ktype)
     {
-        float pivot = input.back();
+        Tank* pivot = input.back();
+        float pivot_position = this->getTankPositionValueFromKType(pivot, ktype);
         input.pop_back();
 
-        std::vector<float> left;
-        std::vector<float> right;
+        std::vector<Tank*> left;
+        std::vector<Tank*> right;
 
-        for (float coordinate : input) {
-            if (coordinate <= pivot) {
-                left.push_back(coordinate);
+        for (Tank* tank : input) {
+            float coordinate = this->getTankPositionValueFromKType(tank, ktype);
+            if (coordinate <= pivot_position) {
+                left.push_back(tank);
             } else {
-                right.push_back(coordinate);
+                right.push_back(tank);
             }
         }
 
         if (left.size() > 1) {
-            left = this->getSortedList(left);
+            left = this->sortTanksVectorOnKTypePosition(left, ktype);
         }
         if (right.size() > 1) {
-            right = this->getSortedList(right);
+            right = this->sortTanksVectorOnKTypePosition(right, ktype);
         }
 
-        std::vector<float> output;
+        std::vector<Tank*> output;
         output.insert(output.end(), left.begin(), left.end());
         output.push_back(pivot);
         output.insert(output.end(), right.begin(), right.end());
         return output;
     }
+
+    /* TODO: HIER GEBLEVEN! */
 
     KDNode* KDTree::getDeepestNodeByPosition(vec2 position, KDNode* root, KTypes ktype = KTypes::X)
     {
