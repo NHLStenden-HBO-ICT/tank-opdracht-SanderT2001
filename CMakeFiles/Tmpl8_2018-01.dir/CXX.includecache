@@ -8,6 +8,12 @@
 
 /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/explosion.h
 
+/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/game.cpp
+precomp.h
+/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/precomp.h
+chrono
+-
+
 /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/game.h
 
 /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/grid.h
@@ -15,10 +21,6 @@
 /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/gridcell.h
 
 /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/kdnode.h
-
-/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/kdtree.cpp
-precomp.h
-/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/precomp.h
 
 /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/kdtree.h
 
