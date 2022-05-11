@@ -392,68 +392,25 @@ void Game::shootRocketsToClosestTanks()
         return;
     }
 
-    std::cout << "HIER SHOOT!" << std::endl;
-
     std::vector<Tank*> blue_tanks;
     std::vector<Tank*> red_tanks;
     for (Tank& tank : tanks) {
         (tank.allignment == BLUE) ? blue_tanks.push_back(&tank) : red_tanks.push_back(&tank);
     }
 
-    std::vector<Tank*> test_tanks;
-    blue_tanks[0]->position.x = 3;
-    blue_tanks[0]->position.y = 6;
-    blue_tanks[1]->position.x = 17;
-    blue_tanks[1]->position.y = 15;
-    blue_tanks[2]->position.x = 13;
-    blue_tanks[2]->position.y = 15;
-    blue_tanks[3]->position.x = 6;
-    blue_tanks[3]->position.y = 12;
-    blue_tanks[4]->position.x = 9;
-    blue_tanks[4]->position.y = 1;
-    blue_tanks[5]->position.x = 2;
-    blue_tanks[5]->position.y = 7;
-    blue_tanks[6]->position.x = 10;
-    blue_tanks[6]->position.y = 19;
-    blue_tanks[7]->position.x = 5;
-    blue_tanks[7]->position.y = 10;
-    blue_tanks[8]->position.x = 7;
-    blue_tanks[8]->position.y = 11;
-    //blue_tanks[8]->position.y = 14;
-    blue_tanks[9]->position.x = 3;
-    blue_tanks[9]->position.y = 12;
-
-    test_tanks.push_back(blue_tanks[0]);
-    test_tanks.push_back(blue_tanks[1]);
-    test_tanks.push_back(blue_tanks[2]);
-    // TODO: WELLICHT ZWAAR OM TE IGNOREN IN REAL TIME
-//    test_tanks.push_back(blue_tanks[3]);
-    test_tanks.push_back(blue_tanks[4]);
-    test_tanks.push_back(blue_tanks[5]);
-    test_tanks.push_back(blue_tanks[6]);
-    test_tanks.push_back(blue_tanks[7]);
-    test_tanks.push_back(blue_tanks[8]);
-    test_tanks.push_back(blue_tanks[9]);
-
-    St::KDTree* blue_tanks_tree = new St::KDTree(test_tanks);
-    blue_tanks_tree->getClosestTank(blue_tanks[3]);
-    throw std::exception();
-
-    /**
     St::KDTree* blue_tanks_tree = new St::KDTree(blue_tanks);
     St::KDTree* red_tanks_tree = new St::KDTree(red_tanks);
 
     for (Tank& tank : tanks) {
         if (!tank.active) continue;
 
-        // TODO: weer aanzetten
         if (!tank.rocket_reloaded()) continue;
 
-        Tank& target = find_closest_enemy(tank);
-        rockets.push_back(Rocket(tank.position, (target.get_position() - tank.position).normalized() * 3, rocket_radius, tank.allignment, ((tank.allignment == RED) ? &rocket_red : &rocket_blue)));
+        Tank* target = (tank.allignment == RED) ? blue_tanks_tree->getClosestTank(&tank) : red_tanks_tree->getClosestTank(&tank);
+
+        rockets.push_back(Rocket(tank.position, (target->get_position() - tank.position).normalized() * 3, rocket_radius, tank.allignment, ((tank.allignment == RED) ? &rocket_red : &rocket_blue)));
         tank.reload_rocket();
     }
-    */
 }
 
 //Shoot at closest target if reloaded

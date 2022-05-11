@@ -12,7 +12,6 @@ namespace St
     {
         // Stap 1. Diepste Node zoeken binnen de Tree op basis van een positie van een Tank.
         KDNode* deepest_node = this->getDeepestNodeByTank(tank, &this->rootNode, KTypes::X);
-        std::cout << "Base Closest Distance Pos: " << deepest_node->getTank()->get_position().x << ", " << deepest_node->getTank()->get_position().y << std::endl;
 
         // Stap 2. Vanuit deze diepste node de minimum distance berekenen en vervolgens omhoog gaan in de Tree om te kijken of er nog een node dichterbij de tank zit.
         KDNode* n = this->getClosestDistanceNodeFromDeepestNode(tank->get_position(), deepest_node);
@@ -145,6 +144,10 @@ namespace St
 
         KDNode* new_closest_node = this->getClosestDistanceInNodeByPosition(target_position, deepest_node, deepest_node->getParentNode());
         float new_closest_distance = this->getDistanceBetweenPositions(new_closest_node->getTank()->get_position(), target_position);
+
+        if (new_closest_node == deepest_node) {
+            return deepest_node;
+        }
 
         if (new_closest_distance > deepest_node_distance) {
             return deepest_node;
