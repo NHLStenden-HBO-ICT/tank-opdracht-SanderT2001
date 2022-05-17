@@ -35,6 +35,10 @@ class Game
     void updateExplosions();
     void clearFinishedExplosions();
 
+    void drawHealthBarsOriginal();
+    void drawHealthBars();
+    std::vector<const Tank*> getSortedTanksByHealth(std::vector<Tank*> tanks);
+
     void draw();
     void tick(float deltaTime);
     void insertion_sort_tanks_health(const std::vector<Tank>& original, std::vector<const Tank*>& sorted_tanks, int begin, int end);

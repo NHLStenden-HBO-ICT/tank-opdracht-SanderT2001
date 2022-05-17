@@ -1,5 +1,5 @@
-#include "precomp.h" // include (only) this in every .cpp file
 
+#include "precomp.h" // include (only) this in every .cpp file
 #include <chrono>
 
 constexpr auto num_tanks_blue = 2048;
@@ -150,6 +150,7 @@ void Game::update(float deltaTime)
         }
     }
 
+    std::cout << "Set Tanks PushBack: ";
     if (show_timings) startFunctionTimer();
     (version == 1) ? this->setTanksPushBackOriginal() : this->setTanksPushBack();
     if (show_timings) stopFunctionTimer();
@@ -157,6 +158,7 @@ void Game::update(float deltaTime)
 
     this->updateTanksPositions();
 
+    std::cout << "Shoot Rockets To Closest Tank: ";
     if (show_timings) startFunctionTimer();
     (version == 1) ? this->shootRocketsToClosestTanksOriginal() : this->shootRocketsToClosestTanks();
     if (show_timings) stopFunctionTimer();
@@ -257,6 +259,8 @@ void Game::shootRocketsToClosestTanks()
     std::vector<Tank*> blue_tanks;
     std::vector<Tank*> red_tanks;
     for (Tank& tank : tanks) {
+        if (!tank.active) continue;
+
         (tank.allignment == BLUE) ? blue_tanks.push_back(&tank) : red_tanks.push_back(&tank);
     }
 
@@ -264,8 +268,6 @@ void Game::shootRocketsToClosestTanks()
     St::KDTree* red_tanks_tree = new St::KDTree(red_tanks);
 
     for (Tank& tank : tanks) {
-        if (!tank.active) continue;
-
         if (!tank.rocket_reloaded()) continue;
 
         Tank* target = (tank.allignment == RED) ? blue_tanks_tree->getClosestTank(&tank) : red_tanks_tree->getClosestTank(&tank);
@@ -455,6 +457,88 @@ void Game::clearFinishedExplosions()
     explosions.erase(std::remove_if(explosions.begin(), explosions.end(), [](const Explosion& explosion) { return explosion.done(); }), explosions.end());
 }
 
+//Draw sorted health bars
+void Game::drawHealthBarsOriginal()
+{
+    for (int t = 0; t < 2; t++)
+    {
+        const int NUM_TANKS = ((t < 1) ? num_tanks_blue : num_tanks_red);
+
+        const int begin = ((t < 1) ? 0 : num_tanks_blue);
+        std::vector<const Tank*> sorted_tanks;
+        insertion_sort_tanks_health(tanks, sorted_tanks, begin, begin + NUM_TANKS);
+        sorted_tanks.erase(std::remove_if(sorted_tanks.begin(), sorted_tanks.end(), [](const Tank* tank) { return !tank->active; }), sorted_tanks.end());
+
+        draw_health_bars(sorted_tanks, t);
+    }
+}
+
+// Zowel voor de blauwe als rode kant van de tanks
+void Game::drawHealthBars()
+{
+    std::vector<Tank*> blue_tanks;
+    std::vector<Tank*> red_tanks;
+    for (Tank& tank : tanks) {
+        if (!tank.active) continue;
+
+        (tank.allignment == BLUE) ? blue_tanks.push_back(&tank) : red_tanks.push_back(&tank);
+    }
+
+    std::vector<const Tank*> sorted_blue_tanks = this->getSortedTanksByHealth(blue_tanks);
+    draw_health_bars(sorted_blue_tanks, 0);
+
+    std::vector<const Tank*> sorted_red_tanks = this->getSortedTanksByHealth(red_tanks);
+    draw_health_bars(sorted_blue_tanks, 1);
+}
+
+// Uses Count Sort
+std::vector<const Tank*> Game::getSortedTanksByHealth(std::vector<Tank*> tanks_to_sort)
+{
+    std::vector<int> tanks_health_list(tanks_to_sort.size());
+    for (Tank* tank : tanks_to_sort) {
+        tanks_health_list.push_back(tank->health);
+    }
+
+    std::vector<int> tanks_health_count_list(tank_max_health);
+    for (int i = 0; i <= tanks_health_count_list.size(); i++) {
+        tanks_health_count_list[i] = 0;
+    }
+    for (int tank_health : tanks_health_list) {
+        tanks_health_count_list[tank_health] = tanks_health_count_list[tank_health]+1;
+    }
+
+    std::vector<int> tanks_health_index(tank_max_health);
+    for (int i = 0; i <= tanks_health_index.size(); i++) {
+        tanks_health_index[i] = 0;
+    }
+
+    for (int i = 0; i <= tanks_health_count_list.size(); i++) {
+        int value = tanks_health_count_list[i];
+
+        if (i == 0) {
+            tanks_health_index[i] = value;
+        } else {
+            int previous_value = tanks_health_index[i-1];
+            tanks_health_index[i] = previous_value + value;
+        }
+    }
+
+    std::vector<const Tank*> sorted_tanks(tanks_health_index[tanks_health_index.size()]);
+    for (Tank* tank : tanks_to_sort) {
+        int health = tank->health;
+        int position_in_sorted_tanks = tanks_health_index[health];
+
+        sorted_tanks[position_in_sorted_tanks] = tank;
+
+        tanks_health_index[health] = tanks_health_index[health]-1;
+    }
+
+    // Remove NULL Pointers
+    sorted_tanks.erase(std::remove(sorted_tanks.begin(), sorted_tanks.end(), nullptr), sorted_tanks.end());
+
+    return sorted_tanks;
+}
+
 // -----------------------------------------------------------
 // Draw all sprites to the screen
 // (It is not recommended to multi-thread this function)
@@ -505,18 +589,11 @@ void Game::draw()
         screen->line(line_start, line_end, 0x0000ff);
     }
 
-    //Draw sorted health bars
-    for (int t = 0; t < 2; t++)
-    {
-        const int NUM_TANKS = ((t < 1) ? num_tanks_blue : num_tanks_red);
-
-        const int begin = ((t < 1) ? 0 : num_tanks_blue);
-        std::vector<const Tank*> sorted_tanks;
-        insertion_sort_tanks_health(tanks, sorted_tanks, begin, begin + NUM_TANKS);
-        sorted_tanks.erase(std::remove_if(sorted_tanks.begin(), sorted_tanks.end(), [](const Tank* tank) { return !tank->active; }), sorted_tanks.end());
-
-        draw_health_bars(sorted_tanks, t);
-    }
+    std::cout << "Draw Health Bars: ";
+    if (show_timings) startFunctionTimer();
+    (version == 1) ? this->drawHealthBarsOriginal() : this->drawHealthBars();
+    if (show_timings) stopFunctionTimer();
+    if (show_timings) printFunctionTime();
 }
 
 // -----------------------------------------------------------
