@@ -16,11 +16,25 @@ class Game
     void init();
     void shutdown();
     void update(float deltaTime);
+
     void setTanksPushBack();
     void setTanksPushBackOriginal();
+
     void updateTanksPositions();
+
     void shootRocketsToClosestTanks();
     void shootRocketsToClosestTanksOriginal();
+
+    void updateSmokePlumes();
+    void clearForceField();
+    void generateForceField();
+    void checkRocketCollision();
+    void checkRocketCollisionWithForcefield();
+    void clearExplodedRockets();
+    void damageTanksHitByParticleBeam();
+    void updateExplosions();
+    void clearFinishedExplosions();
+
     void draw();
     void tick(float deltaTime);
     void insertion_sort_tanks_health(const std::vector<Tank>& original, std::vector<const Tank*>& sorted_tanks, int begin, int end);

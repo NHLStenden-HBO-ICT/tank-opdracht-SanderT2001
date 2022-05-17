@@ -43,7 +43,6 @@ const static vec2 rocket_size(6, 6);
 const static float tank_radius = 3.f;
 const static float rocket_radius = 5.f;
 
-// TODO: Moet dit niet in de header file staan?
 const static int  version      = 2; // 1 => Original function, 2 => Optimized function
 const static bool show_timings = true;
 
@@ -105,7 +104,6 @@ void Game::shutdown()
 // -----------------------------------------------------------
 // Iterates through all tanks and returns the closest enemy tank for the given tank
 // -----------------------------------------------------------
-// TODO: Dit is een zware. Wordt door alle tanks gelooped
 Tank& Game::find_closest_enemy(Tank& current_tank)
 {
     float closest_distance = numeric_limits<float>::infinity();
@@ -140,7 +138,6 @@ bool Tmpl8::Game::left_of_line(vec2 line_start, vec2 line_end, vec2 point)
 // Collision detection
 // Targeting etc..
 // -----------------------------------------------------------
-// TODO: Multi Threading?
 void Game::update(float deltaTime)
 {
     //Calculate the route to the destination for each tank using BFS
@@ -156,7 +153,7 @@ void Game::update(float deltaTime)
     if (show_timings) startFunctionTimer();
     (version == 1) ? this->setTanksPushBackOriginal() : this->setTanksPushBack();
     if (show_timings) stopFunctionTimer();
-//    if (show_timings) printFunctionTime();
+    if (show_timings) printFunctionTime();
 
     this->updateTanksPositions();
 
@@ -165,150 +162,15 @@ void Game::update(float deltaTime)
     if (show_timings) stopFunctionTimer();
     if (show_timings) printFunctionTime();
 
-    //Update smoke plumes
-    // TODO: function updateSmokePlumes();
-    // TODO: Alle zaken opdelen in verschillende functies. Laat die maar weten hoe ze iets moeten updaten.
-    //       Deze functie zou niet meer moeten zijn dan meerdere aanroepen.
-    for (Smoke& smoke : smokes)
-    {
-        smoke.tick();
-    }
-
-    // TODO: function clearForcefield();
-    // TODO: function generateForceField();
-    //Calculate "forcefield" around active tanks
-    forcefield_hull.clear();
-
-    //Find first active tank (this loop is a bit disgusting, fix?)
-    // TODO: Dit moet echt anders
-    int first_active = 0;
-    for (Tank& tank : tanks)
-    {
-        if (tank.active)
-        {
-            break;
-        }
-        first_active++;
-    }
-
-    // TODO: Dit kunnen we ook met een radius/mapping berekenen
-    vec2 point_on_hull = tanks.at(first_active).position;
-    //Find left most tank position
-    for (Tank& tank : tanks)
-    {
-        if (tank.active)
-        {
-            if (tank.position.x <= point_on_hull.x)
-            {
-                point_on_hull = tank.position;
-            }
-        }
-    }
-
-    //Calculate convex hull for 'rocket barrier'
-    for (Tank& tank : tanks)
-    {
-        if (tank.active)
-        {
-            forcefield_hull.push_back(point_on_hull);
-            vec2 endpoint = tanks.at(first_active).position;
-
-            for (Tank& tank : tanks)
-            {
-                if (tank.active)
-                {
-                    if ((endpoint == point_on_hull) || left_of_line(point_on_hull, endpoint, tank.position))
-                    {
-                        endpoint = tank.position;
-                    }
-                }
-            }
-            point_on_hull = endpoint;
-
-            if (endpoint == forcefield_hull.at(0))
-            {
-                break;
-            }
-        }
-    }
-
-    //Update rockets
-    // TODO: function checkRocketCollision();
-    // TODO: Dit is ook een bastard.
-    for (Rocket& rocket : rockets)
-    {
-        rocket.tick();
-
-        //Check if rocket collides with enemy tank, spawn explosion, and if tank is destroyed spawn a smoke plume
-        for (Tank& tank : tanks)
-        {
-            if (tank.active && (tank.allignment != rocket.allignment) && rocket.intersects(tank.position, tank.collision_radius))
-            {
-                explosions.push_back(Explosion(&explosion, tank.position));
-
-                if (tank.hit(rocket_hit_value))
-                {
-                    smokes.push_back(Smoke(smoke, tank.position - vec2(7, 24)));
-                    this->gamegrid->removeTank(&tank);
-                }
-
-                rocket.active = false;
-                break;
-            }
-        }
-    }
-
-    //Disable rockets if they collide with the "forcefield"
-    //Hint: A point to convex hull intersection test might be better here? :) (Disable if outside)
-    // TODO: function checkRocketCollisionWithForcefield();
-    for (Rocket& rocket : rockets)
-    {
-        if (rocket.active)
-        {
-            for (size_t i = 0; i < forcefield_hull.size(); i++)
-            {
-                if (circle_segment_intersect(forcefield_hull.at(i), forcefield_hull.at((i + 1) % forcefield_hull.size()), rocket.position, rocket.collision_radius))
-                {
-                    explosions.push_back(Explosion(&explosion, rocket.position));
-                    rocket.active = false;
-                }
-            }
-        }
-    }
-
-    //Remove exploded rockets with remove erase idiom
-    // TODO: function clearExplodedRockets();
-    rockets.erase(std::remove_if(rockets.begin(), rockets.end(), [](const Rocket& rocket) { return !rocket.active; }), rockets.end());
-
-    // TODO: function damageTanksHitByParticleBeam();
-    //Update particle beams
-    for (Particle_beam& particle_beam : particle_beams)
-    {
-        particle_beam.tick(tanks);
-
-        //Damage all tanks within the damage window of the beam (the window is an axis-aligned bounding box)
-        for (Tank& tank : tanks)
-        {
-            if (tank.active && particle_beam.rectangle.intersects_circle(tank.get_position(), tank.get_collision_radius()))
-            {
-                if (tank.hit(particle_beam.damage))
-                {
-                    smokes.push_back(Smoke(smoke, tank.position - vec2(0, 48)));
-                    this->gamegrid->removeTank(&tank);
-                }
-            }
-        }
-    }
-
-    // TODO: function updateExplosions();
-    //Update explosion sprites and remove when done with remove erase idiom
-    for (Explosion& explosion : explosions)
-    {
-        explosion.tick();
-    }
-
-    // TODO: function clearFinishedExplosions();
-    explosions.erase(std::remove_if(explosions.begin(), explosions.end(), [](const Explosion& explosion) { return explosion.done(); }), explosions.end());
+    this->updateSmokePlumes();
+    this->clearForceField();
+    this->generateForceField();
+    this->checkRocketCollision();
+    this->checkRocketCollisionWithForcefield();
+    this->clearExplodedRockets();
+    this->damageTanksHitByParticleBeam();
+    this->updateExplosions();
+    this->clearFinishedExplosions();
 }
 
 //Check tank collision and nudge tanks away from each other
@@ -430,6 +292,167 @@ void Game::shootRocketsToClosestTanksOriginal()
             }
         }
     }
+}
+
+//Update smoke plumes
+void Game::updateSmokePlumes()
+{
+    for (Smoke& smoke : smokes)
+    {
+        smoke.tick();
+    }
+}
+
+void Game::clearForceField()
+{
+    forcefield_hull.clear();
+}
+
+//Calculate "forcefield" around active tanks
+void Game::generateForceField()
+{
+    //Find first active tank (this loop is a bit disgusting, fix?)
+    // TODO: Dit moet echt anders
+    int first_active = 0;
+    for (Tank& tank : tanks)
+    {
+        if (tank.active)
+        {
+            break;
+        }
+        first_active++;
+    }
+
+    // TODO: Dit kunnen we ook met een radius/mapping berekenen
+    vec2 point_on_hull = tanks.at(first_active).position;
+    //Find left most tank position
+    for (Tank& tank : tanks)
+    {
+        if (tank.active)
+        {
+            if (tank.position.x <= point_on_hull.x)
+            {
+                point_on_hull = tank.position;
+            }
+        }
+    }
+
+    //Calculate convex hull for 'rocket barrier'
+    for (Tank& tank : tanks)
+    {
+        if (tank.active)
+        {
+            forcefield_hull.push_back(point_on_hull);
+            vec2 endpoint = tanks.at(first_active).position;
+
+            for (Tank& tank : tanks)
+            {
+                if (tank.active)
+                {
+                    if ((endpoint == point_on_hull) || left_of_line(point_on_hull, endpoint, tank.position))
+                    {
+                        endpoint = tank.position;
+                    }
+                }
+            }
+            point_on_hull = endpoint;
+
+            if (endpoint == forcefield_hull.at(0))
+            {
+                break;
+            }
+        }
+    }
+}
+
+//Update rockets
+void Game::checkRocketCollision()
+{
+    // TODO: Dit is ook een bastard.
+    for (Rocket& rocket : rockets)
+    {
+        rocket.tick();
+
+        //Check if rocket collides with enemy tank, spawn explosion, and if tank is destroyed spawn a smoke plume
+        for (Tank& tank : tanks)
+        {
+            if (tank.active && (tank.allignment != rocket.allignment) && rocket.intersects(tank.position, tank.collision_radius))
+            {
+                explosions.push_back(Explosion(&explosion, tank.position));
+
+                if (tank.hit(rocket_hit_value))
+                {
+                    smokes.push_back(Smoke(smoke, tank.position - vec2(7, 24)));
+                    this->gamegrid->removeTank(&tank);
+                }
+
+                rocket.active = false;
+                break;
+            }
+        }
+    }
+}
+
+//Disable rockets if they collide with the "forcefield"
+//Hint: A point to convex hull intersection test might be better here? :) (Disable if outside)
+void Game::checkRocketCollisionWithForcefield()
+{
+    for (Rocket& rocket : rockets)
+    {
+        if (rocket.active)
+        {
+            for (size_t i = 0; i < forcefield_hull.size(); i++)
+            {
+                if (circle_segment_intersect(forcefield_hull.at(i), forcefield_hull.at((i + 1) % forcefield_hull.size()), rocket.position, rocket.collision_radius))
+                {
+                    explosions.push_back(Explosion(&explosion, rocket.position));
+                    rocket.active = false;
+                }
+            }
+        }
+    }
+}
+
+//Remove exploded rockets with remove erase idiom
+void Game::clearExplodedRockets()
+{
+    rockets.erase(std::remove_if(rockets.begin(), rockets.end(), [](const Rocket& rocket) { return !rocket.active; }), rockets.end());
+}
+
+//Update particle beams
+void Game::damageTanksHitByParticleBeam()
+{
+    for (Particle_beam& particle_beam : particle_beams)
+    {
+        particle_beam.tick(tanks);
+
+        //Damage all tanks within the damage window of the beam (the window is an axis-aligned bounding box)
+        for (Tank& tank : tanks)
+        {
+            if (tank.active && particle_beam.rectangle.intersects_circle(tank.get_position(), tank.get_collision_radius()))
+            {
+                if (tank.hit(particle_beam.damage))
+                {
+                    smokes.push_back(Smoke(smoke, tank.position - vec2(0, 48)));
+                    this->gamegrid->removeTank(&tank);
+                }
+            }
+        }
+    }
+}
+
+//Update explosion sprites and remove when done with remove erase idiom
+void Game::updateExplosions()
+{
+    for (Explosion& explosion : explosions)
+    {
+        explosion.tick();
+    }
+}
+
+void Game::clearFinishedExplosions()
+{
+    explosions.erase(std::remove_if(explosions.begin(), explosions.end(), [](const Explosion& explosion) { return explosion.done(); }), explosions.end());
 }
 
 // -----------------------------------------------------------
