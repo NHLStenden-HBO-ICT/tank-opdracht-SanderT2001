@@ -10,6 +10,10 @@
 
 /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/game.h
 
+/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/grid.cpp
+precomp.h
+/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/precomp.h
+
 /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/grid.h
 
 /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/gridaddtankcommand.h
@@ -19,10 +23,6 @@
 /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/gridchangecommand.h
 
 /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/gridchangemanager.h
-
-/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/gridremovetankcommand.cpp
-precomp.h
-/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/precomp.h
 
 /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/gridremovetankcommand.h
 
