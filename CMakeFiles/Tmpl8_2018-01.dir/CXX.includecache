@@ -6,12 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/explosion.cpp
-precomp.h
-/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/precomp.h
-explosion.h
-/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/explosion.h
-
 /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/explosion.h
 
 /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/game.cpp
@@ -21,10 +15,6 @@ chrono
 -
 
 /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/game.h
-
-/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/grid.cpp
-precomp.h
-/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/precomp.h
 
 /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/grid.h
 
@@ -125,6 +115,10 @@ explosion.h
 /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/explosion.h
 particle_beam.h
 /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/particle_beam.h
+gridcell.h
+/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/gridcell.h
+grid.h
+/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/grid.h
 gridchangecommand.h
 /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/gridchangecommand.h
 gridchangemanager.h
@@ -135,10 +129,6 @@ gridedittankcommand.h
 /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/gridedittankcommand.h
 gridremovetankcommand.h
 /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/gridremovetankcommand.h
-gridcell.h
-/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/gridcell.h
-grid.h
-/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/grid.h
 ktypes.h
 /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/ktypes.h
 kdnode.h

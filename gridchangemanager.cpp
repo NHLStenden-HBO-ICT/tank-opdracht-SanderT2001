@@ -2,17 +2,20 @@
 
 namespace St
 {
-    GridChangeManager::GridChangeManager()
+    GridChangeManager::GridChangeManager(St::Grid* grid)
     {
+        this->grid = grid;
     }
 
     void GridChangeManager::addToQueue(GridChangeCommand* command)
     {
-        std::cout << "Grid Change Manager: Add To Queue" << std::endl;
+        this->command_queue.push_back(command);
     }
 
     void GridChangeManager::commitChanges()
     {
-        std::cout << "Grid Change Manager: Commit Changes" << std::endl;
+        for (GridChangeCommand* command : this->command_queue) {
+            command->execute(this->grid);
+        }
     }
 }

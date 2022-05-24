@@ -7,8 +7,8 @@ namespace St
         this->tank = tank;
     }
 
-    void GridAddTankCommand::execute()
+    void GridAddTankCommand::execute(Grid* grid)
     {
-        std::cout << "Grid Add Tank Command: EXECUTE!" << std::endl;
+        grid->addTank(this->tank);
     }
 }

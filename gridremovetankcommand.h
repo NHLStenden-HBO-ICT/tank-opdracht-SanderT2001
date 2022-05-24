@@ -6,7 +6,7 @@ namespace St
     {
         public:
             GridRemoveTankCommand(Tank* tank);
-            virtual void execute();
+            virtual void execute(Grid* grid);
 
         private:
             Tank* tank;

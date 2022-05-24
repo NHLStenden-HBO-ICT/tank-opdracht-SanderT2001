@@ -89,10 +89,14 @@ void Game::init()
     particle_beams.push_back(Particle_beam(vec2(1200, 600), vec2(100, 50), &particle_beam_sprite, particle_beam_hit_value));
 
     vec2 terrain_size = background_terrain.getActualTerrainSize();
+
     this->gamegrid = new St::Grid(terrain_size.x, terrain_size.y, 16);
+    this->gamegridchangemanager = new St::GridChangeManager(this->gamegrid);
+
     for (Tank& tank : this->tanks) {
-        this->gamegrid->addTank(&tank);
+        this->gamegridchangemanager->addToQueue(new St::GridAddTankCommand(&tank));
     }
+    this->gamegridchangemanager->commitChanges();
 }
 
 // -----------------------------------------------------------

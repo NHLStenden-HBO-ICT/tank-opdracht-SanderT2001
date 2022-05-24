@@ -81,6 +81,7 @@ class Game
 
     Terrain background_terrain;
     St::Grid* gamegrid;
+    St::GridChangeManager* gamegridchangemanager;
     std::vector<vec2> forcefield_hull;
 
     Font* frame_count_font;
