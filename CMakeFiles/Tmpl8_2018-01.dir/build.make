@@ -96,9 +96,22 @@ CMakeFiles/Tmpl8_2018-01.dir/grid.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Tmpl8_2018-01.dir/grid.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/grid.cpp -o CMakeFiles/Tmpl8_2018-01.dir/grid.cpp.s
 
+CMakeFiles/Tmpl8_2018-01.dir/gridaddtankcommand.cpp.o: CMakeFiles/Tmpl8_2018-01.dir/flags.make
+CMakeFiles/Tmpl8_2018-01.dir/gridaddtankcommand.cpp.o: gridaddtankcommand.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Tmpl8_2018-01.dir/gridaddtankcommand.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Tmpl8_2018-01.dir/gridaddtankcommand.cpp.o -c /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/gridaddtankcommand.cpp
+
+CMakeFiles/Tmpl8_2018-01.dir/gridaddtankcommand.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Tmpl8_2018-01.dir/gridaddtankcommand.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/gridaddtankcommand.cpp > CMakeFiles/Tmpl8_2018-01.dir/gridaddtankcommand.cpp.i
+
+CMakeFiles/Tmpl8_2018-01.dir/gridaddtankcommand.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Tmpl8_2018-01.dir/gridaddtankcommand.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/gridaddtankcommand.cpp -o CMakeFiles/Tmpl8_2018-01.dir/gridaddtankcommand.cpp.s
+
 CMakeFiles/Tmpl8_2018-01.dir/gridcell.cpp.o: CMakeFiles/Tmpl8_2018-01.dir/flags.make
 CMakeFiles/Tmpl8_2018-01.dir/gridcell.cpp.o: gridcell.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Tmpl8_2018-01.dir/gridcell.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Tmpl8_2018-01.dir/gridcell.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Tmpl8_2018-01.dir/gridcell.cpp.o -c /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/gridcell.cpp
 
 CMakeFiles/Tmpl8_2018-01.dir/gridcell.cpp.i: cmake_force
@@ -109,9 +122,22 @@ CMakeFiles/Tmpl8_2018-01.dir/gridcell.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Tmpl8_2018-01.dir/gridcell.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/gridcell.cpp -o CMakeFiles/Tmpl8_2018-01.dir/gridcell.cpp.s
 
+CMakeFiles/Tmpl8_2018-01.dir/gridedittankcommand.cpp.o: CMakeFiles/Tmpl8_2018-01.dir/flags.make
+CMakeFiles/Tmpl8_2018-01.dir/gridedittankcommand.cpp.o: gridedittankcommand.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Tmpl8_2018-01.dir/gridedittankcommand.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Tmpl8_2018-01.dir/gridedittankcommand.cpp.o -c /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/gridedittankcommand.cpp
+
+CMakeFiles/Tmpl8_2018-01.dir/gridedittankcommand.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Tmpl8_2018-01.dir/gridedittankcommand.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/gridedittankcommand.cpp > CMakeFiles/Tmpl8_2018-01.dir/gridedittankcommand.cpp.i
+
+CMakeFiles/Tmpl8_2018-01.dir/gridedittankcommand.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Tmpl8_2018-01.dir/gridedittankcommand.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/gridedittankcommand.cpp -o CMakeFiles/Tmpl8_2018-01.dir/gridedittankcommand.cpp.s
+
 CMakeFiles/Tmpl8_2018-01.dir/kdnode.cpp.o: CMakeFiles/Tmpl8_2018-01.dir/flags.make
 CMakeFiles/Tmpl8_2018-01.dir/kdnode.cpp.o: kdnode.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Tmpl8_2018-01.dir/kdnode.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Tmpl8_2018-01.dir/kdnode.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Tmpl8_2018-01.dir/kdnode.cpp.o -c /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/kdnode.cpp
 
 CMakeFiles/Tmpl8_2018-01.dir/kdnode.cpp.i: cmake_force
@@ -124,7 +150,7 @@ CMakeFiles/Tmpl8_2018-01.dir/kdnode.cpp.s: cmake_force
 
 CMakeFiles/Tmpl8_2018-01.dir/kdtree.cpp.o: CMakeFiles/Tmpl8_2018-01.dir/flags.make
 CMakeFiles/Tmpl8_2018-01.dir/kdtree.cpp.o: kdtree.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Tmpl8_2018-01.dir/kdtree.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Tmpl8_2018-01.dir/kdtree.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Tmpl8_2018-01.dir/kdtree.cpp.o -c /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/kdtree.cpp
 
 CMakeFiles/Tmpl8_2018-01.dir/kdtree.cpp.i: cmake_force
@@ -137,7 +163,7 @@ CMakeFiles/Tmpl8_2018-01.dir/kdtree.cpp.s: cmake_force
 
 CMakeFiles/Tmpl8_2018-01.dir/particle_beam.cpp.o: CMakeFiles/Tmpl8_2018-01.dir/flags.make
 CMakeFiles/Tmpl8_2018-01.dir/particle_beam.cpp.o: particle_beam.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Tmpl8_2018-01.dir/particle_beam.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Tmpl8_2018-01.dir/particle_beam.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Tmpl8_2018-01.dir/particle_beam.cpp.o -c /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/particle_beam.cpp
 
 CMakeFiles/Tmpl8_2018-01.dir/particle_beam.cpp.i: cmake_force
@@ -150,7 +176,7 @@ CMakeFiles/Tmpl8_2018-01.dir/particle_beam.cpp.s: cmake_force
 
 CMakeFiles/Tmpl8_2018-01.dir/rocket.cpp.o: CMakeFiles/Tmpl8_2018-01.dir/flags.make
 CMakeFiles/Tmpl8_2018-01.dir/rocket.cpp.o: rocket.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Tmpl8_2018-01.dir/rocket.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Tmpl8_2018-01.dir/rocket.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Tmpl8_2018-01.dir/rocket.cpp.o -c /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/rocket.cpp
 
 CMakeFiles/Tmpl8_2018-01.dir/rocket.cpp.i: cmake_force
@@ -163,7 +189,7 @@ CMakeFiles/Tmpl8_2018-01.dir/rocket.cpp.s: cmake_force
 
 CMakeFiles/Tmpl8_2018-01.dir/smoke.cpp.o: CMakeFiles/Tmpl8_2018-01.dir/flags.make
 CMakeFiles/Tmpl8_2018-01.dir/smoke.cpp.o: smoke.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Tmpl8_2018-01.dir/smoke.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/Tmpl8_2018-01.dir/smoke.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Tmpl8_2018-01.dir/smoke.cpp.o -c /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/smoke.cpp
 
 CMakeFiles/Tmpl8_2018-01.dir/smoke.cpp.i: cmake_force
@@ -176,7 +202,7 @@ CMakeFiles/Tmpl8_2018-01.dir/smoke.cpp.s: cmake_force
 
 CMakeFiles/Tmpl8_2018-01.dir/surface.cpp.o: CMakeFiles/Tmpl8_2018-01.dir/flags.make
 CMakeFiles/Tmpl8_2018-01.dir/surface.cpp.o: surface.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Tmpl8_2018-01.dir/surface.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/Tmpl8_2018-01.dir/surface.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Tmpl8_2018-01.dir/surface.cpp.o -c /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/surface.cpp
 
 CMakeFiles/Tmpl8_2018-01.dir/surface.cpp.i: cmake_force
@@ -189,7 +215,7 @@ CMakeFiles/Tmpl8_2018-01.dir/surface.cpp.s: cmake_force
 
 CMakeFiles/Tmpl8_2018-01.dir/tank.cpp.o: CMakeFiles/Tmpl8_2018-01.dir/flags.make
 CMakeFiles/Tmpl8_2018-01.dir/tank.cpp.o: tank.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/Tmpl8_2018-01.dir/tank.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/Tmpl8_2018-01.dir/tank.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Tmpl8_2018-01.dir/tank.cpp.o -c /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/tank.cpp
 
 CMakeFiles/Tmpl8_2018-01.dir/tank.cpp.i: cmake_force
@@ -202,7 +228,7 @@ CMakeFiles/Tmpl8_2018-01.dir/tank.cpp.s: cmake_force
 
 CMakeFiles/Tmpl8_2018-01.dir/template.cpp.o: CMakeFiles/Tmpl8_2018-01.dir/flags.make
 CMakeFiles/Tmpl8_2018-01.dir/template.cpp.o: template.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/Tmpl8_2018-01.dir/template.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/Tmpl8_2018-01.dir/template.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Tmpl8_2018-01.dir/template.cpp.o -c /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/template.cpp
 
 CMakeFiles/Tmpl8_2018-01.dir/template.cpp.i: cmake_force
@@ -215,7 +241,7 @@ CMakeFiles/Tmpl8_2018-01.dir/template.cpp.s: cmake_force
 
 CMakeFiles/Tmpl8_2018-01.dir/terrain.cpp.o: CMakeFiles/Tmpl8_2018-01.dir/flags.make
 CMakeFiles/Tmpl8_2018-01.dir/terrain.cpp.o: terrain.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/Tmpl8_2018-01.dir/terrain.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/Tmpl8_2018-01.dir/terrain.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Tmpl8_2018-01.dir/terrain.cpp.o -c /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/terrain.cpp
 
 CMakeFiles/Tmpl8_2018-01.dir/terrain.cpp.i: cmake_force
@@ -231,7 +257,9 @@ Tmpl8_2018__01_OBJECTS = \
 "CMakeFiles/Tmpl8_2018-01.dir/explosion.cpp.o" \
 "CMakeFiles/Tmpl8_2018-01.dir/game.cpp.o" \
 "CMakeFiles/Tmpl8_2018-01.dir/grid.cpp.o" \
+"CMakeFiles/Tmpl8_2018-01.dir/gridaddtankcommand.cpp.o" \
 "CMakeFiles/Tmpl8_2018-01.dir/gridcell.cpp.o" \
+"CMakeFiles/Tmpl8_2018-01.dir/gridedittankcommand.cpp.o" \
 "CMakeFiles/Tmpl8_2018-01.dir/kdnode.cpp.o" \
 "CMakeFiles/Tmpl8_2018-01.dir/kdtree.cpp.o" \
 "CMakeFiles/Tmpl8_2018-01.dir/particle_beam.cpp.o" \
@@ -248,7 +276,9 @@ Tmpl8_2018__01_EXTERNAL_OBJECTS =
 Tmpl8_2018-01: CMakeFiles/Tmpl8_2018-01.dir/explosion.cpp.o
 Tmpl8_2018-01: CMakeFiles/Tmpl8_2018-01.dir/game.cpp.o
 Tmpl8_2018-01: CMakeFiles/Tmpl8_2018-01.dir/grid.cpp.o
+Tmpl8_2018-01: CMakeFiles/Tmpl8_2018-01.dir/gridaddtankcommand.cpp.o
 Tmpl8_2018-01: CMakeFiles/Tmpl8_2018-01.dir/gridcell.cpp.o
+Tmpl8_2018-01: CMakeFiles/Tmpl8_2018-01.dir/gridedittankcommand.cpp.o
 Tmpl8_2018-01: CMakeFiles/Tmpl8_2018-01.dir/kdnode.cpp.o
 Tmpl8_2018-01: CMakeFiles/Tmpl8_2018-01.dir/kdtree.cpp.o
 Tmpl8_2018-01: CMakeFiles/Tmpl8_2018-01.dir/particle_beam.cpp.o
@@ -265,7 +295,7 @@ Tmpl8_2018-01: /usr/lib/x86_64-linux-gnu/libfreeimage.so
 Tmpl8_2018-01: /usr/lib/x86_64-linux-gnu/libGLX.so
 Tmpl8_2018-01: /usr/lib/x86_64-linux-gnu/libOpenGL.so
 Tmpl8_2018-01: CMakeFiles/Tmpl8_2018-01.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Linking CXX executable Tmpl8_2018-01"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Linking CXX executable Tmpl8_2018-01"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Tmpl8_2018-01.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

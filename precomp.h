@@ -90,6 +90,12 @@ using namespace Tmpl8;
 #include "explosion.h"
 #include "particle_beam.h"
 
+#include "gridchangecommand.h"
+#include "gridchangemanager.h"
+#include "gridaddtankcommand.h"
+#include "gridedittankcommand.h"
+#include "gridremovetankcommand.h"
+
 #include "gridcell.h"
 #include "grid.h"
 
