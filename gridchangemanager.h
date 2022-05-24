@@ -13,5 +13,7 @@ namespace St
         private:
             St::Grid* grid;
             std::vector<GridChangeCommand*> command_queue;
+
+            void resetQueue();
     };
 };

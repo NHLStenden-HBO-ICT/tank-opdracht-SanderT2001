@@ -9,6 +9,6 @@ namespace St
 
     void GridRemoveTankCommand::execute(Grid* grid)
     {
-        std::cout << "Grid Remove Tank Command: EXECUTE!" << std::endl;
+        grid->removeTank(this->tank);
     }
 }

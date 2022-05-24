@@ -135,22 +135,9 @@ CMakeFiles/Tmpl8_2018-01.dir/gridchangemanager.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Tmpl8_2018-01.dir/gridchangemanager.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/gridchangemanager.cpp -o CMakeFiles/Tmpl8_2018-01.dir/gridchangemanager.cpp.s
 
-CMakeFiles/Tmpl8_2018-01.dir/gridedittankcommand.cpp.o: CMakeFiles/Tmpl8_2018-01.dir/flags.make
-CMakeFiles/Tmpl8_2018-01.dir/gridedittankcommand.cpp.o: gridedittankcommand.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Tmpl8_2018-01.dir/gridedittankcommand.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Tmpl8_2018-01.dir/gridedittankcommand.cpp.o -c /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/gridedittankcommand.cpp
-
-CMakeFiles/Tmpl8_2018-01.dir/gridedittankcommand.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Tmpl8_2018-01.dir/gridedittankcommand.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/gridedittankcommand.cpp > CMakeFiles/Tmpl8_2018-01.dir/gridedittankcommand.cpp.i
-
-CMakeFiles/Tmpl8_2018-01.dir/gridedittankcommand.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Tmpl8_2018-01.dir/gridedittankcommand.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/gridedittankcommand.cpp -o CMakeFiles/Tmpl8_2018-01.dir/gridedittankcommand.cpp.s
-
 CMakeFiles/Tmpl8_2018-01.dir/gridremovetankcommand.cpp.o: CMakeFiles/Tmpl8_2018-01.dir/flags.make
 CMakeFiles/Tmpl8_2018-01.dir/gridremovetankcommand.cpp.o: gridremovetankcommand.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Tmpl8_2018-01.dir/gridremovetankcommand.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Tmpl8_2018-01.dir/gridremovetankcommand.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Tmpl8_2018-01.dir/gridremovetankcommand.cpp.o -c /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/gridremovetankcommand.cpp
 
 CMakeFiles/Tmpl8_2018-01.dir/gridremovetankcommand.cpp.i: cmake_force
@@ -160,6 +147,19 @@ CMakeFiles/Tmpl8_2018-01.dir/gridremovetankcommand.cpp.i: cmake_force
 CMakeFiles/Tmpl8_2018-01.dir/gridremovetankcommand.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Tmpl8_2018-01.dir/gridremovetankcommand.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/gridremovetankcommand.cpp -o CMakeFiles/Tmpl8_2018-01.dir/gridremovetankcommand.cpp.s
+
+CMakeFiles/Tmpl8_2018-01.dir/gridupdatetankcommand.cpp.o: CMakeFiles/Tmpl8_2018-01.dir/flags.make
+CMakeFiles/Tmpl8_2018-01.dir/gridupdatetankcommand.cpp.o: gridupdatetankcommand.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Tmpl8_2018-01.dir/gridupdatetankcommand.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Tmpl8_2018-01.dir/gridupdatetankcommand.cpp.o -c /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/gridupdatetankcommand.cpp
+
+CMakeFiles/Tmpl8_2018-01.dir/gridupdatetankcommand.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Tmpl8_2018-01.dir/gridupdatetankcommand.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/gridupdatetankcommand.cpp > CMakeFiles/Tmpl8_2018-01.dir/gridupdatetankcommand.cpp.i
+
+CMakeFiles/Tmpl8_2018-01.dir/gridupdatetankcommand.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Tmpl8_2018-01.dir/gridupdatetankcommand.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/gridupdatetankcommand.cpp -o CMakeFiles/Tmpl8_2018-01.dir/gridupdatetankcommand.cpp.s
 
 CMakeFiles/Tmpl8_2018-01.dir/kdnode.cpp.o: CMakeFiles/Tmpl8_2018-01.dir/flags.make
 CMakeFiles/Tmpl8_2018-01.dir/kdnode.cpp.o: kdnode.cpp
@@ -286,8 +286,8 @@ Tmpl8_2018__01_OBJECTS = \
 "CMakeFiles/Tmpl8_2018-01.dir/gridaddtankcommand.cpp.o" \
 "CMakeFiles/Tmpl8_2018-01.dir/gridcell.cpp.o" \
 "CMakeFiles/Tmpl8_2018-01.dir/gridchangemanager.cpp.o" \
-"CMakeFiles/Tmpl8_2018-01.dir/gridedittankcommand.cpp.o" \
 "CMakeFiles/Tmpl8_2018-01.dir/gridremovetankcommand.cpp.o" \
+"CMakeFiles/Tmpl8_2018-01.dir/gridupdatetankcommand.cpp.o" \
 "CMakeFiles/Tmpl8_2018-01.dir/kdnode.cpp.o" \
 "CMakeFiles/Tmpl8_2018-01.dir/kdtree.cpp.o" \
 "CMakeFiles/Tmpl8_2018-01.dir/particle_beam.cpp.o" \
@@ -307,8 +307,8 @@ Tmpl8_2018-01: CMakeFiles/Tmpl8_2018-01.dir/grid.cpp.o
 Tmpl8_2018-01: CMakeFiles/Tmpl8_2018-01.dir/gridaddtankcommand.cpp.o
 Tmpl8_2018-01: CMakeFiles/Tmpl8_2018-01.dir/gridcell.cpp.o
 Tmpl8_2018-01: CMakeFiles/Tmpl8_2018-01.dir/gridchangemanager.cpp.o
-Tmpl8_2018-01: CMakeFiles/Tmpl8_2018-01.dir/gridedittankcommand.cpp.o
 Tmpl8_2018-01: CMakeFiles/Tmpl8_2018-01.dir/gridremovetankcommand.cpp.o
+Tmpl8_2018-01: CMakeFiles/Tmpl8_2018-01.dir/gridupdatetankcommand.cpp.o
 Tmpl8_2018-01: CMakeFiles/Tmpl8_2018-01.dir/kdnode.cpp.o
 Tmpl8_2018-01: CMakeFiles/Tmpl8_2018-01.dir/kdtree.cpp.o
 Tmpl8_2018-01: CMakeFiles/Tmpl8_2018-01.dir/particle_beam.cpp.o

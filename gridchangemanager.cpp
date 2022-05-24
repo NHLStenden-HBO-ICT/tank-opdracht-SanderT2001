@@ -17,5 +17,12 @@ namespace St
         for (GridChangeCommand* command : this->command_queue) {
             command->execute(this->grid);
         }
+
+        this->resetQueue();
+    }
+
+    void GridChangeManager::resetQueue()
+    {
+        this->command_queue.clear();
     }
 }

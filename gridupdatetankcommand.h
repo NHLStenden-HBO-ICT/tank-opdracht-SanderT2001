@@ -2,10 +2,10 @@
 
 namespace St
 {
-    class GridEditTankCommand : public GridChangeCommand
+    class GridUpdateTankCommand : public GridChangeCommand
     {
         public:
-            GridEditTankCommand(Tank* tank);
+            GridUpdateTankCommand(Tank* tank);
             virtual void execute(Grid* grid);
 
         private:

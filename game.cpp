@@ -240,8 +240,10 @@ void Game::updateTanksPositions()
         if (!tank.active) continue;
 
         tank.tick(background_terrain);
-        this->gamegrid->updateTank(&tank);
+        this->gamegridchangemanager->addToQueue(new St::GridUpdateTankCommand(&tank));
     }
+
+    this->gamegridchangemanager->commitChanges();
 }
 
 void Game::shootRocketsToClosestTanks()
@@ -390,7 +392,7 @@ void Game::checkRocketCollision()
                 if (tank.hit(rocket_hit_value))
                 {
                     smokes.push_back(Smoke(smoke, tank.position - vec2(7, 24)));
-                    this->gamegrid->removeTank(&tank);
+                    this->gamegridchangemanager->addToQueue(new St::GridRemoveTankCommand(&tank));
                 }
 
                 rocket.active = false;
@@ -398,6 +400,8 @@ void Game::checkRocketCollision()
             }
         }
     }
+
+    this->gamegridchangemanager->commitChanges();
 }
 
 //Disable rockets if they collide with the "forcefield"
@@ -441,11 +445,13 @@ void Game::damageTanksHitByParticleBeam()
                 if (tank.hit(particle_beam.damage))
                 {
                     smokes.push_back(Smoke(smoke, tank.position - vec2(0, 48)));
-                    this->gamegrid->removeTank(&tank);
+                    this->gamegridchangemanager->addToQueue(new St::GridRemoveTankCommand(&tank));
                 }
             }
         }
     }
+
+    this->gamegridchangemanager->commitChanges();
 }
 
 //Update explosion sprites and remove when done with remove erase idiom

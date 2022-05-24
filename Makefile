@@ -285,33 +285,6 @@ gridchangemanager.cpp.s:
 	$(MAKE) -f CMakeFiles/Tmpl8_2018-01.dir/build.make CMakeFiles/Tmpl8_2018-01.dir/gridchangemanager.cpp.s
 .PHONY : gridchangemanager.cpp.s
 
-gridedittankcommand.o: gridedittankcommand.cpp.o
-
-.PHONY : gridedittankcommand.o
-
-# target to build an object file
-gridedittankcommand.cpp.o:
-	$(MAKE) -f CMakeFiles/Tmpl8_2018-01.dir/build.make CMakeFiles/Tmpl8_2018-01.dir/gridedittankcommand.cpp.o
-.PHONY : gridedittankcommand.cpp.o
-
-gridedittankcommand.i: gridedittankcommand.cpp.i
-
-.PHONY : gridedittankcommand.i
-
-# target to preprocess a source file
-gridedittankcommand.cpp.i:
-	$(MAKE) -f CMakeFiles/Tmpl8_2018-01.dir/build.make CMakeFiles/Tmpl8_2018-01.dir/gridedittankcommand.cpp.i
-.PHONY : gridedittankcommand.cpp.i
-
-gridedittankcommand.s: gridedittankcommand.cpp.s
-
-.PHONY : gridedittankcommand.s
-
-# target to generate assembly for a file
-gridedittankcommand.cpp.s:
-	$(MAKE) -f CMakeFiles/Tmpl8_2018-01.dir/build.make CMakeFiles/Tmpl8_2018-01.dir/gridedittankcommand.cpp.s
-.PHONY : gridedittankcommand.cpp.s
-
 gridremovetankcommand.o: gridremovetankcommand.cpp.o
 
 .PHONY : gridremovetankcommand.o
@@ -338,6 +311,33 @@ gridremovetankcommand.s: gridremovetankcommand.cpp.s
 gridremovetankcommand.cpp.s:
 	$(MAKE) -f CMakeFiles/Tmpl8_2018-01.dir/build.make CMakeFiles/Tmpl8_2018-01.dir/gridremovetankcommand.cpp.s
 .PHONY : gridremovetankcommand.cpp.s
+
+gridupdatetankcommand.o: gridupdatetankcommand.cpp.o
+
+.PHONY : gridupdatetankcommand.o
+
+# target to build an object file
+gridupdatetankcommand.cpp.o:
+	$(MAKE) -f CMakeFiles/Tmpl8_2018-01.dir/build.make CMakeFiles/Tmpl8_2018-01.dir/gridupdatetankcommand.cpp.o
+.PHONY : gridupdatetankcommand.cpp.o
+
+gridupdatetankcommand.i: gridupdatetankcommand.cpp.i
+
+.PHONY : gridupdatetankcommand.i
+
+# target to preprocess a source file
+gridupdatetankcommand.cpp.i:
+	$(MAKE) -f CMakeFiles/Tmpl8_2018-01.dir/build.make CMakeFiles/Tmpl8_2018-01.dir/gridupdatetankcommand.cpp.i
+.PHONY : gridupdatetankcommand.cpp.i
+
+gridupdatetankcommand.s: gridupdatetankcommand.cpp.s
+
+.PHONY : gridupdatetankcommand.s
+
+# target to generate assembly for a file
+gridupdatetankcommand.cpp.s:
+	$(MAKE) -f CMakeFiles/Tmpl8_2018-01.dir/build.make CMakeFiles/Tmpl8_2018-01.dir/gridupdatetankcommand.cpp.s
+.PHONY : gridupdatetankcommand.cpp.s
 
 kdnode.o: kdnode.cpp.o
 
@@ -609,12 +609,12 @@ help:
 	@echo "... gridchangemanager.o"
 	@echo "... gridchangemanager.i"
 	@echo "... gridchangemanager.s"
-	@echo "... gridedittankcommand.o"
-	@echo "... gridedittankcommand.i"
-	@echo "... gridedittankcommand.s"
 	@echo "... gridremovetankcommand.o"
 	@echo "... gridremovetankcommand.i"
 	@echo "... gridremovetankcommand.s"
+	@echo "... gridupdatetankcommand.o"
+	@echo "... gridupdatetankcommand.i"
+	@echo "... gridupdatetankcommand.s"
 	@echo "... kdnode.o"
 	@echo "... kdnode.i"
 	@echo "... kdnode.s"

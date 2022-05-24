@@ -96,7 +96,7 @@ using namespace Tmpl8;
 #include "gridchangecommand.h"
 #include "gridchangemanager.h"
 #include "gridaddtankcommand.h"
-#include "gridedittankcommand.h"
+#include "gridupdatetankcommand.h"
 #include "gridremovetankcommand.h"
 
 #include "ktypes.h"
