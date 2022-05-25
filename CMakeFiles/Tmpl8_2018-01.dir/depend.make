@@ -4,6 +4,7 @@
 CMakeFiles/Tmpl8_2018-01.dir/explosion.cpp.o: explosion.cpp
 CMakeFiles/Tmpl8_2018-01.dir/explosion.cpp.o: explosion.h
 CMakeFiles/Tmpl8_2018-01.dir/explosion.cpp.o: game.h
+CMakeFiles/Tmpl8_2018-01.dir/explosion.cpp.o: gameobjectsvisitor.h
 CMakeFiles/Tmpl8_2018-01.dir/explosion.cpp.o: grid.h
 CMakeFiles/Tmpl8_2018-01.dir/explosion.cpp.o: gridaddtankcommand.h
 CMakeFiles/Tmpl8_2018-01.dir/explosion.cpp.o: gridcell.h
@@ -16,6 +17,7 @@ CMakeFiles/Tmpl8_2018-01.dir/explosion.cpp.o: kdtree.h
 CMakeFiles/Tmpl8_2018-01.dir/explosion.cpp.o: ktypes.h
 CMakeFiles/Tmpl8_2018-01.dir/explosion.cpp.o: particle_beam.h
 CMakeFiles/Tmpl8_2018-01.dir/explosion.cpp.o: precomp.h
+CMakeFiles/Tmpl8_2018-01.dir/explosion.cpp.o: printpositionvisitor.h
 CMakeFiles/Tmpl8_2018-01.dir/explosion.cpp.o: rocket.h
 CMakeFiles/Tmpl8_2018-01.dir/explosion.cpp.o: smoke.h
 CMakeFiles/Tmpl8_2018-01.dir/explosion.cpp.o: surface.h
@@ -72,6 +74,7 @@ CMakeFiles/Tmpl8_2018-01.dir/explosion.cpp.o: /usr/include/SDL2/close_code.h
 CMakeFiles/Tmpl8_2018-01.dir/game.cpp.o: explosion.h
 CMakeFiles/Tmpl8_2018-01.dir/game.cpp.o: game.cpp
 CMakeFiles/Tmpl8_2018-01.dir/game.cpp.o: game.h
+CMakeFiles/Tmpl8_2018-01.dir/game.cpp.o: gameobjectsvisitor.h
 CMakeFiles/Tmpl8_2018-01.dir/game.cpp.o: grid.h
 CMakeFiles/Tmpl8_2018-01.dir/game.cpp.o: gridaddtankcommand.h
 CMakeFiles/Tmpl8_2018-01.dir/game.cpp.o: gridcell.h
@@ -84,6 +87,7 @@ CMakeFiles/Tmpl8_2018-01.dir/game.cpp.o: kdtree.h
 CMakeFiles/Tmpl8_2018-01.dir/game.cpp.o: ktypes.h
 CMakeFiles/Tmpl8_2018-01.dir/game.cpp.o: particle_beam.h
 CMakeFiles/Tmpl8_2018-01.dir/game.cpp.o: precomp.h
+CMakeFiles/Tmpl8_2018-01.dir/game.cpp.o: printpositionvisitor.h
 CMakeFiles/Tmpl8_2018-01.dir/game.cpp.o: rocket.h
 CMakeFiles/Tmpl8_2018-01.dir/game.cpp.o: smoke.h
 CMakeFiles/Tmpl8_2018-01.dir/game.cpp.o: surface.h
@@ -139,6 +143,7 @@ CMakeFiles/Tmpl8_2018-01.dir/game.cpp.o: /usr/include/SDL2/close_code.h
 
 CMakeFiles/Tmpl8_2018-01.dir/grid.cpp.o: explosion.h
 CMakeFiles/Tmpl8_2018-01.dir/grid.cpp.o: game.h
+CMakeFiles/Tmpl8_2018-01.dir/grid.cpp.o: gameobjectsvisitor.h
 CMakeFiles/Tmpl8_2018-01.dir/grid.cpp.o: grid.cpp
 CMakeFiles/Tmpl8_2018-01.dir/grid.cpp.o: grid.h
 CMakeFiles/Tmpl8_2018-01.dir/grid.cpp.o: gridaddtankcommand.h
@@ -152,6 +157,7 @@ CMakeFiles/Tmpl8_2018-01.dir/grid.cpp.o: kdtree.h
 CMakeFiles/Tmpl8_2018-01.dir/grid.cpp.o: ktypes.h
 CMakeFiles/Tmpl8_2018-01.dir/grid.cpp.o: particle_beam.h
 CMakeFiles/Tmpl8_2018-01.dir/grid.cpp.o: precomp.h
+CMakeFiles/Tmpl8_2018-01.dir/grid.cpp.o: printpositionvisitor.h
 CMakeFiles/Tmpl8_2018-01.dir/grid.cpp.o: rocket.h
 CMakeFiles/Tmpl8_2018-01.dir/grid.cpp.o: smoke.h
 CMakeFiles/Tmpl8_2018-01.dir/grid.cpp.o: surface.h
@@ -207,6 +213,7 @@ CMakeFiles/Tmpl8_2018-01.dir/grid.cpp.o: /usr/include/SDL2/close_code.h
 
 CMakeFiles/Tmpl8_2018-01.dir/gridaddtankcommand.cpp.o: explosion.h
 CMakeFiles/Tmpl8_2018-01.dir/gridaddtankcommand.cpp.o: game.h
+CMakeFiles/Tmpl8_2018-01.dir/gridaddtankcommand.cpp.o: gameobjectsvisitor.h
 CMakeFiles/Tmpl8_2018-01.dir/gridaddtankcommand.cpp.o: grid.h
 CMakeFiles/Tmpl8_2018-01.dir/gridaddtankcommand.cpp.o: gridaddtankcommand.cpp
 CMakeFiles/Tmpl8_2018-01.dir/gridaddtankcommand.cpp.o: gridaddtankcommand.h
@@ -220,6 +227,7 @@ CMakeFiles/Tmpl8_2018-01.dir/gridaddtankcommand.cpp.o: kdtree.h
 CMakeFiles/Tmpl8_2018-01.dir/gridaddtankcommand.cpp.o: ktypes.h
 CMakeFiles/Tmpl8_2018-01.dir/gridaddtankcommand.cpp.o: particle_beam.h
 CMakeFiles/Tmpl8_2018-01.dir/gridaddtankcommand.cpp.o: precomp.h
+CMakeFiles/Tmpl8_2018-01.dir/gridaddtankcommand.cpp.o: printpositionvisitor.h
 CMakeFiles/Tmpl8_2018-01.dir/gridaddtankcommand.cpp.o: rocket.h
 CMakeFiles/Tmpl8_2018-01.dir/gridaddtankcommand.cpp.o: smoke.h
 CMakeFiles/Tmpl8_2018-01.dir/gridaddtankcommand.cpp.o: surface.h
@@ -275,6 +283,7 @@ CMakeFiles/Tmpl8_2018-01.dir/gridaddtankcommand.cpp.o: /usr/include/SDL2/close_c
 
 CMakeFiles/Tmpl8_2018-01.dir/gridcell.cpp.o: explosion.h
 CMakeFiles/Tmpl8_2018-01.dir/gridcell.cpp.o: game.h
+CMakeFiles/Tmpl8_2018-01.dir/gridcell.cpp.o: gameobjectsvisitor.h
 CMakeFiles/Tmpl8_2018-01.dir/gridcell.cpp.o: grid.h
 CMakeFiles/Tmpl8_2018-01.dir/gridcell.cpp.o: gridaddtankcommand.h
 CMakeFiles/Tmpl8_2018-01.dir/gridcell.cpp.o: gridcell.cpp
@@ -288,6 +297,7 @@ CMakeFiles/Tmpl8_2018-01.dir/gridcell.cpp.o: kdtree.h
 CMakeFiles/Tmpl8_2018-01.dir/gridcell.cpp.o: ktypes.h
 CMakeFiles/Tmpl8_2018-01.dir/gridcell.cpp.o: particle_beam.h
 CMakeFiles/Tmpl8_2018-01.dir/gridcell.cpp.o: precomp.h
+CMakeFiles/Tmpl8_2018-01.dir/gridcell.cpp.o: printpositionvisitor.h
 CMakeFiles/Tmpl8_2018-01.dir/gridcell.cpp.o: rocket.h
 CMakeFiles/Tmpl8_2018-01.dir/gridcell.cpp.o: smoke.h
 CMakeFiles/Tmpl8_2018-01.dir/gridcell.cpp.o: surface.h
@@ -343,6 +353,7 @@ CMakeFiles/Tmpl8_2018-01.dir/gridcell.cpp.o: /usr/include/SDL2/close_code.h
 
 CMakeFiles/Tmpl8_2018-01.dir/gridchangemanager.cpp.o: explosion.h
 CMakeFiles/Tmpl8_2018-01.dir/gridchangemanager.cpp.o: game.h
+CMakeFiles/Tmpl8_2018-01.dir/gridchangemanager.cpp.o: gameobjectsvisitor.h
 CMakeFiles/Tmpl8_2018-01.dir/gridchangemanager.cpp.o: grid.h
 CMakeFiles/Tmpl8_2018-01.dir/gridchangemanager.cpp.o: gridaddtankcommand.h
 CMakeFiles/Tmpl8_2018-01.dir/gridchangemanager.cpp.o: gridcell.h
@@ -356,6 +367,7 @@ CMakeFiles/Tmpl8_2018-01.dir/gridchangemanager.cpp.o: kdtree.h
 CMakeFiles/Tmpl8_2018-01.dir/gridchangemanager.cpp.o: ktypes.h
 CMakeFiles/Tmpl8_2018-01.dir/gridchangemanager.cpp.o: particle_beam.h
 CMakeFiles/Tmpl8_2018-01.dir/gridchangemanager.cpp.o: precomp.h
+CMakeFiles/Tmpl8_2018-01.dir/gridchangemanager.cpp.o: printpositionvisitor.h
 CMakeFiles/Tmpl8_2018-01.dir/gridchangemanager.cpp.o: rocket.h
 CMakeFiles/Tmpl8_2018-01.dir/gridchangemanager.cpp.o: smoke.h
 CMakeFiles/Tmpl8_2018-01.dir/gridchangemanager.cpp.o: surface.h
@@ -411,6 +423,7 @@ CMakeFiles/Tmpl8_2018-01.dir/gridchangemanager.cpp.o: /usr/include/SDL2/close_co
 
 CMakeFiles/Tmpl8_2018-01.dir/gridremovetankcommand.cpp.o: explosion.h
 CMakeFiles/Tmpl8_2018-01.dir/gridremovetankcommand.cpp.o: game.h
+CMakeFiles/Tmpl8_2018-01.dir/gridremovetankcommand.cpp.o: gameobjectsvisitor.h
 CMakeFiles/Tmpl8_2018-01.dir/gridremovetankcommand.cpp.o: grid.h
 CMakeFiles/Tmpl8_2018-01.dir/gridremovetankcommand.cpp.o: gridaddtankcommand.h
 CMakeFiles/Tmpl8_2018-01.dir/gridremovetankcommand.cpp.o: gridcell.h
@@ -424,6 +437,7 @@ CMakeFiles/Tmpl8_2018-01.dir/gridremovetankcommand.cpp.o: kdtree.h
 CMakeFiles/Tmpl8_2018-01.dir/gridremovetankcommand.cpp.o: ktypes.h
 CMakeFiles/Tmpl8_2018-01.dir/gridremovetankcommand.cpp.o: particle_beam.h
 CMakeFiles/Tmpl8_2018-01.dir/gridremovetankcommand.cpp.o: precomp.h
+CMakeFiles/Tmpl8_2018-01.dir/gridremovetankcommand.cpp.o: printpositionvisitor.h
 CMakeFiles/Tmpl8_2018-01.dir/gridremovetankcommand.cpp.o: rocket.h
 CMakeFiles/Tmpl8_2018-01.dir/gridremovetankcommand.cpp.o: smoke.h
 CMakeFiles/Tmpl8_2018-01.dir/gridremovetankcommand.cpp.o: surface.h
@@ -479,6 +493,7 @@ CMakeFiles/Tmpl8_2018-01.dir/gridremovetankcommand.cpp.o: /usr/include/SDL2/clos
 
 CMakeFiles/Tmpl8_2018-01.dir/gridupdatetankcommand.cpp.o: explosion.h
 CMakeFiles/Tmpl8_2018-01.dir/gridupdatetankcommand.cpp.o: game.h
+CMakeFiles/Tmpl8_2018-01.dir/gridupdatetankcommand.cpp.o: gameobjectsvisitor.h
 CMakeFiles/Tmpl8_2018-01.dir/gridupdatetankcommand.cpp.o: grid.h
 CMakeFiles/Tmpl8_2018-01.dir/gridupdatetankcommand.cpp.o: gridaddtankcommand.h
 CMakeFiles/Tmpl8_2018-01.dir/gridupdatetankcommand.cpp.o: gridcell.h
@@ -492,6 +507,7 @@ CMakeFiles/Tmpl8_2018-01.dir/gridupdatetankcommand.cpp.o: kdtree.h
 CMakeFiles/Tmpl8_2018-01.dir/gridupdatetankcommand.cpp.o: ktypes.h
 CMakeFiles/Tmpl8_2018-01.dir/gridupdatetankcommand.cpp.o: particle_beam.h
 CMakeFiles/Tmpl8_2018-01.dir/gridupdatetankcommand.cpp.o: precomp.h
+CMakeFiles/Tmpl8_2018-01.dir/gridupdatetankcommand.cpp.o: printpositionvisitor.h
 CMakeFiles/Tmpl8_2018-01.dir/gridupdatetankcommand.cpp.o: rocket.h
 CMakeFiles/Tmpl8_2018-01.dir/gridupdatetankcommand.cpp.o: smoke.h
 CMakeFiles/Tmpl8_2018-01.dir/gridupdatetankcommand.cpp.o: surface.h
@@ -547,6 +563,7 @@ CMakeFiles/Tmpl8_2018-01.dir/gridupdatetankcommand.cpp.o: /usr/include/SDL2/clos
 
 CMakeFiles/Tmpl8_2018-01.dir/kdnode.cpp.o: explosion.h
 CMakeFiles/Tmpl8_2018-01.dir/kdnode.cpp.o: game.h
+CMakeFiles/Tmpl8_2018-01.dir/kdnode.cpp.o: gameobjectsvisitor.h
 CMakeFiles/Tmpl8_2018-01.dir/kdnode.cpp.o: grid.h
 CMakeFiles/Tmpl8_2018-01.dir/kdnode.cpp.o: gridaddtankcommand.h
 CMakeFiles/Tmpl8_2018-01.dir/kdnode.cpp.o: gridcell.h
@@ -560,6 +577,7 @@ CMakeFiles/Tmpl8_2018-01.dir/kdnode.cpp.o: kdtree.h
 CMakeFiles/Tmpl8_2018-01.dir/kdnode.cpp.o: ktypes.h
 CMakeFiles/Tmpl8_2018-01.dir/kdnode.cpp.o: particle_beam.h
 CMakeFiles/Tmpl8_2018-01.dir/kdnode.cpp.o: precomp.h
+CMakeFiles/Tmpl8_2018-01.dir/kdnode.cpp.o: printpositionvisitor.h
 CMakeFiles/Tmpl8_2018-01.dir/kdnode.cpp.o: rocket.h
 CMakeFiles/Tmpl8_2018-01.dir/kdnode.cpp.o: smoke.h
 CMakeFiles/Tmpl8_2018-01.dir/kdnode.cpp.o: surface.h
@@ -615,6 +633,7 @@ CMakeFiles/Tmpl8_2018-01.dir/kdnode.cpp.o: /usr/include/SDL2/close_code.h
 
 CMakeFiles/Tmpl8_2018-01.dir/kdtree.cpp.o: explosion.h
 CMakeFiles/Tmpl8_2018-01.dir/kdtree.cpp.o: game.h
+CMakeFiles/Tmpl8_2018-01.dir/kdtree.cpp.o: gameobjectsvisitor.h
 CMakeFiles/Tmpl8_2018-01.dir/kdtree.cpp.o: grid.h
 CMakeFiles/Tmpl8_2018-01.dir/kdtree.cpp.o: gridaddtankcommand.h
 CMakeFiles/Tmpl8_2018-01.dir/kdtree.cpp.o: gridcell.h
@@ -628,6 +647,7 @@ CMakeFiles/Tmpl8_2018-01.dir/kdtree.cpp.o: kdtree.h
 CMakeFiles/Tmpl8_2018-01.dir/kdtree.cpp.o: ktypes.h
 CMakeFiles/Tmpl8_2018-01.dir/kdtree.cpp.o: particle_beam.h
 CMakeFiles/Tmpl8_2018-01.dir/kdtree.cpp.o: precomp.h
+CMakeFiles/Tmpl8_2018-01.dir/kdtree.cpp.o: printpositionvisitor.h
 CMakeFiles/Tmpl8_2018-01.dir/kdtree.cpp.o: rocket.h
 CMakeFiles/Tmpl8_2018-01.dir/kdtree.cpp.o: smoke.h
 CMakeFiles/Tmpl8_2018-01.dir/kdtree.cpp.o: surface.h
@@ -683,6 +703,7 @@ CMakeFiles/Tmpl8_2018-01.dir/kdtree.cpp.o: /usr/include/SDL2/close_code.h
 
 CMakeFiles/Tmpl8_2018-01.dir/particle_beam.cpp.o: explosion.h
 CMakeFiles/Tmpl8_2018-01.dir/particle_beam.cpp.o: game.h
+CMakeFiles/Tmpl8_2018-01.dir/particle_beam.cpp.o: gameobjectsvisitor.h
 CMakeFiles/Tmpl8_2018-01.dir/particle_beam.cpp.o: grid.h
 CMakeFiles/Tmpl8_2018-01.dir/particle_beam.cpp.o: gridaddtankcommand.h
 CMakeFiles/Tmpl8_2018-01.dir/particle_beam.cpp.o: gridcell.h
@@ -696,6 +717,7 @@ CMakeFiles/Tmpl8_2018-01.dir/particle_beam.cpp.o: ktypes.h
 CMakeFiles/Tmpl8_2018-01.dir/particle_beam.cpp.o: particle_beam.cpp
 CMakeFiles/Tmpl8_2018-01.dir/particle_beam.cpp.o: particle_beam.h
 CMakeFiles/Tmpl8_2018-01.dir/particle_beam.cpp.o: precomp.h
+CMakeFiles/Tmpl8_2018-01.dir/particle_beam.cpp.o: printpositionvisitor.h
 CMakeFiles/Tmpl8_2018-01.dir/particle_beam.cpp.o: rocket.h
 CMakeFiles/Tmpl8_2018-01.dir/particle_beam.cpp.o: smoke.h
 CMakeFiles/Tmpl8_2018-01.dir/particle_beam.cpp.o: surface.h
@@ -749,8 +771,79 @@ CMakeFiles/Tmpl8_2018-01.dir/particle_beam.cpp.o: /usr/include/SDL2/SDL_video.h
 CMakeFiles/Tmpl8_2018-01.dir/particle_beam.cpp.o: /usr/include/SDL2/begin_code.h
 CMakeFiles/Tmpl8_2018-01.dir/particle_beam.cpp.o: /usr/include/SDL2/close_code.h
 
+CMakeFiles/Tmpl8_2018-01.dir/printpositionvisitor.cpp.o: explosion.h
+CMakeFiles/Tmpl8_2018-01.dir/printpositionvisitor.cpp.o: game.h
+CMakeFiles/Tmpl8_2018-01.dir/printpositionvisitor.cpp.o: gameobjectsvisitor.h
+CMakeFiles/Tmpl8_2018-01.dir/printpositionvisitor.cpp.o: grid.h
+CMakeFiles/Tmpl8_2018-01.dir/printpositionvisitor.cpp.o: gridaddtankcommand.h
+CMakeFiles/Tmpl8_2018-01.dir/printpositionvisitor.cpp.o: gridcell.h
+CMakeFiles/Tmpl8_2018-01.dir/printpositionvisitor.cpp.o: gridchangecommand.h
+CMakeFiles/Tmpl8_2018-01.dir/printpositionvisitor.cpp.o: gridchangemanager.h
+CMakeFiles/Tmpl8_2018-01.dir/printpositionvisitor.cpp.o: gridremovetankcommand.h
+CMakeFiles/Tmpl8_2018-01.dir/printpositionvisitor.cpp.o: gridupdatetankcommand.h
+CMakeFiles/Tmpl8_2018-01.dir/printpositionvisitor.cpp.o: kdnode.h
+CMakeFiles/Tmpl8_2018-01.dir/printpositionvisitor.cpp.o: kdtree.h
+CMakeFiles/Tmpl8_2018-01.dir/printpositionvisitor.cpp.o: ktypes.h
+CMakeFiles/Tmpl8_2018-01.dir/printpositionvisitor.cpp.o: particle_beam.h
+CMakeFiles/Tmpl8_2018-01.dir/printpositionvisitor.cpp.o: precomp.h
+CMakeFiles/Tmpl8_2018-01.dir/printpositionvisitor.cpp.o: printpositionvisitor.cpp
+CMakeFiles/Tmpl8_2018-01.dir/printpositionvisitor.cpp.o: printpositionvisitor.h
+CMakeFiles/Tmpl8_2018-01.dir/printpositionvisitor.cpp.o: rocket.h
+CMakeFiles/Tmpl8_2018-01.dir/printpositionvisitor.cpp.o: smoke.h
+CMakeFiles/Tmpl8_2018-01.dir/printpositionvisitor.cpp.o: surface.h
+CMakeFiles/Tmpl8_2018-01.dir/printpositionvisitor.cpp.o: tank.h
+CMakeFiles/Tmpl8_2018-01.dir/printpositionvisitor.cpp.o: template.h
+CMakeFiles/Tmpl8_2018-01.dir/printpositionvisitor.cpp.o: terrain.h
+CMakeFiles/Tmpl8_2018-01.dir/printpositionvisitor.cpp.o: thread_pool.h
+CMakeFiles/Tmpl8_2018-01.dir/printpositionvisitor.cpp.o: /usr/include/SDL2/SDL.h
+CMakeFiles/Tmpl8_2018-01.dir/printpositionvisitor.cpp.o: /usr/include/SDL2/SDL_assert.h
+CMakeFiles/Tmpl8_2018-01.dir/printpositionvisitor.cpp.o: /usr/include/SDL2/SDL_atomic.h
+CMakeFiles/Tmpl8_2018-01.dir/printpositionvisitor.cpp.o: /usr/include/SDL2/SDL_audio.h
+CMakeFiles/Tmpl8_2018-01.dir/printpositionvisitor.cpp.o: /usr/include/SDL2/SDL_blendmode.h
+CMakeFiles/Tmpl8_2018-01.dir/printpositionvisitor.cpp.o: /usr/include/SDL2/SDL_clipboard.h
+CMakeFiles/Tmpl8_2018-01.dir/printpositionvisitor.cpp.o: /usr/include/SDL2/SDL_config.h
+CMakeFiles/Tmpl8_2018-01.dir/printpositionvisitor.cpp.o: /usr/include/SDL2/SDL_cpuinfo.h
+CMakeFiles/Tmpl8_2018-01.dir/printpositionvisitor.cpp.o: /usr/include/SDL2/SDL_endian.h
+CMakeFiles/Tmpl8_2018-01.dir/printpositionvisitor.cpp.o: /usr/include/SDL2/SDL_error.h
+CMakeFiles/Tmpl8_2018-01.dir/printpositionvisitor.cpp.o: /usr/include/SDL2/SDL_events.h
+CMakeFiles/Tmpl8_2018-01.dir/printpositionvisitor.cpp.o: /usr/include/SDL2/SDL_filesystem.h
+CMakeFiles/Tmpl8_2018-01.dir/printpositionvisitor.cpp.o: /usr/include/SDL2/SDL_gamecontroller.h
+CMakeFiles/Tmpl8_2018-01.dir/printpositionvisitor.cpp.o: /usr/include/SDL2/SDL_gesture.h
+CMakeFiles/Tmpl8_2018-01.dir/printpositionvisitor.cpp.o: /usr/include/SDL2/SDL_haptic.h
+CMakeFiles/Tmpl8_2018-01.dir/printpositionvisitor.cpp.o: /usr/include/SDL2/SDL_hints.h
+CMakeFiles/Tmpl8_2018-01.dir/printpositionvisitor.cpp.o: /usr/include/SDL2/SDL_joystick.h
+CMakeFiles/Tmpl8_2018-01.dir/printpositionvisitor.cpp.o: /usr/include/SDL2/SDL_keyboard.h
+CMakeFiles/Tmpl8_2018-01.dir/printpositionvisitor.cpp.o: /usr/include/SDL2/SDL_keycode.h
+CMakeFiles/Tmpl8_2018-01.dir/printpositionvisitor.cpp.o: /usr/include/SDL2/SDL_loadso.h
+CMakeFiles/Tmpl8_2018-01.dir/printpositionvisitor.cpp.o: /usr/include/SDL2/SDL_log.h
+CMakeFiles/Tmpl8_2018-01.dir/printpositionvisitor.cpp.o: /usr/include/SDL2/SDL_main.h
+CMakeFiles/Tmpl8_2018-01.dir/printpositionvisitor.cpp.o: /usr/include/SDL2/SDL_messagebox.h
+CMakeFiles/Tmpl8_2018-01.dir/printpositionvisitor.cpp.o: /usr/include/SDL2/SDL_mouse.h
+CMakeFiles/Tmpl8_2018-01.dir/printpositionvisitor.cpp.o: /usr/include/SDL2/SDL_mutex.h
+CMakeFiles/Tmpl8_2018-01.dir/printpositionvisitor.cpp.o: /usr/include/SDL2/SDL_pixels.h
+CMakeFiles/Tmpl8_2018-01.dir/printpositionvisitor.cpp.o: /usr/include/SDL2/SDL_platform.h
+CMakeFiles/Tmpl8_2018-01.dir/printpositionvisitor.cpp.o: /usr/include/SDL2/SDL_power.h
+CMakeFiles/Tmpl8_2018-01.dir/printpositionvisitor.cpp.o: /usr/include/SDL2/SDL_quit.h
+CMakeFiles/Tmpl8_2018-01.dir/printpositionvisitor.cpp.o: /usr/include/SDL2/SDL_rect.h
+CMakeFiles/Tmpl8_2018-01.dir/printpositionvisitor.cpp.o: /usr/include/SDL2/SDL_render.h
+CMakeFiles/Tmpl8_2018-01.dir/printpositionvisitor.cpp.o: /usr/include/SDL2/SDL_rwops.h
+CMakeFiles/Tmpl8_2018-01.dir/printpositionvisitor.cpp.o: /usr/include/SDL2/SDL_scancode.h
+CMakeFiles/Tmpl8_2018-01.dir/printpositionvisitor.cpp.o: /usr/include/SDL2/SDL_sensor.h
+CMakeFiles/Tmpl8_2018-01.dir/printpositionvisitor.cpp.o: /usr/include/SDL2/SDL_shape.h
+CMakeFiles/Tmpl8_2018-01.dir/printpositionvisitor.cpp.o: /usr/include/SDL2/SDL_stdinc.h
+CMakeFiles/Tmpl8_2018-01.dir/printpositionvisitor.cpp.o: /usr/include/SDL2/SDL_surface.h
+CMakeFiles/Tmpl8_2018-01.dir/printpositionvisitor.cpp.o: /usr/include/SDL2/SDL_system.h
+CMakeFiles/Tmpl8_2018-01.dir/printpositionvisitor.cpp.o: /usr/include/SDL2/SDL_thread.h
+CMakeFiles/Tmpl8_2018-01.dir/printpositionvisitor.cpp.o: /usr/include/SDL2/SDL_timer.h
+CMakeFiles/Tmpl8_2018-01.dir/printpositionvisitor.cpp.o: /usr/include/SDL2/SDL_touch.h
+CMakeFiles/Tmpl8_2018-01.dir/printpositionvisitor.cpp.o: /usr/include/SDL2/SDL_version.h
+CMakeFiles/Tmpl8_2018-01.dir/printpositionvisitor.cpp.o: /usr/include/SDL2/SDL_video.h
+CMakeFiles/Tmpl8_2018-01.dir/printpositionvisitor.cpp.o: /usr/include/SDL2/begin_code.h
+CMakeFiles/Tmpl8_2018-01.dir/printpositionvisitor.cpp.o: /usr/include/SDL2/close_code.h
+
 CMakeFiles/Tmpl8_2018-01.dir/rocket.cpp.o: explosion.h
 CMakeFiles/Tmpl8_2018-01.dir/rocket.cpp.o: game.h
+CMakeFiles/Tmpl8_2018-01.dir/rocket.cpp.o: gameobjectsvisitor.h
 CMakeFiles/Tmpl8_2018-01.dir/rocket.cpp.o: grid.h
 CMakeFiles/Tmpl8_2018-01.dir/rocket.cpp.o: gridaddtankcommand.h
 CMakeFiles/Tmpl8_2018-01.dir/rocket.cpp.o: gridcell.h
@@ -763,6 +856,7 @@ CMakeFiles/Tmpl8_2018-01.dir/rocket.cpp.o: kdtree.h
 CMakeFiles/Tmpl8_2018-01.dir/rocket.cpp.o: ktypes.h
 CMakeFiles/Tmpl8_2018-01.dir/rocket.cpp.o: particle_beam.h
 CMakeFiles/Tmpl8_2018-01.dir/rocket.cpp.o: precomp.h
+CMakeFiles/Tmpl8_2018-01.dir/rocket.cpp.o: printpositionvisitor.h
 CMakeFiles/Tmpl8_2018-01.dir/rocket.cpp.o: rocket.cpp
 CMakeFiles/Tmpl8_2018-01.dir/rocket.cpp.o: rocket.h
 CMakeFiles/Tmpl8_2018-01.dir/rocket.cpp.o: smoke.h
@@ -819,6 +913,7 @@ CMakeFiles/Tmpl8_2018-01.dir/rocket.cpp.o: /usr/include/SDL2/close_code.h
 
 CMakeFiles/Tmpl8_2018-01.dir/smoke.cpp.o: explosion.h
 CMakeFiles/Tmpl8_2018-01.dir/smoke.cpp.o: game.h
+CMakeFiles/Tmpl8_2018-01.dir/smoke.cpp.o: gameobjectsvisitor.h
 CMakeFiles/Tmpl8_2018-01.dir/smoke.cpp.o: grid.h
 CMakeFiles/Tmpl8_2018-01.dir/smoke.cpp.o: gridaddtankcommand.h
 CMakeFiles/Tmpl8_2018-01.dir/smoke.cpp.o: gridcell.h
@@ -831,6 +926,7 @@ CMakeFiles/Tmpl8_2018-01.dir/smoke.cpp.o: kdtree.h
 CMakeFiles/Tmpl8_2018-01.dir/smoke.cpp.o: ktypes.h
 CMakeFiles/Tmpl8_2018-01.dir/smoke.cpp.o: particle_beam.h
 CMakeFiles/Tmpl8_2018-01.dir/smoke.cpp.o: precomp.h
+CMakeFiles/Tmpl8_2018-01.dir/smoke.cpp.o: printpositionvisitor.h
 CMakeFiles/Tmpl8_2018-01.dir/smoke.cpp.o: rocket.h
 CMakeFiles/Tmpl8_2018-01.dir/smoke.cpp.o: smoke.cpp
 CMakeFiles/Tmpl8_2018-01.dir/smoke.cpp.o: smoke.h
@@ -887,6 +983,7 @@ CMakeFiles/Tmpl8_2018-01.dir/smoke.cpp.o: /usr/include/SDL2/close_code.h
 
 CMakeFiles/Tmpl8_2018-01.dir/surface.cpp.o: explosion.h
 CMakeFiles/Tmpl8_2018-01.dir/surface.cpp.o: game.h
+CMakeFiles/Tmpl8_2018-01.dir/surface.cpp.o: gameobjectsvisitor.h
 CMakeFiles/Tmpl8_2018-01.dir/surface.cpp.o: grid.h
 CMakeFiles/Tmpl8_2018-01.dir/surface.cpp.o: gridaddtankcommand.h
 CMakeFiles/Tmpl8_2018-01.dir/surface.cpp.o: gridcell.h
@@ -899,6 +996,7 @@ CMakeFiles/Tmpl8_2018-01.dir/surface.cpp.o: kdtree.h
 CMakeFiles/Tmpl8_2018-01.dir/surface.cpp.o: ktypes.h
 CMakeFiles/Tmpl8_2018-01.dir/surface.cpp.o: particle_beam.h
 CMakeFiles/Tmpl8_2018-01.dir/surface.cpp.o: precomp.h
+CMakeFiles/Tmpl8_2018-01.dir/surface.cpp.o: printpositionvisitor.h
 CMakeFiles/Tmpl8_2018-01.dir/surface.cpp.o: rocket.h
 CMakeFiles/Tmpl8_2018-01.dir/surface.cpp.o: smoke.h
 CMakeFiles/Tmpl8_2018-01.dir/surface.cpp.o: surface.cpp
@@ -955,6 +1053,7 @@ CMakeFiles/Tmpl8_2018-01.dir/surface.cpp.o: /usr/include/SDL2/close_code.h
 
 CMakeFiles/Tmpl8_2018-01.dir/tank.cpp.o: explosion.h
 CMakeFiles/Tmpl8_2018-01.dir/tank.cpp.o: game.h
+CMakeFiles/Tmpl8_2018-01.dir/tank.cpp.o: gameobjectsvisitor.h
 CMakeFiles/Tmpl8_2018-01.dir/tank.cpp.o: grid.h
 CMakeFiles/Tmpl8_2018-01.dir/tank.cpp.o: gridaddtankcommand.h
 CMakeFiles/Tmpl8_2018-01.dir/tank.cpp.o: gridcell.h
@@ -967,6 +1066,7 @@ CMakeFiles/Tmpl8_2018-01.dir/tank.cpp.o: kdtree.h
 CMakeFiles/Tmpl8_2018-01.dir/tank.cpp.o: ktypes.h
 CMakeFiles/Tmpl8_2018-01.dir/tank.cpp.o: particle_beam.h
 CMakeFiles/Tmpl8_2018-01.dir/tank.cpp.o: precomp.h
+CMakeFiles/Tmpl8_2018-01.dir/tank.cpp.o: printpositionvisitor.h
 CMakeFiles/Tmpl8_2018-01.dir/tank.cpp.o: rocket.h
 CMakeFiles/Tmpl8_2018-01.dir/tank.cpp.o: smoke.h
 CMakeFiles/Tmpl8_2018-01.dir/tank.cpp.o: surface.h
@@ -1023,6 +1123,7 @@ CMakeFiles/Tmpl8_2018-01.dir/tank.cpp.o: /usr/include/SDL2/close_code.h
 
 CMakeFiles/Tmpl8_2018-01.dir/template.cpp.o: explosion.h
 CMakeFiles/Tmpl8_2018-01.dir/template.cpp.o: game.h
+CMakeFiles/Tmpl8_2018-01.dir/template.cpp.o: gameobjectsvisitor.h
 CMakeFiles/Tmpl8_2018-01.dir/template.cpp.o: grid.h
 CMakeFiles/Tmpl8_2018-01.dir/template.cpp.o: gridaddtankcommand.h
 CMakeFiles/Tmpl8_2018-01.dir/template.cpp.o: gridcell.h
@@ -1035,6 +1136,7 @@ CMakeFiles/Tmpl8_2018-01.dir/template.cpp.o: kdtree.h
 CMakeFiles/Tmpl8_2018-01.dir/template.cpp.o: ktypes.h
 CMakeFiles/Tmpl8_2018-01.dir/template.cpp.o: particle_beam.h
 CMakeFiles/Tmpl8_2018-01.dir/template.cpp.o: precomp.h
+CMakeFiles/Tmpl8_2018-01.dir/template.cpp.o: printpositionvisitor.h
 CMakeFiles/Tmpl8_2018-01.dir/template.cpp.o: rocket.h
 CMakeFiles/Tmpl8_2018-01.dir/template.cpp.o: smoke.h
 CMakeFiles/Tmpl8_2018-01.dir/template.cpp.o: surface.h
@@ -1091,6 +1193,7 @@ CMakeFiles/Tmpl8_2018-01.dir/template.cpp.o: /usr/include/SDL2/close_code.h
 
 CMakeFiles/Tmpl8_2018-01.dir/terrain.cpp.o: explosion.h
 CMakeFiles/Tmpl8_2018-01.dir/terrain.cpp.o: game.h
+CMakeFiles/Tmpl8_2018-01.dir/terrain.cpp.o: gameobjectsvisitor.h
 CMakeFiles/Tmpl8_2018-01.dir/terrain.cpp.o: grid.h
 CMakeFiles/Tmpl8_2018-01.dir/terrain.cpp.o: gridaddtankcommand.h
 CMakeFiles/Tmpl8_2018-01.dir/terrain.cpp.o: gridcell.h
@@ -1103,6 +1206,7 @@ CMakeFiles/Tmpl8_2018-01.dir/terrain.cpp.o: kdtree.h
 CMakeFiles/Tmpl8_2018-01.dir/terrain.cpp.o: ktypes.h
 CMakeFiles/Tmpl8_2018-01.dir/terrain.cpp.o: particle_beam.h
 CMakeFiles/Tmpl8_2018-01.dir/terrain.cpp.o: precomp.h
+CMakeFiles/Tmpl8_2018-01.dir/terrain.cpp.o: printpositionvisitor.h
 CMakeFiles/Tmpl8_2018-01.dir/terrain.cpp.o: rocket.h
 CMakeFiles/Tmpl8_2018-01.dir/terrain.cpp.o: smoke.h
 CMakeFiles/Tmpl8_2018-01.dir/terrain.cpp.o: surface.h

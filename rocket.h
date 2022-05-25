@@ -14,6 +14,8 @@ class Rocket
 
     bool intersects(vec2 position_other, float radius_other) const;
 
+    void accept(St::GameObjectsVisitor* visitor) { visitor->visitRocket(this); };
+
     vec2 position;
     vec2 speed;
 

@@ -420,6 +420,33 @@ particle_beam.cpp.s:
 	$(MAKE) -f CMakeFiles/Tmpl8_2018-01.dir/build.make CMakeFiles/Tmpl8_2018-01.dir/particle_beam.cpp.s
 .PHONY : particle_beam.cpp.s
 
+printpositionvisitor.o: printpositionvisitor.cpp.o
+
+.PHONY : printpositionvisitor.o
+
+# target to build an object file
+printpositionvisitor.cpp.o:
+	$(MAKE) -f CMakeFiles/Tmpl8_2018-01.dir/build.make CMakeFiles/Tmpl8_2018-01.dir/printpositionvisitor.cpp.o
+.PHONY : printpositionvisitor.cpp.o
+
+printpositionvisitor.i: printpositionvisitor.cpp.i
+
+.PHONY : printpositionvisitor.i
+
+# target to preprocess a source file
+printpositionvisitor.cpp.i:
+	$(MAKE) -f CMakeFiles/Tmpl8_2018-01.dir/build.make CMakeFiles/Tmpl8_2018-01.dir/printpositionvisitor.cpp.i
+.PHONY : printpositionvisitor.cpp.i
+
+printpositionvisitor.s: printpositionvisitor.cpp.s
+
+.PHONY : printpositionvisitor.s
+
+# target to generate assembly for a file
+printpositionvisitor.cpp.s:
+	$(MAKE) -f CMakeFiles/Tmpl8_2018-01.dir/build.make CMakeFiles/Tmpl8_2018-01.dir/printpositionvisitor.cpp.s
+.PHONY : printpositionvisitor.cpp.s
+
 rocket.o: rocket.cpp.o
 
 .PHONY : rocket.o
@@ -624,6 +651,9 @@ help:
 	@echo "... particle_beam.o"
 	@echo "... particle_beam.i"
 	@echo "... particle_beam.s"
+	@echo "... printpositionvisitor.o"
+	@echo "... printpositionvisitor.i"
+	@echo "... printpositionvisitor.s"
 	@echo "... rocket.o"
 	@echo "... rocket.i"
 	@echo "... rocket.s"

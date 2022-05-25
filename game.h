@@ -35,6 +35,8 @@ class Game
     void updateExplosions();
     void clearFinishedExplosions();
 
+    void printAllGameObjectsPositions();
+
     void drawHealthBarsOriginal();
     void drawHealthBars();
     std::vector<const Tank*> getSortedTanksByHealth(std::vector<Tank*> tanks);

@@ -8,11 +8,15 @@
 
 /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/explosion.h
 
-/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/game.h
-
-/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/grid.cpp
+/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/game.cpp
 precomp.h
 /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/precomp.h
+chrono
+-
+
+/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/game.h
+
+/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/gameobjectsvisitor.h
 
 /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/grid.h
 
@@ -101,6 +105,10 @@ surface.h
 /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/surface.h
 thread_pool.h
 /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/thread_pool.h
+gameobjectsvisitor.h
+/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/gameobjectsvisitor.h
+printpositionvisitor.h
+/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/printpositionvisitor.h
 tank.h
 /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/tank.h
 terrain.h
@@ -135,6 +143,8 @@ kdtree.h
 /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/kdtree.h
 game.h
 /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/game.h
+
+/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/printpositionvisitor.h
 
 /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/rocket.h
 

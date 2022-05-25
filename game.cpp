@@ -178,6 +178,10 @@ void Game::update(float deltaTime)
     this->damageTanksHitByParticleBeam();
     this->updateExplosions();
     this->clearFinishedExplosions();
+
+    if (false) {
+        this->printAllGameObjectsPositions();
+    }
 }
 
 //Check tank collision and nudge tanks away from each other
@@ -466,6 +470,27 @@ void Game::updateExplosions()
 void Game::clearFinishedExplosions()
 {
     explosions.erase(std::remove_if(explosions.begin(), explosions.end(), [](const Explosion& explosion) { return explosion.done(); }), explosions.end());
+}
+
+void Game::printAllGameObjectsPositions()
+{
+    St::PrintPositionVisitor* print_position_visitor = new St::PrintPositionVisitor();
+
+    for (Tank& tank : tanks) {
+        tank.accept(print_position_visitor);
+    }
+
+    for (Rocket& rocket : rockets) {
+        rocket.accept(print_position_visitor);
+    }
+
+    for (Smoke& smoke : smokes) {
+        smoke.accept(print_position_visitor);
+    }
+
+    for (Explosion& explosion : explosions) {
+        explosion.accept(print_position_visitor);
+    }
 }
 
 //Draw sorted health bars
