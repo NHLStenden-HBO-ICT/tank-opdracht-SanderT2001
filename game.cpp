@@ -520,10 +520,15 @@ void Game::drawHealthBars()
         (tank.allignment == BLUE) ? blue_tanks.push_back(&tank) : red_tanks.push_back(&tank);
     }
 
-    std::vector<const Tank*> sorted_blue_tanks = this->getSortedTanksByHealth(blue_tanks);
+    //St::SortTanksHealth* tanks_sorter = new St::SortTanksHealth(new St::InsertionSortTanksHealthStrategy());
+    St::SortTanksHealth* tanks_sorter = new St::SortTanksHealth(new St::CountSortTanksHealthStrategy());
+
+    //std::vector<const Tank*> sorted_blue_tanks = this->getSortedTanksByHealth(blue_tanks);
+    std::vector<const Tank*> sorted_blue_tanks = tanks_sorter->getSortedTanks(blue_tanks);
     draw_health_bars(sorted_blue_tanks, 0);
 
-    std::vector<const Tank*> sorted_red_tanks = this->getSortedTanksByHealth(red_tanks);
+    //std::vector<const Tank*> sorted_red_tanks = this->getSortedTanksByHealth(red_tanks);
+    std::vector<const Tank*> sorted_red_tanks = tanks_sorter->getSortedTanks(red_tanks);
     draw_health_bars(sorted_blue_tanks, 1);
 }
 

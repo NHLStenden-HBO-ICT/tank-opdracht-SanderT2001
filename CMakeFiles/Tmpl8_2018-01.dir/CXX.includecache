@@ -6,13 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/explosion.h
-
-/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/game.cpp
+/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/countsorttankshealthstrategy.cpp
 precomp.h
 /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/precomp.h
-chrono
--
+
+/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/countsorttankshealthstrategy.h
+
+/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/explosion.h
 
 /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/game.h
 
@@ -31,6 +31,8 @@ chrono
 /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/gridremovetankcommand.h
 
 /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/gridupdatetankcommand.h
+
+/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/insertionsorttankshealthstrategy.h
 
 /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/kdnode.h
 
@@ -135,6 +137,14 @@ gridupdatetankcommand.h
 /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/gridupdatetankcommand.h
 gridremovetankcommand.h
 /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/gridremovetankcommand.h
+sorttankshealthstrategy.h
+/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/sorttankshealthstrategy.h
+sorttankshealth.h
+/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/sorttankshealth.h
+insertionsorttankshealthstrategy.h
+/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/insertionsorttankshealthstrategy.h
+countsorttankshealthstrategy.h
+/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/countsorttankshealthstrategy.h
 ktypes.h
 /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/ktypes.h
 kdnode.h
@@ -149,6 +159,10 @@ game.h
 /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/rocket.h
 
 /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/smoke.h
+
+/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/sorttankshealth.h
+
+/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/sorttankshealthstrategy.h
 
 /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/surface.h
 

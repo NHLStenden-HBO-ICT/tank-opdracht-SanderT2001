@@ -123,6 +123,33 @@ Tmpl8_2018-01/fast:
 	$(MAKE) -f CMakeFiles/Tmpl8_2018-01.dir/build.make CMakeFiles/Tmpl8_2018-01.dir/build
 .PHONY : Tmpl8_2018-01/fast
 
+countsorttankshealthstrategy.o: countsorttankshealthstrategy.cpp.o
+
+.PHONY : countsorttankshealthstrategy.o
+
+# target to build an object file
+countsorttankshealthstrategy.cpp.o:
+	$(MAKE) -f CMakeFiles/Tmpl8_2018-01.dir/build.make CMakeFiles/Tmpl8_2018-01.dir/countsorttankshealthstrategy.cpp.o
+.PHONY : countsorttankshealthstrategy.cpp.o
+
+countsorttankshealthstrategy.i: countsorttankshealthstrategy.cpp.i
+
+.PHONY : countsorttankshealthstrategy.i
+
+# target to preprocess a source file
+countsorttankshealthstrategy.cpp.i:
+	$(MAKE) -f CMakeFiles/Tmpl8_2018-01.dir/build.make CMakeFiles/Tmpl8_2018-01.dir/countsorttankshealthstrategy.cpp.i
+.PHONY : countsorttankshealthstrategy.cpp.i
+
+countsorttankshealthstrategy.s: countsorttankshealthstrategy.cpp.s
+
+.PHONY : countsorttankshealthstrategy.s
+
+# target to generate assembly for a file
+countsorttankshealthstrategy.cpp.s:
+	$(MAKE) -f CMakeFiles/Tmpl8_2018-01.dir/build.make CMakeFiles/Tmpl8_2018-01.dir/countsorttankshealthstrategy.cpp.s
+.PHONY : countsorttankshealthstrategy.cpp.s
+
 explosion.o: explosion.cpp.o
 
 .PHONY : explosion.o
@@ -339,6 +366,33 @@ gridupdatetankcommand.cpp.s:
 	$(MAKE) -f CMakeFiles/Tmpl8_2018-01.dir/build.make CMakeFiles/Tmpl8_2018-01.dir/gridupdatetankcommand.cpp.s
 .PHONY : gridupdatetankcommand.cpp.s
 
+insertionsorttankshealthstrategy.o: insertionsorttankshealthstrategy.cpp.o
+
+.PHONY : insertionsorttankshealthstrategy.o
+
+# target to build an object file
+insertionsorttankshealthstrategy.cpp.o:
+	$(MAKE) -f CMakeFiles/Tmpl8_2018-01.dir/build.make CMakeFiles/Tmpl8_2018-01.dir/insertionsorttankshealthstrategy.cpp.o
+.PHONY : insertionsorttankshealthstrategy.cpp.o
+
+insertionsorttankshealthstrategy.i: insertionsorttankshealthstrategy.cpp.i
+
+.PHONY : insertionsorttankshealthstrategy.i
+
+# target to preprocess a source file
+insertionsorttankshealthstrategy.cpp.i:
+	$(MAKE) -f CMakeFiles/Tmpl8_2018-01.dir/build.make CMakeFiles/Tmpl8_2018-01.dir/insertionsorttankshealthstrategy.cpp.i
+.PHONY : insertionsorttankshealthstrategy.cpp.i
+
+insertionsorttankshealthstrategy.s: insertionsorttankshealthstrategy.cpp.s
+
+.PHONY : insertionsorttankshealthstrategy.s
+
+# target to generate assembly for a file
+insertionsorttankshealthstrategy.cpp.s:
+	$(MAKE) -f CMakeFiles/Tmpl8_2018-01.dir/build.make CMakeFiles/Tmpl8_2018-01.dir/insertionsorttankshealthstrategy.cpp.s
+.PHONY : insertionsorttankshealthstrategy.cpp.s
+
 kdnode.o: kdnode.cpp.o
 
 .PHONY : kdnode.o
@@ -501,6 +555,33 @@ smoke.cpp.s:
 	$(MAKE) -f CMakeFiles/Tmpl8_2018-01.dir/build.make CMakeFiles/Tmpl8_2018-01.dir/smoke.cpp.s
 .PHONY : smoke.cpp.s
 
+sorttankshealth.o: sorttankshealth.cpp.o
+
+.PHONY : sorttankshealth.o
+
+# target to build an object file
+sorttankshealth.cpp.o:
+	$(MAKE) -f CMakeFiles/Tmpl8_2018-01.dir/build.make CMakeFiles/Tmpl8_2018-01.dir/sorttankshealth.cpp.o
+.PHONY : sorttankshealth.cpp.o
+
+sorttankshealth.i: sorttankshealth.cpp.i
+
+.PHONY : sorttankshealth.i
+
+# target to preprocess a source file
+sorttankshealth.cpp.i:
+	$(MAKE) -f CMakeFiles/Tmpl8_2018-01.dir/build.make CMakeFiles/Tmpl8_2018-01.dir/sorttankshealth.cpp.i
+.PHONY : sorttankshealth.cpp.i
+
+sorttankshealth.s: sorttankshealth.cpp.s
+
+.PHONY : sorttankshealth.s
+
+# target to generate assembly for a file
+sorttankshealth.cpp.s:
+	$(MAKE) -f CMakeFiles/Tmpl8_2018-01.dir/build.make CMakeFiles/Tmpl8_2018-01.dir/sorttankshealth.cpp.s
+.PHONY : sorttankshealth.cpp.s
+
 surface.o: surface.cpp.o
 
 .PHONY : surface.o
@@ -618,6 +699,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... Tmpl8_2018-01"
+	@echo "... countsorttankshealthstrategy.o"
+	@echo "... countsorttankshealthstrategy.i"
+	@echo "... countsorttankshealthstrategy.s"
 	@echo "... explosion.o"
 	@echo "... explosion.i"
 	@echo "... explosion.s"
@@ -642,6 +726,9 @@ help:
 	@echo "... gridupdatetankcommand.o"
 	@echo "... gridupdatetankcommand.i"
 	@echo "... gridupdatetankcommand.s"
+	@echo "... insertionsorttankshealthstrategy.o"
+	@echo "... insertionsorttankshealthstrategy.i"
+	@echo "... insertionsorttankshealthstrategy.s"
 	@echo "... kdnode.o"
 	@echo "... kdnode.i"
 	@echo "... kdnode.s"
@@ -660,6 +747,9 @@ help:
 	@echo "... smoke.o"
 	@echo "... smoke.i"
 	@echo "... smoke.s"
+	@echo "... sorttankshealth.o"
+	@echo "... sorttankshealth.i"
+	@echo "... sorttankshealth.s"
 	@echo "... surface.o"
 	@echo "... surface.i"
 	@echo "... surface.s"

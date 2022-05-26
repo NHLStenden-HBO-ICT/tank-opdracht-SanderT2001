@@ -102,6 +102,11 @@ using namespace Tmpl8;
 #include "gridupdatetankcommand.h"
 #include "gridremovetankcommand.h"
 
+#include "sorttankshealthstrategy.h"
+#include "sorttankshealth.h"
+#include "insertionsorttankshealthstrategy.h"
+#include "countsorttankshealthstrategy.h"
+
 #include "ktypes.h"
 #include "kdnode.h"
 #include "kdtree.h"
