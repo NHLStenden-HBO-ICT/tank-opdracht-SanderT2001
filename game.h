@@ -36,6 +36,7 @@ class Game
     void clearFinishedExplosions();
 
     void printAllGameObjectsPositions();
+    void printTanksHierarchyWithCombinedHealth();
 
     void drawHealthBarsOriginal();
     void drawHealthBars();

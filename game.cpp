@@ -84,30 +84,6 @@ void Game::init()
         tanks.push_back(Tank(position.x, position.y, RED, &tank_red, &smoke, 100.f, position.y + 16, tank_radius, tank_max_health, tank_max_speed));
     }
 
-    std::vector<St::LeaderTank*> leader_tanks;
-    std::string leader_names[10] = { "Mercurius", "Venus", "Aarde", "Mars", "Jupiter", "Saturnus", "Uranus", "Neptunus", "Eris", "Ceres" };
-    for (int i = 0; i < 10; i++) {
-        St::LeaderTank* leader = new St::LeaderTank(&tanks[i]);
-        leader->setName(leader_names[i]);
-
-        for (int j = 10; j < 50; j++) {
-            St::SoldierTank* soldier = new St::SoldierTank(&tanks[i+j]);
-
-            for (int n = 50; n < 250; n++) {
-                St::TraineeTank* trainee = new St::TraineeTank(&tanks[i+j+n]);
-                soldier->addTankUnderCommand(trainee);
-            }
-
-            leader->addTankUnderCommand(soldier);
-        }
-
-        leader_tanks.push_back(leader);
-    }
-
-    for (St::LeaderTank* leader : leader_tanks) {
-        std::cout << "Leader '" << leader->getName() <<  "' and other Tanks under his command - Total Health Left: " << leader->getCombinedHealth() << std::endl;
-    }
-
     particle_beams.push_back(Particle_beam(vec2(590, 327), vec2(100, 50), &particle_beam_sprite, particle_beam_hit_value));
     particle_beams.push_back(Particle_beam(vec2(64, 64), vec2(100, 50), &particle_beam_sprite, particle_beam_hit_value));
     particle_beams.push_back(Particle_beam(vec2(1200, 600), vec2(100, 50), &particle_beam_sprite, particle_beam_hit_value));
@@ -121,6 +97,10 @@ void Game::init()
         this->gamegridchangemanager->addToQueue(new St::GridAddTankCommand(&tank));
     }
     this->gamegridchangemanager->commitChanges();
+
+    if (false) {
+        this->printTanksHierarchyWithCombinedHealth();
+    }
 }
 
 // -----------------------------------------------------------
@@ -496,6 +476,9 @@ void Game::clearFinishedExplosions()
     explosions.erase(std::remove_if(explosions.begin(), explosions.end(), [](const Explosion& explosion) { return explosion.done(); }), explosions.end());
 }
 
+/**
+ * Visitor Pattern
+ */
 void Game::printAllGameObjectsPositions()
 {
     St::PrintPositionVisitor* print_position_visitor = new St::PrintPositionVisitor();
@@ -514,6 +497,36 @@ void Game::printAllGameObjectsPositions()
 
     for (Explosion& explosion : explosions) {
         explosion.accept(print_position_visitor);
+    }
+}
+
+/**
+ * Composite Pattern
+ */
+void Game::printTanksHierarchyWithCombinedHealth()
+{
+    std::vector<St::LeaderTank*> leader_tanks;
+    std::string leader_names[10] = { "Mercurius", "Venus", "Aarde", "Mars", "Jupiter", "Saturnus", "Uranus", "Neptunus", "Eris", "Ceres" };
+    for (int i = 0; i < 10; i++) {
+        St::LeaderTank* leader = new St::LeaderTank(&tanks[i]);
+        leader->setName(leader_names[i]);
+
+        for (int j = 10; j < 50; j++) {
+            St::SoldierTank* soldier = new St::SoldierTank(&tanks[i+j]);
+
+            for (int n = 50; n < 250; n++) {
+                St::TraineeTank* trainee = new St::TraineeTank(&tanks[i+j+n]);
+                soldier->addTankUnderCommand(trainee);
+            }
+
+            leader->addTankUnderCommand(soldier);
+        }
+
+        leader_tanks.push_back(leader);
+    }
+
+    for (St::LeaderTank* leader : leader_tanks) {
+        std::cout << "Leader '" << leader->getName() <<  "' and other Tanks under his command - Total Health Left: " << leader->getCombinedHealth() << std::endl;
     }
 }
 
