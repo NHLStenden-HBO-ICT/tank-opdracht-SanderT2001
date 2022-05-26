@@ -447,6 +447,33 @@ kdtree.cpp.s:
 	$(MAKE) -f CMakeFiles/Tmpl8_2018-01.dir/build.make CMakeFiles/Tmpl8_2018-01.dir/kdtree.cpp.s
 .PHONY : kdtree.cpp.s
 
+leadertank.o: leadertank.cpp.o
+
+.PHONY : leadertank.o
+
+# target to build an object file
+leadertank.cpp.o:
+	$(MAKE) -f CMakeFiles/Tmpl8_2018-01.dir/build.make CMakeFiles/Tmpl8_2018-01.dir/leadertank.cpp.o
+.PHONY : leadertank.cpp.o
+
+leadertank.i: leadertank.cpp.i
+
+.PHONY : leadertank.i
+
+# target to preprocess a source file
+leadertank.cpp.i:
+	$(MAKE) -f CMakeFiles/Tmpl8_2018-01.dir/build.make CMakeFiles/Tmpl8_2018-01.dir/leadertank.cpp.i
+.PHONY : leadertank.cpp.i
+
+leadertank.s: leadertank.cpp.s
+
+.PHONY : leadertank.s
+
+# target to generate assembly for a file
+leadertank.cpp.s:
+	$(MAKE) -f CMakeFiles/Tmpl8_2018-01.dir/build.make CMakeFiles/Tmpl8_2018-01.dir/leadertank.cpp.s
+.PHONY : leadertank.cpp.s
+
 particle_beam.o: particle_beam.cpp.o
 
 .PHONY : particle_beam.o
@@ -554,6 +581,33 @@ smoke.s: smoke.cpp.s
 smoke.cpp.s:
 	$(MAKE) -f CMakeFiles/Tmpl8_2018-01.dir/build.make CMakeFiles/Tmpl8_2018-01.dir/smoke.cpp.s
 .PHONY : smoke.cpp.s
+
+soldiertank.o: soldiertank.cpp.o
+
+.PHONY : soldiertank.o
+
+# target to build an object file
+soldiertank.cpp.o:
+	$(MAKE) -f CMakeFiles/Tmpl8_2018-01.dir/build.make CMakeFiles/Tmpl8_2018-01.dir/soldiertank.cpp.o
+.PHONY : soldiertank.cpp.o
+
+soldiertank.i: soldiertank.cpp.i
+
+.PHONY : soldiertank.i
+
+# target to preprocess a source file
+soldiertank.cpp.i:
+	$(MAKE) -f CMakeFiles/Tmpl8_2018-01.dir/build.make CMakeFiles/Tmpl8_2018-01.dir/soldiertank.cpp.i
+.PHONY : soldiertank.cpp.i
+
+soldiertank.s: soldiertank.cpp.s
+
+.PHONY : soldiertank.s
+
+# target to generate assembly for a file
+soldiertank.cpp.s:
+	$(MAKE) -f CMakeFiles/Tmpl8_2018-01.dir/build.make CMakeFiles/Tmpl8_2018-01.dir/soldiertank.cpp.s
+.PHONY : soldiertank.cpp.s
 
 sorttankshealth.o: sorttankshealth.cpp.o
 
@@ -690,6 +744,33 @@ terrain.cpp.s:
 	$(MAKE) -f CMakeFiles/Tmpl8_2018-01.dir/build.make CMakeFiles/Tmpl8_2018-01.dir/terrain.cpp.s
 .PHONY : terrain.cpp.s
 
+traineetank.o: traineetank.cpp.o
+
+.PHONY : traineetank.o
+
+# target to build an object file
+traineetank.cpp.o:
+	$(MAKE) -f CMakeFiles/Tmpl8_2018-01.dir/build.make CMakeFiles/Tmpl8_2018-01.dir/traineetank.cpp.o
+.PHONY : traineetank.cpp.o
+
+traineetank.i: traineetank.cpp.i
+
+.PHONY : traineetank.i
+
+# target to preprocess a source file
+traineetank.cpp.i:
+	$(MAKE) -f CMakeFiles/Tmpl8_2018-01.dir/build.make CMakeFiles/Tmpl8_2018-01.dir/traineetank.cpp.i
+.PHONY : traineetank.cpp.i
+
+traineetank.s: traineetank.cpp.s
+
+.PHONY : traineetank.s
+
+# target to generate assembly for a file
+traineetank.cpp.s:
+	$(MAKE) -f CMakeFiles/Tmpl8_2018-01.dir/build.make CMakeFiles/Tmpl8_2018-01.dir/traineetank.cpp.s
+.PHONY : traineetank.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -735,6 +816,9 @@ help:
 	@echo "... kdtree.o"
 	@echo "... kdtree.i"
 	@echo "... kdtree.s"
+	@echo "... leadertank.o"
+	@echo "... leadertank.i"
+	@echo "... leadertank.s"
 	@echo "... particle_beam.o"
 	@echo "... particle_beam.i"
 	@echo "... particle_beam.s"
@@ -747,6 +831,9 @@ help:
 	@echo "... smoke.o"
 	@echo "... smoke.i"
 	@echo "... smoke.s"
+	@echo "... soldiertank.o"
+	@echo "... soldiertank.i"
+	@echo "... soldiertank.s"
 	@echo "... sorttankshealth.o"
 	@echo "... sorttankshealth.i"
 	@echo "... sorttankshealth.s"
@@ -762,6 +849,9 @@ help:
 	@echo "... terrain.o"
 	@echo "... terrain.i"
 	@echo "... terrain.s"
+	@echo "... traineetank.o"
+	@echo "... traineetank.i"
+	@echo "... traineetank.s"
 .PHONY : help
 
 

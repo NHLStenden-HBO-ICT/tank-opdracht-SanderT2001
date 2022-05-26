@@ -6,17 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/countsorttankshealthstrategy.cpp
-precomp.h
-/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/precomp.h
-
 /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/countsorttankshealthstrategy.h
-
-/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/explosion.cpp
-precomp.h
-/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/precomp.h
-explosion.h
-/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/explosion.h
 
 /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/explosion.h
 
@@ -30,69 +20,29 @@ chrono
 
 /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/gameobjectsvisitor.h
 
-/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/grid.cpp
-precomp.h
-/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/precomp.h
-
 /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/grid.h
 
-/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/gridaddtankcommand.cpp
-precomp.h
-/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/precomp.h
-
 /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/gridaddtankcommand.h
-
-/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/gridcell.cpp
-precomp.h
-/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/precomp.h
 
 /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/gridcell.h
 
 /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/gridchangecommand.h
 
-/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/gridchangemanager.cpp
-precomp.h
-/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/precomp.h
-
 /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/gridchangemanager.h
-
-/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/gridremovetankcommand.cpp
-precomp.h
-/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/precomp.h
 
 /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/gridremovetankcommand.h
 
-/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/gridupdatetankcommand.cpp
-precomp.h
-/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/precomp.h
-
 /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/gridupdatetankcommand.h
-
-/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/insertionsorttankshealthstrategy.cpp
-precomp.h
-/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/precomp.h
 
 /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/insertionsorttankshealthstrategy.h
 
-/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/kdnode.cpp
-precomp.h
-/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/precomp.h
-
 /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/kdnode.h
-
-/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/kdtree.cpp
-precomp.h
-/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/precomp.h
 
 /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/kdtree.h
 
 /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/ktypes.h
 
-/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/particle_beam.cpp
-precomp.h
-/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/precomp.h
-particle_beam.h
-/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/particle_beam.h
+/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/leadertank.h
 
 /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/particle_beam.h
 
@@ -199,6 +149,14 @@ insertionsorttankshealthstrategy.h
 /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/insertionsorttankshealthstrategy.h
 countsorttankshealthstrategy.h
 /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/countsorttankshealthstrategy.h
+tankteammember.h
+/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/tankteammember.h
+leadertank.h
+/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/leadertank.h
+soldiertank.h
+/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/soldiertank.h
+traineetank.h
+/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/traineetank.h
 ktypes.h
 /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/ktypes.h
 kdnode.h
@@ -208,65 +166,31 @@ kdtree.h
 game.h
 /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/game.h
 
-/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/printpositionvisitor.cpp
-precomp.h
-/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/precomp.h
-
 /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/printpositionvisitor.h
 
-/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/rocket.cpp
-precomp.h
-/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/precomp.h
-rocket.h
 /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/rocket.h
-
-/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/rocket.h
-
-/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/smoke.cpp
-precomp.h
-/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/precomp.h
-smoke.h
-/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/smoke.h
 
 /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/smoke.h
 
-/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/sorttankshealth.cpp
-precomp.h
-/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/precomp.h
+/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/soldiertank.h
 
 /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/sorttankshealth.h
 
 /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/sorttankshealthstrategy.h
 
-/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/surface.cpp
-precomp.h
-/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/precomp.h
-
 /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/surface.h
 
-/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/tank.cpp
-precomp.h
-/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/precomp.h
-tank.h
 /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/tank.h
 
-/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/tank.h
-
-/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/template.cpp
-precomp.h
-/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/precomp.h
+/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/tankteammember.h
 
 /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/template.h
-
-/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/terrain.cpp
-precomp.h
-/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/precomp.h
-terrain.h
-/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/terrain.h
 
 /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/terrain.h
 
 /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/thread_pool.h
+
+/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/traineetank.h
 
 /usr/include/SDL2/SDL.h
 SDL_main.h

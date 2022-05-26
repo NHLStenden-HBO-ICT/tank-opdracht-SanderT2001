@@ -16,15 +16,18 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/insertionsorttankshealthstrategy.cpp" "/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/CMakeFiles/Tmpl8_2018-01.dir/insertionsorttankshealthstrategy.cpp.o"
   "/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/kdnode.cpp" "/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/CMakeFiles/Tmpl8_2018-01.dir/kdnode.cpp.o"
   "/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/kdtree.cpp" "/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/CMakeFiles/Tmpl8_2018-01.dir/kdtree.cpp.o"
+  "/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/leadertank.cpp" "/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/CMakeFiles/Tmpl8_2018-01.dir/leadertank.cpp.o"
   "/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/particle_beam.cpp" "/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/CMakeFiles/Tmpl8_2018-01.dir/particle_beam.cpp.o"
   "/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/printpositionvisitor.cpp" "/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/CMakeFiles/Tmpl8_2018-01.dir/printpositionvisitor.cpp.o"
   "/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/rocket.cpp" "/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/CMakeFiles/Tmpl8_2018-01.dir/rocket.cpp.o"
   "/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/smoke.cpp" "/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/CMakeFiles/Tmpl8_2018-01.dir/smoke.cpp.o"
+  "/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/soldiertank.cpp" "/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/CMakeFiles/Tmpl8_2018-01.dir/soldiertank.cpp.o"
   "/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/sorttankshealth.cpp" "/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/CMakeFiles/Tmpl8_2018-01.dir/sorttankshealth.cpp.o"
   "/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/surface.cpp" "/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/CMakeFiles/Tmpl8_2018-01.dir/surface.cpp.o"
   "/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/tank.cpp" "/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/CMakeFiles/Tmpl8_2018-01.dir/tank.cpp.o"
   "/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/template.cpp" "/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/CMakeFiles/Tmpl8_2018-01.dir/template.cpp.o"
   "/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/terrain.cpp" "/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/CMakeFiles/Tmpl8_2018-01.dir/terrain.cpp.o"
+  "/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/traineetank.cpp" "/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/CMakeFiles/Tmpl8_2018-01.dir/traineetank.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

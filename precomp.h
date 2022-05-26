@@ -107,6 +107,11 @@ using namespace Tmpl8;
 #include "insertionsorttankshealthstrategy.h"
 #include "countsorttankshealthstrategy.h"
 
+#include "tankteammember.h"
+#include "leadertank.h"
+#include "soldiertank.h"
+#include "traineetank.h"
+
 #include "ktypes.h"
 #include "kdnode.h"
 #include "kdtree.h"
