@@ -30,7 +30,17 @@ namespace Tmpl8
     {
     public:
 
-        Terrain();
+        static Terrain& getInstance()
+        {
+            // -- "Meyers Singleton" --
+            // Leunt op de werking van C++ die zegt dat het object Terrain alleen aangemaakt wordt zodra deze aangeroepen wordt.
+            // Zodra deze er al is, wordt het bestaande object ge-returned.
+            // Let op! Dit is alleen zo bij lokale static objecten.
+            // Normaal gesproken zou je een static variabele bijhouden waarbij je checked of deze "gevuld" is.
+            //   Zo ja, dan die returnen. Zo niet, dan nieuwe instantie maken, die in de variabele opslaan en dan returnen.
+            static Terrain terrain;
+            return terrain;
+        }
 
         void update();
         void draw(Surface* target) const;
@@ -49,6 +59,8 @@ namespace Tmpl8
         }
 
     private:
+
+        Terrain();
 
         bool is_accessible(int y, int x);
 

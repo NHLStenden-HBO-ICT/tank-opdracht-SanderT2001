@@ -88,7 +88,7 @@ void Game::init()
     particle_beams.push_back(Particle_beam(vec2(64, 64), vec2(100, 50), &particle_beam_sprite, particle_beam_hit_value));
     particle_beams.push_back(Particle_beam(vec2(1200, 600), vec2(100, 50), &particle_beam_sprite, particle_beam_hit_value));
 
-    vec2 terrain_size = background_terrain.getActualTerrainSize();
+    vec2 terrain_size = Terrain::getInstance().getActualTerrainSize();
 
     this->gamegrid = new St::Grid(terrain_size.x, terrain_size.y, 16);
     this->gamegridchangemanager = new St::GridChangeManager(this->gamegrid);
@@ -151,7 +151,7 @@ void Game::update(float deltaTime)
     {
         for (Tank& t : tanks)
         {
-            t.set_route(background_terrain.get_route(t, t.target));
+            t.set_route(Terrain::getInstance().get_route(t, t.target));
         }
     }
 
@@ -243,7 +243,7 @@ void Game::updateTanksPositions()
     for (Tank& tank : tanks) {
         if (!tank.active) continue;
 
-        tank.tick(background_terrain);
+        tank.tick(Terrain::getInstance());
         this->gamegridchangemanager->addToQueue(new St::GridUpdateTankCommand(&tank));
     }
 
@@ -590,7 +590,7 @@ void Game::draw()
     screen->clear(0);
 
     //Draw background
-    background_terrain.draw(screen);
+    Terrain::getInstance().draw(screen);
 
     //Draw sprites
     for (int i = 0; i < num_tanks_blue + num_tanks_red; i++)

@@ -81,7 +81,6 @@ class Game
     vector<Explosion> explosions;
     vector<Particle_beam> particle_beams;
 
-    Terrain background_terrain;
     St::Grid* gamegrid;
     St::GridChangeManager* gamegridchangemanager;
     std::vector<vec2> forcefield_hull;
