@@ -32,6 +32,7 @@ CMakeFiles/Tmpl8_2018-01.dir/countsorttankshealthstrategy.cpp.o: tankteammember.
 CMakeFiles/Tmpl8_2018-01.dir/countsorttankshealthstrategy.cpp.o: template.h
 CMakeFiles/Tmpl8_2018-01.dir/countsorttankshealthstrategy.cpp.o: terrain.h
 CMakeFiles/Tmpl8_2018-01.dir/countsorttankshealthstrategy.cpp.o: thread_pool.h
+CMakeFiles/Tmpl8_2018-01.dir/countsorttankshealthstrategy.cpp.o: timer.h
 CMakeFiles/Tmpl8_2018-01.dir/countsorttankshealthstrategy.cpp.o: traineetank.h
 CMakeFiles/Tmpl8_2018-01.dir/countsorttankshealthstrategy.cpp.o: /usr/include/SDL2/SDL.h
 CMakeFiles/Tmpl8_2018-01.dir/countsorttankshealthstrategy.cpp.o: /usr/include/SDL2/SDL_assert.h
@@ -110,6 +111,7 @@ CMakeFiles/Tmpl8_2018-01.dir/explosion.cpp.o: tankteammember.h
 CMakeFiles/Tmpl8_2018-01.dir/explosion.cpp.o: template.h
 CMakeFiles/Tmpl8_2018-01.dir/explosion.cpp.o: terrain.h
 CMakeFiles/Tmpl8_2018-01.dir/explosion.cpp.o: thread_pool.h
+CMakeFiles/Tmpl8_2018-01.dir/explosion.cpp.o: timer.h
 CMakeFiles/Tmpl8_2018-01.dir/explosion.cpp.o: traineetank.h
 CMakeFiles/Tmpl8_2018-01.dir/explosion.cpp.o: /usr/include/SDL2/SDL.h
 CMakeFiles/Tmpl8_2018-01.dir/explosion.cpp.o: /usr/include/SDL2/SDL_assert.h
@@ -188,6 +190,7 @@ CMakeFiles/Tmpl8_2018-01.dir/game.cpp.o: tankteammember.h
 CMakeFiles/Tmpl8_2018-01.dir/game.cpp.o: template.h
 CMakeFiles/Tmpl8_2018-01.dir/game.cpp.o: terrain.h
 CMakeFiles/Tmpl8_2018-01.dir/game.cpp.o: thread_pool.h
+CMakeFiles/Tmpl8_2018-01.dir/game.cpp.o: timer.h
 CMakeFiles/Tmpl8_2018-01.dir/game.cpp.o: traineetank.h
 CMakeFiles/Tmpl8_2018-01.dir/game.cpp.o: /usr/include/SDL2/SDL.h
 CMakeFiles/Tmpl8_2018-01.dir/game.cpp.o: /usr/include/SDL2/SDL_assert.h
@@ -266,6 +269,7 @@ CMakeFiles/Tmpl8_2018-01.dir/grid.cpp.o: tankteammember.h
 CMakeFiles/Tmpl8_2018-01.dir/grid.cpp.o: template.h
 CMakeFiles/Tmpl8_2018-01.dir/grid.cpp.o: terrain.h
 CMakeFiles/Tmpl8_2018-01.dir/grid.cpp.o: thread_pool.h
+CMakeFiles/Tmpl8_2018-01.dir/grid.cpp.o: timer.h
 CMakeFiles/Tmpl8_2018-01.dir/grid.cpp.o: traineetank.h
 CMakeFiles/Tmpl8_2018-01.dir/grid.cpp.o: /usr/include/SDL2/SDL.h
 CMakeFiles/Tmpl8_2018-01.dir/grid.cpp.o: /usr/include/SDL2/SDL_assert.h
@@ -344,6 +348,7 @@ CMakeFiles/Tmpl8_2018-01.dir/gridaddtankcommand.cpp.o: tankteammember.h
 CMakeFiles/Tmpl8_2018-01.dir/gridaddtankcommand.cpp.o: template.h
 CMakeFiles/Tmpl8_2018-01.dir/gridaddtankcommand.cpp.o: terrain.h
 CMakeFiles/Tmpl8_2018-01.dir/gridaddtankcommand.cpp.o: thread_pool.h
+CMakeFiles/Tmpl8_2018-01.dir/gridaddtankcommand.cpp.o: timer.h
 CMakeFiles/Tmpl8_2018-01.dir/gridaddtankcommand.cpp.o: traineetank.h
 CMakeFiles/Tmpl8_2018-01.dir/gridaddtankcommand.cpp.o: /usr/include/SDL2/SDL.h
 CMakeFiles/Tmpl8_2018-01.dir/gridaddtankcommand.cpp.o: /usr/include/SDL2/SDL_assert.h
@@ -422,6 +427,7 @@ CMakeFiles/Tmpl8_2018-01.dir/gridcell.cpp.o: tankteammember.h
 CMakeFiles/Tmpl8_2018-01.dir/gridcell.cpp.o: template.h
 CMakeFiles/Tmpl8_2018-01.dir/gridcell.cpp.o: terrain.h
 CMakeFiles/Tmpl8_2018-01.dir/gridcell.cpp.o: thread_pool.h
+CMakeFiles/Tmpl8_2018-01.dir/gridcell.cpp.o: timer.h
 CMakeFiles/Tmpl8_2018-01.dir/gridcell.cpp.o: traineetank.h
 CMakeFiles/Tmpl8_2018-01.dir/gridcell.cpp.o: /usr/include/SDL2/SDL.h
 CMakeFiles/Tmpl8_2018-01.dir/gridcell.cpp.o: /usr/include/SDL2/SDL_assert.h
@@ -500,6 +506,7 @@ CMakeFiles/Tmpl8_2018-01.dir/gridchangemanager.cpp.o: tankteammember.h
 CMakeFiles/Tmpl8_2018-01.dir/gridchangemanager.cpp.o: template.h
 CMakeFiles/Tmpl8_2018-01.dir/gridchangemanager.cpp.o: terrain.h
 CMakeFiles/Tmpl8_2018-01.dir/gridchangemanager.cpp.o: thread_pool.h
+CMakeFiles/Tmpl8_2018-01.dir/gridchangemanager.cpp.o: timer.h
 CMakeFiles/Tmpl8_2018-01.dir/gridchangemanager.cpp.o: traineetank.h
 CMakeFiles/Tmpl8_2018-01.dir/gridchangemanager.cpp.o: /usr/include/SDL2/SDL.h
 CMakeFiles/Tmpl8_2018-01.dir/gridchangemanager.cpp.o: /usr/include/SDL2/SDL_assert.h
@@ -578,6 +585,7 @@ CMakeFiles/Tmpl8_2018-01.dir/gridremovetankcommand.cpp.o: tankteammember.h
 CMakeFiles/Tmpl8_2018-01.dir/gridremovetankcommand.cpp.o: template.h
 CMakeFiles/Tmpl8_2018-01.dir/gridremovetankcommand.cpp.o: terrain.h
 CMakeFiles/Tmpl8_2018-01.dir/gridremovetankcommand.cpp.o: thread_pool.h
+CMakeFiles/Tmpl8_2018-01.dir/gridremovetankcommand.cpp.o: timer.h
 CMakeFiles/Tmpl8_2018-01.dir/gridremovetankcommand.cpp.o: traineetank.h
 CMakeFiles/Tmpl8_2018-01.dir/gridremovetankcommand.cpp.o: /usr/include/SDL2/SDL.h
 CMakeFiles/Tmpl8_2018-01.dir/gridremovetankcommand.cpp.o: /usr/include/SDL2/SDL_assert.h
@@ -656,6 +664,7 @@ CMakeFiles/Tmpl8_2018-01.dir/gridupdatetankcommand.cpp.o: tankteammember.h
 CMakeFiles/Tmpl8_2018-01.dir/gridupdatetankcommand.cpp.o: template.h
 CMakeFiles/Tmpl8_2018-01.dir/gridupdatetankcommand.cpp.o: terrain.h
 CMakeFiles/Tmpl8_2018-01.dir/gridupdatetankcommand.cpp.o: thread_pool.h
+CMakeFiles/Tmpl8_2018-01.dir/gridupdatetankcommand.cpp.o: timer.h
 CMakeFiles/Tmpl8_2018-01.dir/gridupdatetankcommand.cpp.o: traineetank.h
 CMakeFiles/Tmpl8_2018-01.dir/gridupdatetankcommand.cpp.o: /usr/include/SDL2/SDL.h
 CMakeFiles/Tmpl8_2018-01.dir/gridupdatetankcommand.cpp.o: /usr/include/SDL2/SDL_assert.h
@@ -734,6 +743,7 @@ CMakeFiles/Tmpl8_2018-01.dir/insertionsorttankshealthstrategy.cpp.o: tankteammem
 CMakeFiles/Tmpl8_2018-01.dir/insertionsorttankshealthstrategy.cpp.o: template.h
 CMakeFiles/Tmpl8_2018-01.dir/insertionsorttankshealthstrategy.cpp.o: terrain.h
 CMakeFiles/Tmpl8_2018-01.dir/insertionsorttankshealthstrategy.cpp.o: thread_pool.h
+CMakeFiles/Tmpl8_2018-01.dir/insertionsorttankshealthstrategy.cpp.o: timer.h
 CMakeFiles/Tmpl8_2018-01.dir/insertionsorttankshealthstrategy.cpp.o: traineetank.h
 CMakeFiles/Tmpl8_2018-01.dir/insertionsorttankshealthstrategy.cpp.o: /usr/include/SDL2/SDL.h
 CMakeFiles/Tmpl8_2018-01.dir/insertionsorttankshealthstrategy.cpp.o: /usr/include/SDL2/SDL_assert.h
@@ -812,6 +822,7 @@ CMakeFiles/Tmpl8_2018-01.dir/kdnode.cpp.o: tankteammember.h
 CMakeFiles/Tmpl8_2018-01.dir/kdnode.cpp.o: template.h
 CMakeFiles/Tmpl8_2018-01.dir/kdnode.cpp.o: terrain.h
 CMakeFiles/Tmpl8_2018-01.dir/kdnode.cpp.o: thread_pool.h
+CMakeFiles/Tmpl8_2018-01.dir/kdnode.cpp.o: timer.h
 CMakeFiles/Tmpl8_2018-01.dir/kdnode.cpp.o: traineetank.h
 CMakeFiles/Tmpl8_2018-01.dir/kdnode.cpp.o: /usr/include/SDL2/SDL.h
 CMakeFiles/Tmpl8_2018-01.dir/kdnode.cpp.o: /usr/include/SDL2/SDL_assert.h
@@ -890,6 +901,7 @@ CMakeFiles/Tmpl8_2018-01.dir/kdtree.cpp.o: tankteammember.h
 CMakeFiles/Tmpl8_2018-01.dir/kdtree.cpp.o: template.h
 CMakeFiles/Tmpl8_2018-01.dir/kdtree.cpp.o: terrain.h
 CMakeFiles/Tmpl8_2018-01.dir/kdtree.cpp.o: thread_pool.h
+CMakeFiles/Tmpl8_2018-01.dir/kdtree.cpp.o: timer.h
 CMakeFiles/Tmpl8_2018-01.dir/kdtree.cpp.o: traineetank.h
 CMakeFiles/Tmpl8_2018-01.dir/kdtree.cpp.o: /usr/include/SDL2/SDL.h
 CMakeFiles/Tmpl8_2018-01.dir/kdtree.cpp.o: /usr/include/SDL2/SDL_assert.h
@@ -968,6 +980,7 @@ CMakeFiles/Tmpl8_2018-01.dir/leadertank.cpp.o: tankteammember.h
 CMakeFiles/Tmpl8_2018-01.dir/leadertank.cpp.o: template.h
 CMakeFiles/Tmpl8_2018-01.dir/leadertank.cpp.o: terrain.h
 CMakeFiles/Tmpl8_2018-01.dir/leadertank.cpp.o: thread_pool.h
+CMakeFiles/Tmpl8_2018-01.dir/leadertank.cpp.o: timer.h
 CMakeFiles/Tmpl8_2018-01.dir/leadertank.cpp.o: traineetank.h
 CMakeFiles/Tmpl8_2018-01.dir/leadertank.cpp.o: /usr/include/SDL2/SDL.h
 CMakeFiles/Tmpl8_2018-01.dir/leadertank.cpp.o: /usr/include/SDL2/SDL_assert.h
@@ -1046,6 +1059,7 @@ CMakeFiles/Tmpl8_2018-01.dir/particle_beam.cpp.o: tankteammember.h
 CMakeFiles/Tmpl8_2018-01.dir/particle_beam.cpp.o: template.h
 CMakeFiles/Tmpl8_2018-01.dir/particle_beam.cpp.o: terrain.h
 CMakeFiles/Tmpl8_2018-01.dir/particle_beam.cpp.o: thread_pool.h
+CMakeFiles/Tmpl8_2018-01.dir/particle_beam.cpp.o: timer.h
 CMakeFiles/Tmpl8_2018-01.dir/particle_beam.cpp.o: traineetank.h
 CMakeFiles/Tmpl8_2018-01.dir/particle_beam.cpp.o: /usr/include/SDL2/SDL.h
 CMakeFiles/Tmpl8_2018-01.dir/particle_beam.cpp.o: /usr/include/SDL2/SDL_assert.h
@@ -1124,6 +1138,7 @@ CMakeFiles/Tmpl8_2018-01.dir/printpositionvisitor.cpp.o: tankteammember.h
 CMakeFiles/Tmpl8_2018-01.dir/printpositionvisitor.cpp.o: template.h
 CMakeFiles/Tmpl8_2018-01.dir/printpositionvisitor.cpp.o: terrain.h
 CMakeFiles/Tmpl8_2018-01.dir/printpositionvisitor.cpp.o: thread_pool.h
+CMakeFiles/Tmpl8_2018-01.dir/printpositionvisitor.cpp.o: timer.h
 CMakeFiles/Tmpl8_2018-01.dir/printpositionvisitor.cpp.o: traineetank.h
 CMakeFiles/Tmpl8_2018-01.dir/printpositionvisitor.cpp.o: /usr/include/SDL2/SDL.h
 CMakeFiles/Tmpl8_2018-01.dir/printpositionvisitor.cpp.o: /usr/include/SDL2/SDL_assert.h
@@ -1202,6 +1217,7 @@ CMakeFiles/Tmpl8_2018-01.dir/rocket.cpp.o: tankteammember.h
 CMakeFiles/Tmpl8_2018-01.dir/rocket.cpp.o: template.h
 CMakeFiles/Tmpl8_2018-01.dir/rocket.cpp.o: terrain.h
 CMakeFiles/Tmpl8_2018-01.dir/rocket.cpp.o: thread_pool.h
+CMakeFiles/Tmpl8_2018-01.dir/rocket.cpp.o: timer.h
 CMakeFiles/Tmpl8_2018-01.dir/rocket.cpp.o: traineetank.h
 CMakeFiles/Tmpl8_2018-01.dir/rocket.cpp.o: /usr/include/SDL2/SDL.h
 CMakeFiles/Tmpl8_2018-01.dir/rocket.cpp.o: /usr/include/SDL2/SDL_assert.h
@@ -1280,6 +1296,7 @@ CMakeFiles/Tmpl8_2018-01.dir/smoke.cpp.o: tankteammember.h
 CMakeFiles/Tmpl8_2018-01.dir/smoke.cpp.o: template.h
 CMakeFiles/Tmpl8_2018-01.dir/smoke.cpp.o: terrain.h
 CMakeFiles/Tmpl8_2018-01.dir/smoke.cpp.o: thread_pool.h
+CMakeFiles/Tmpl8_2018-01.dir/smoke.cpp.o: timer.h
 CMakeFiles/Tmpl8_2018-01.dir/smoke.cpp.o: traineetank.h
 CMakeFiles/Tmpl8_2018-01.dir/smoke.cpp.o: /usr/include/SDL2/SDL.h
 CMakeFiles/Tmpl8_2018-01.dir/smoke.cpp.o: /usr/include/SDL2/SDL_assert.h
@@ -1358,6 +1375,7 @@ CMakeFiles/Tmpl8_2018-01.dir/soldiertank.cpp.o: tankteammember.h
 CMakeFiles/Tmpl8_2018-01.dir/soldiertank.cpp.o: template.h
 CMakeFiles/Tmpl8_2018-01.dir/soldiertank.cpp.o: terrain.h
 CMakeFiles/Tmpl8_2018-01.dir/soldiertank.cpp.o: thread_pool.h
+CMakeFiles/Tmpl8_2018-01.dir/soldiertank.cpp.o: timer.h
 CMakeFiles/Tmpl8_2018-01.dir/soldiertank.cpp.o: traineetank.h
 CMakeFiles/Tmpl8_2018-01.dir/soldiertank.cpp.o: /usr/include/SDL2/SDL.h
 CMakeFiles/Tmpl8_2018-01.dir/soldiertank.cpp.o: /usr/include/SDL2/SDL_assert.h
@@ -1436,6 +1454,7 @@ CMakeFiles/Tmpl8_2018-01.dir/sorttankshealth.cpp.o: tankteammember.h
 CMakeFiles/Tmpl8_2018-01.dir/sorttankshealth.cpp.o: template.h
 CMakeFiles/Tmpl8_2018-01.dir/sorttankshealth.cpp.o: terrain.h
 CMakeFiles/Tmpl8_2018-01.dir/sorttankshealth.cpp.o: thread_pool.h
+CMakeFiles/Tmpl8_2018-01.dir/sorttankshealth.cpp.o: timer.h
 CMakeFiles/Tmpl8_2018-01.dir/sorttankshealth.cpp.o: traineetank.h
 CMakeFiles/Tmpl8_2018-01.dir/sorttankshealth.cpp.o: /usr/include/SDL2/SDL.h
 CMakeFiles/Tmpl8_2018-01.dir/sorttankshealth.cpp.o: /usr/include/SDL2/SDL_assert.h
@@ -1514,6 +1533,7 @@ CMakeFiles/Tmpl8_2018-01.dir/surface.cpp.o: tankteammember.h
 CMakeFiles/Tmpl8_2018-01.dir/surface.cpp.o: template.h
 CMakeFiles/Tmpl8_2018-01.dir/surface.cpp.o: terrain.h
 CMakeFiles/Tmpl8_2018-01.dir/surface.cpp.o: thread_pool.h
+CMakeFiles/Tmpl8_2018-01.dir/surface.cpp.o: timer.h
 CMakeFiles/Tmpl8_2018-01.dir/surface.cpp.o: traineetank.h
 CMakeFiles/Tmpl8_2018-01.dir/surface.cpp.o: /usr/include/SDL2/SDL.h
 CMakeFiles/Tmpl8_2018-01.dir/surface.cpp.o: /usr/include/SDL2/SDL_assert.h
@@ -1592,6 +1612,7 @@ CMakeFiles/Tmpl8_2018-01.dir/tank.cpp.o: tankteammember.h
 CMakeFiles/Tmpl8_2018-01.dir/tank.cpp.o: template.h
 CMakeFiles/Tmpl8_2018-01.dir/tank.cpp.o: terrain.h
 CMakeFiles/Tmpl8_2018-01.dir/tank.cpp.o: thread_pool.h
+CMakeFiles/Tmpl8_2018-01.dir/tank.cpp.o: timer.h
 CMakeFiles/Tmpl8_2018-01.dir/tank.cpp.o: traineetank.h
 CMakeFiles/Tmpl8_2018-01.dir/tank.cpp.o: /usr/include/SDL2/SDL.h
 CMakeFiles/Tmpl8_2018-01.dir/tank.cpp.o: /usr/include/SDL2/SDL_assert.h
@@ -1670,6 +1691,7 @@ CMakeFiles/Tmpl8_2018-01.dir/template.cpp.o: template.cpp
 CMakeFiles/Tmpl8_2018-01.dir/template.cpp.o: template.h
 CMakeFiles/Tmpl8_2018-01.dir/template.cpp.o: terrain.h
 CMakeFiles/Tmpl8_2018-01.dir/template.cpp.o: thread_pool.h
+CMakeFiles/Tmpl8_2018-01.dir/template.cpp.o: timer.h
 CMakeFiles/Tmpl8_2018-01.dir/template.cpp.o: traineetank.h
 CMakeFiles/Tmpl8_2018-01.dir/template.cpp.o: /usr/include/SDL2/SDL.h
 CMakeFiles/Tmpl8_2018-01.dir/template.cpp.o: /usr/include/SDL2/SDL_assert.h
@@ -1748,6 +1770,7 @@ CMakeFiles/Tmpl8_2018-01.dir/terrain.cpp.o: template.h
 CMakeFiles/Tmpl8_2018-01.dir/terrain.cpp.o: terrain.cpp
 CMakeFiles/Tmpl8_2018-01.dir/terrain.cpp.o: terrain.h
 CMakeFiles/Tmpl8_2018-01.dir/terrain.cpp.o: thread_pool.h
+CMakeFiles/Tmpl8_2018-01.dir/terrain.cpp.o: timer.h
 CMakeFiles/Tmpl8_2018-01.dir/terrain.cpp.o: traineetank.h
 CMakeFiles/Tmpl8_2018-01.dir/terrain.cpp.o: /usr/include/SDL2/SDL.h
 CMakeFiles/Tmpl8_2018-01.dir/terrain.cpp.o: /usr/include/SDL2/SDL_assert.h
@@ -1795,6 +1818,85 @@ CMakeFiles/Tmpl8_2018-01.dir/terrain.cpp.o: /usr/include/SDL2/SDL_video.h
 CMakeFiles/Tmpl8_2018-01.dir/terrain.cpp.o: /usr/include/SDL2/begin_code.h
 CMakeFiles/Tmpl8_2018-01.dir/terrain.cpp.o: /usr/include/SDL2/close_code.h
 
+CMakeFiles/Tmpl8_2018-01.dir/timer.cpp.o: countsorttankshealthstrategy.h
+CMakeFiles/Tmpl8_2018-01.dir/timer.cpp.o: explosion.h
+CMakeFiles/Tmpl8_2018-01.dir/timer.cpp.o: game.h
+CMakeFiles/Tmpl8_2018-01.dir/timer.cpp.o: gameobjectsvisitor.h
+CMakeFiles/Tmpl8_2018-01.dir/timer.cpp.o: grid.h
+CMakeFiles/Tmpl8_2018-01.dir/timer.cpp.o: gridaddtankcommand.h
+CMakeFiles/Tmpl8_2018-01.dir/timer.cpp.o: gridcell.h
+CMakeFiles/Tmpl8_2018-01.dir/timer.cpp.o: gridchangecommand.h
+CMakeFiles/Tmpl8_2018-01.dir/timer.cpp.o: gridchangemanager.h
+CMakeFiles/Tmpl8_2018-01.dir/timer.cpp.o: gridremovetankcommand.h
+CMakeFiles/Tmpl8_2018-01.dir/timer.cpp.o: gridupdatetankcommand.h
+CMakeFiles/Tmpl8_2018-01.dir/timer.cpp.o: insertionsorttankshealthstrategy.h
+CMakeFiles/Tmpl8_2018-01.dir/timer.cpp.o: kdnode.h
+CMakeFiles/Tmpl8_2018-01.dir/timer.cpp.o: kdtree.h
+CMakeFiles/Tmpl8_2018-01.dir/timer.cpp.o: ktypes.h
+CMakeFiles/Tmpl8_2018-01.dir/timer.cpp.o: leadertank.h
+CMakeFiles/Tmpl8_2018-01.dir/timer.cpp.o: particle_beam.h
+CMakeFiles/Tmpl8_2018-01.dir/timer.cpp.o: precomp.h
+CMakeFiles/Tmpl8_2018-01.dir/timer.cpp.o: printpositionvisitor.h
+CMakeFiles/Tmpl8_2018-01.dir/timer.cpp.o: rocket.h
+CMakeFiles/Tmpl8_2018-01.dir/timer.cpp.o: smoke.h
+CMakeFiles/Tmpl8_2018-01.dir/timer.cpp.o: soldiertank.h
+CMakeFiles/Tmpl8_2018-01.dir/timer.cpp.o: sorttankshealth.h
+CMakeFiles/Tmpl8_2018-01.dir/timer.cpp.o: sorttankshealthstrategy.h
+CMakeFiles/Tmpl8_2018-01.dir/timer.cpp.o: surface.h
+CMakeFiles/Tmpl8_2018-01.dir/timer.cpp.o: tank.h
+CMakeFiles/Tmpl8_2018-01.dir/timer.cpp.o: tankteammember.h
+CMakeFiles/Tmpl8_2018-01.dir/timer.cpp.o: template.h
+CMakeFiles/Tmpl8_2018-01.dir/timer.cpp.o: terrain.h
+CMakeFiles/Tmpl8_2018-01.dir/timer.cpp.o: thread_pool.h
+CMakeFiles/Tmpl8_2018-01.dir/timer.cpp.o: timer.cpp
+CMakeFiles/Tmpl8_2018-01.dir/timer.cpp.o: timer.h
+CMakeFiles/Tmpl8_2018-01.dir/timer.cpp.o: traineetank.h
+CMakeFiles/Tmpl8_2018-01.dir/timer.cpp.o: /usr/include/SDL2/SDL.h
+CMakeFiles/Tmpl8_2018-01.dir/timer.cpp.o: /usr/include/SDL2/SDL_assert.h
+CMakeFiles/Tmpl8_2018-01.dir/timer.cpp.o: /usr/include/SDL2/SDL_atomic.h
+CMakeFiles/Tmpl8_2018-01.dir/timer.cpp.o: /usr/include/SDL2/SDL_audio.h
+CMakeFiles/Tmpl8_2018-01.dir/timer.cpp.o: /usr/include/SDL2/SDL_blendmode.h
+CMakeFiles/Tmpl8_2018-01.dir/timer.cpp.o: /usr/include/SDL2/SDL_clipboard.h
+CMakeFiles/Tmpl8_2018-01.dir/timer.cpp.o: /usr/include/SDL2/SDL_config.h
+CMakeFiles/Tmpl8_2018-01.dir/timer.cpp.o: /usr/include/SDL2/SDL_cpuinfo.h
+CMakeFiles/Tmpl8_2018-01.dir/timer.cpp.o: /usr/include/SDL2/SDL_endian.h
+CMakeFiles/Tmpl8_2018-01.dir/timer.cpp.o: /usr/include/SDL2/SDL_error.h
+CMakeFiles/Tmpl8_2018-01.dir/timer.cpp.o: /usr/include/SDL2/SDL_events.h
+CMakeFiles/Tmpl8_2018-01.dir/timer.cpp.o: /usr/include/SDL2/SDL_filesystem.h
+CMakeFiles/Tmpl8_2018-01.dir/timer.cpp.o: /usr/include/SDL2/SDL_gamecontroller.h
+CMakeFiles/Tmpl8_2018-01.dir/timer.cpp.o: /usr/include/SDL2/SDL_gesture.h
+CMakeFiles/Tmpl8_2018-01.dir/timer.cpp.o: /usr/include/SDL2/SDL_haptic.h
+CMakeFiles/Tmpl8_2018-01.dir/timer.cpp.o: /usr/include/SDL2/SDL_hints.h
+CMakeFiles/Tmpl8_2018-01.dir/timer.cpp.o: /usr/include/SDL2/SDL_joystick.h
+CMakeFiles/Tmpl8_2018-01.dir/timer.cpp.o: /usr/include/SDL2/SDL_keyboard.h
+CMakeFiles/Tmpl8_2018-01.dir/timer.cpp.o: /usr/include/SDL2/SDL_keycode.h
+CMakeFiles/Tmpl8_2018-01.dir/timer.cpp.o: /usr/include/SDL2/SDL_loadso.h
+CMakeFiles/Tmpl8_2018-01.dir/timer.cpp.o: /usr/include/SDL2/SDL_log.h
+CMakeFiles/Tmpl8_2018-01.dir/timer.cpp.o: /usr/include/SDL2/SDL_main.h
+CMakeFiles/Tmpl8_2018-01.dir/timer.cpp.o: /usr/include/SDL2/SDL_messagebox.h
+CMakeFiles/Tmpl8_2018-01.dir/timer.cpp.o: /usr/include/SDL2/SDL_mouse.h
+CMakeFiles/Tmpl8_2018-01.dir/timer.cpp.o: /usr/include/SDL2/SDL_mutex.h
+CMakeFiles/Tmpl8_2018-01.dir/timer.cpp.o: /usr/include/SDL2/SDL_pixels.h
+CMakeFiles/Tmpl8_2018-01.dir/timer.cpp.o: /usr/include/SDL2/SDL_platform.h
+CMakeFiles/Tmpl8_2018-01.dir/timer.cpp.o: /usr/include/SDL2/SDL_power.h
+CMakeFiles/Tmpl8_2018-01.dir/timer.cpp.o: /usr/include/SDL2/SDL_quit.h
+CMakeFiles/Tmpl8_2018-01.dir/timer.cpp.o: /usr/include/SDL2/SDL_rect.h
+CMakeFiles/Tmpl8_2018-01.dir/timer.cpp.o: /usr/include/SDL2/SDL_render.h
+CMakeFiles/Tmpl8_2018-01.dir/timer.cpp.o: /usr/include/SDL2/SDL_rwops.h
+CMakeFiles/Tmpl8_2018-01.dir/timer.cpp.o: /usr/include/SDL2/SDL_scancode.h
+CMakeFiles/Tmpl8_2018-01.dir/timer.cpp.o: /usr/include/SDL2/SDL_sensor.h
+CMakeFiles/Tmpl8_2018-01.dir/timer.cpp.o: /usr/include/SDL2/SDL_shape.h
+CMakeFiles/Tmpl8_2018-01.dir/timer.cpp.o: /usr/include/SDL2/SDL_stdinc.h
+CMakeFiles/Tmpl8_2018-01.dir/timer.cpp.o: /usr/include/SDL2/SDL_surface.h
+CMakeFiles/Tmpl8_2018-01.dir/timer.cpp.o: /usr/include/SDL2/SDL_system.h
+CMakeFiles/Tmpl8_2018-01.dir/timer.cpp.o: /usr/include/SDL2/SDL_thread.h
+CMakeFiles/Tmpl8_2018-01.dir/timer.cpp.o: /usr/include/SDL2/SDL_timer.h
+CMakeFiles/Tmpl8_2018-01.dir/timer.cpp.o: /usr/include/SDL2/SDL_touch.h
+CMakeFiles/Tmpl8_2018-01.dir/timer.cpp.o: /usr/include/SDL2/SDL_version.h
+CMakeFiles/Tmpl8_2018-01.dir/timer.cpp.o: /usr/include/SDL2/SDL_video.h
+CMakeFiles/Tmpl8_2018-01.dir/timer.cpp.o: /usr/include/SDL2/begin_code.h
+CMakeFiles/Tmpl8_2018-01.dir/timer.cpp.o: /usr/include/SDL2/close_code.h
+
 CMakeFiles/Tmpl8_2018-01.dir/traineetank.cpp.o: countsorttankshealthstrategy.h
 CMakeFiles/Tmpl8_2018-01.dir/traineetank.cpp.o: explosion.h
 CMakeFiles/Tmpl8_2018-01.dir/traineetank.cpp.o: game.h
@@ -1825,6 +1927,7 @@ CMakeFiles/Tmpl8_2018-01.dir/traineetank.cpp.o: tankteammember.h
 CMakeFiles/Tmpl8_2018-01.dir/traineetank.cpp.o: template.h
 CMakeFiles/Tmpl8_2018-01.dir/traineetank.cpp.o: terrain.h
 CMakeFiles/Tmpl8_2018-01.dir/traineetank.cpp.o: thread_pool.h
+CMakeFiles/Tmpl8_2018-01.dir/traineetank.cpp.o: timer.h
 CMakeFiles/Tmpl8_2018-01.dir/traineetank.cpp.o: traineetank.cpp
 CMakeFiles/Tmpl8_2018-01.dir/traineetank.cpp.o: traineetank.h
 CMakeFiles/Tmpl8_2018-01.dir/traineetank.cpp.o: /usr/include/SDL2/SDL.h

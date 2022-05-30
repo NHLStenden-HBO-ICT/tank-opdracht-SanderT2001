@@ -22,6 +22,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Tmpl8_2018-01.dir/tank.cpp.o"
   "CMakeFiles/Tmpl8_2018-01.dir/template.cpp.o"
   "CMakeFiles/Tmpl8_2018-01.dir/terrain.cpp.o"
+  "CMakeFiles/Tmpl8_2018-01.dir/timer.cpp.o"
   "CMakeFiles/Tmpl8_2018-01.dir/traineetank.cpp.o"
   "Tmpl8_2018-01"
   "Tmpl8_2018-01.pdb"

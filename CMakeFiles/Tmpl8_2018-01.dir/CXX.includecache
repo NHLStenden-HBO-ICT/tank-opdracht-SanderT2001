@@ -111,6 +111,8 @@ surface.h
 /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/surface.h
 thread_pool.h
 /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/thread_pool.h
+timer.h
+/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/timer.h
 gameobjectsvisitor.h
 /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/gameobjectsvisitor.h
 printpositionvisitor.h
@@ -189,6 +191,8 @@ game.h
 /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/terrain.h
 
 /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/thread_pool.h
+
+/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/timer.h
 
 /home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/traineetank.h
 

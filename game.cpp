@@ -47,9 +47,6 @@ const static float rocket_radius = 5.f;
 const static int  version      = 2; // 1 => Original function, 2 => Optimized function
 const static bool show_timings = true;
 
-std::chrono::time_point<std::chrono::system_clock> timing1;
-std::chrono::time_point<std::chrono::system_clock> timing2;
-
 // -----------------------------------------------------------
 // Initialize the simulation state
 // This function does not count for the performance multiplier
@@ -160,18 +157,20 @@ void Game::update(float deltaTime)
     }
 
     std::cout << "Set Tanks PushBack: ";
-    if (show_timings) startFunctionTimer();
+    St::Timer* set_tanks_pushback_timer = new St::Timer();
+    if (show_timings) set_tanks_pushback_timer->start();
     (version == 1) ? this->setTanksPushBackOriginal() : this->setTanksPushBack();
-    if (show_timings) stopFunctionTimer();
-    if (show_timings) printFunctionTime();
+    if (show_timings) set_tanks_pushback_timer->stop();
+    if (show_timings) set_tanks_pushback_timer->printElapsedTime();
 
     this->updateTanksPositions();
 
     std::cout << "Shoot Rockets To Closest Tank: ";
-    if (show_timings) startFunctionTimer();
+    St::Timer* shoot_rockets_to_closest_tank_timer = new St::Timer();
+    if (show_timings) shoot_rockets_to_closest_tank_timer->start();
     (version == 1) ? this->shootRocketsToClosestTanksOriginal() : this->shootRocketsToClosestTanks();
-    if (show_timings) stopFunctionTimer();
-    if (show_timings) printFunctionTime();
+    if (show_timings) shoot_rockets_to_closest_tank_timer->stop();
+    if (show_timings) shoot_rockets_to_closest_tank_timer->printElapsedTime();
 
     this->updateSmokePlumes();
     this->clearForceField();
@@ -329,7 +328,6 @@ void Game::clearForceField()
 void Game::generateForceField()
 {
     //Find first active tank (this loop is a bit disgusting, fix?)
-    // TODO: Dit moet echt anders
     int first_active = 0;
     for (Tank& tank : tanks)
     {
@@ -340,7 +338,6 @@ void Game::generateForceField()
         first_active++;
     }
 
-    // TODO: Dit kunnen we ook met een radius/mapping berekenen
     vec2 point_on_hull = tanks.at(first_active).position;
     //Find left most tank position
     for (Tank& tank : tanks)
@@ -385,7 +382,6 @@ void Game::generateForceField()
 //Update rockets
 void Game::checkRocketCollision()
 {
-    // TODO: Dit is ook een bastard.
     for (Rocket& rocket : rockets)
     {
         rocket.tick();
@@ -668,16 +664,17 @@ void Game::draw()
     }
 
     std::cout << "Draw Health Bars: ";
-    if (show_timings) startFunctionTimer();
+    St::Timer* draw_healthbars_timer = new St::Timer();
+    if (show_timings) draw_healthbars_timer->start();
     (version == 1) ? this->drawHealthBarsOriginal() : this->drawHealthBars();
-    if (show_timings) stopFunctionTimer();
-    if (show_timings) printFunctionTime();
+    if (show_timings) draw_healthbars_timer->stop();
+    if (show_timings) draw_healthbars_timer->printElapsedTime();
+
 }
 
 // -----------------------------------------------------------
 // Sort tanks by health value using insertion sort
 // -----------------------------------------------------------
-// TODO: Fijn is anders maar niet super traag. Wel mooie voor algo
 void Tmpl8::Game::insertion_sort_tanks_health(const std::vector<Tank>& original, std::vector<const Tank*>& sorted_tanks, int begin, int end)
 {
     const int NUM_TANKS = end - begin;
@@ -793,38 +790,4 @@ void Game::tick(float deltaTime)
     frame_count++;
     string frame_count_string = "FRAME: " + std::to_string(frame_count);
     frame_count_font->print(screen, frame_count_string.c_str(), 350, 580);
-}
-
-// TODO: Eigen class
-void Game::startFunctionTimer()
-{
-    using std::chrono::high_resolution_clock;
-    using std::chrono::duration_cast;
-    using std::chrono::duration;
-    using std::chrono::milliseconds;
-
-    timing1 = high_resolution_clock::now();
-}
-
-void Game::stopFunctionTimer()
-{
-    using std::chrono::high_resolution_clock;
-    using std::chrono::duration_cast;
-    using std::chrono::duration;
-    using std::chrono::milliseconds;
-
-    timing2 = high_resolution_clock::now();
-}
-
-// TODO: In class getFunctionTime(), die moet niet weten hoe hij moet printen, tostring zou wel een functie kunnen zijn.
-void Game::printFunctionTime()
-{
-    using std::chrono::high_resolution_clock;
-    using std::chrono::duration_cast;
-    using std::chrono::duration;
-    using std::chrono::milliseconds;
-
-    /* Getting number of milliseconds as an integer. */
-    auto ms_int = duration_cast<milliseconds>(timing2 - timing1);
-    std::cout << ms_int.count() << "ms\n";
 }

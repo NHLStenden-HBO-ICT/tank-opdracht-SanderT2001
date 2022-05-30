@@ -27,6 +27,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/tank.cpp" "/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/CMakeFiles/Tmpl8_2018-01.dir/tank.cpp.o"
   "/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/template.cpp" "/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/CMakeFiles/Tmpl8_2018-01.dir/template.cpp.o"
   "/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/terrain.cpp" "/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/CMakeFiles/Tmpl8_2018-01.dir/terrain.cpp.o"
+  "/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/timer.cpp" "/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/CMakeFiles/Tmpl8_2018-01.dir/timer.cpp.o"
   "/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/traineetank.cpp" "/home/sandertuinstra/projects/code/cpp/tank-opdracht-SanderT2001/CMakeFiles/Tmpl8_2018-01.dir/traineetank.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

@@ -744,6 +744,33 @@ terrain.cpp.s:
 	$(MAKE) -f CMakeFiles/Tmpl8_2018-01.dir/build.make CMakeFiles/Tmpl8_2018-01.dir/terrain.cpp.s
 .PHONY : terrain.cpp.s
 
+timer.o: timer.cpp.o
+
+.PHONY : timer.o
+
+# target to build an object file
+timer.cpp.o:
+	$(MAKE) -f CMakeFiles/Tmpl8_2018-01.dir/build.make CMakeFiles/Tmpl8_2018-01.dir/timer.cpp.o
+.PHONY : timer.cpp.o
+
+timer.i: timer.cpp.i
+
+.PHONY : timer.i
+
+# target to preprocess a source file
+timer.cpp.i:
+	$(MAKE) -f CMakeFiles/Tmpl8_2018-01.dir/build.make CMakeFiles/Tmpl8_2018-01.dir/timer.cpp.i
+.PHONY : timer.cpp.i
+
+timer.s: timer.cpp.s
+
+.PHONY : timer.s
+
+# target to generate assembly for a file
+timer.cpp.s:
+	$(MAKE) -f CMakeFiles/Tmpl8_2018-01.dir/build.make CMakeFiles/Tmpl8_2018-01.dir/timer.cpp.s
+.PHONY : timer.cpp.s
+
 traineetank.o: traineetank.cpp.o
 
 .PHONY : traineetank.o
@@ -849,6 +876,9 @@ help:
 	@echo "... terrain.o"
 	@echo "... terrain.i"
 	@echo "... terrain.s"
+	@echo "... timer.o"
+	@echo "... timer.i"
+	@echo "... timer.s"
 	@echo "... traineetank.o"
 	@echo "... traineetank.i"
 	@echo "... traineetank.s"

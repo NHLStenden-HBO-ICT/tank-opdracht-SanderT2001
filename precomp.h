@@ -82,6 +82,7 @@ using namespace std;
 using namespace Tmpl8;
 
 #include "thread_pool.h"
+#include "timer.h"
 
 #include "gameobjectsvisitor.h"
 #include "printpositionvisitor.h"

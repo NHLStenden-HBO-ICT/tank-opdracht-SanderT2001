@@ -1,6 +1,5 @@
 #include "precomp.h" // include (only) this in every .cpp file
 
-// TODO: Multi threaded?
 namespace St
 {
     KDTree::KDTree(std::vector<Tank*> tanks)

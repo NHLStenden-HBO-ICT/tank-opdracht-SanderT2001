@@ -15,9 +15,6 @@ namespace St
 
     void GridCell::removeTank(Tank* tank)
     {
-        // @TODO https://www.fluentcpp.com/2018/09/18/how-to-remove-pointers-from-a-vector-in-cpp/
-        // TODO: Dit is niet efficient
-
         std::vector<Tank*> new_tanks;
 
         for (Tank* tank_in_cell : this->tanks) {
