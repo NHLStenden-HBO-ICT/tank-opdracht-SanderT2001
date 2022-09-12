@@ -7,21 +7,21 @@ namespace St
         this->build(tanks, &this->rootNode, KTypes::X);
     }
 
-    Tank* KDTree::getClosestTank(Tank* tank)
+    Tank* KDTree::getClosestTank(Tank* tank) // O(n + n + 1) = O(n)
     {
         // Stap 1. Diepste Node zoeken binnen de Tree op basis van een positie van een Tank.
-        KDNode* deepest_node = this->getDeepestNodeByTank(tank, &this->rootNode, KTypes::X);
+        KDNode* deepest_node = this->getDeepestNodeByTank(tank, &this->rootNode, KTypes::X); // O(n)
 
         // Stap 2. Vanuit deze diepste node de minimum distance berekenen en vervolgens omhoog gaan in de Tree om te kijken of er nog een node dichterbij de tank zit.
-        KDNode* n = this->getClosestDistanceNodeFromDeepestNode(tank->get_position(), deepest_node);
+        KDNode* n = this->getClosestDistanceNodeFromDeepestNode(tank->get_position(), deepest_node); // O(n)
 
         return n->getTank();
     }
 
-    void KDTree::build(std::vector<Tank*> tanks, KDNode* root, KTypes ktype)
+    void KDTree::build(std::vector<Tank*> tanks, KDNode* root, KTypes ktype) // O(n + n + n + n) = O(n)
     {
         // Stap 1. Tanks sorteren o.b.v. KType positie (x of y) van klein-groot.
-        std::vector<Tank*> sorted_tanks = this->sortTanksVectorOnKTypePosition(tanks, ktype);
+        std::vector<Tank*> sorted_tanks = this->sortTanksVectorOnKTypePosition(tanks, ktype); // O(n)
 
         // Stap 2. Middelste tank pakken (mediaan).
         int vector_median_position = sorted_tanks.size() / 2;
@@ -38,7 +38,7 @@ namespace St
         std::vector<Tank*> left;
         std::vector<Tank*> right;
 
-        for (Tank* tank : tanks) {
+        for (Tank* tank : tanks) { // O(n)
             if (tank == median_tank) continue;
 
             float compare_value = this->getTankPositionValueFromKType(tank, ktype);
@@ -55,12 +55,12 @@ namespace St
 
         if (left.size() > 0) {
             root->getLeftNode()->setParentNode(root);
-            this->build(left, root->getLeftNode(), next_type);
+            this->build(left, root->getLeftNode(), next_type); // O(n)
         }
 
         if (right.size() > 0) {
             root->getRightNode()->setParentNode(root);
-            this->build(right, root->getRightNode(), next_type);
+            this->build(right, root->getRightNode(), next_type); // O(n)
         }
     }
 
@@ -83,6 +83,9 @@ namespace St
     /**
      * Sorteert een vector met Tanks (methode: QuickSort) o.b.v. KType positie (x of y) van klein-groot.
      */
+    // https://www.quora.com/What-is-different-between-O-N-2-and-O-2N
+    // https://web.stanford.edu/class/archive/cs/cs106b/cs106b.1176/handouts/midterm/5-BigO.pdf
+    // https://www.linkedin.com/pulse/big-o-notation-simple-explanation-examples-pamela-lovett/
     std::vector<Tank*> KDTree::sortTanksVectorOnKTypePosition(std::vector<Tank*> input, KTypes ktype)
     {
         Tank* pivot = input.back();
@@ -92,7 +95,7 @@ namespace St
         std::vector<Tank*> left;
         std::vector<Tank*> right;
 
-        for (Tank* tank : input) {
+        for (Tank* tank : input) { // O(n)
             float coordinate = this->getTankPositionValueFromKType(tank, ktype);
             if (coordinate <= pivot_position) {
                 left.push_back(tank);
@@ -102,17 +105,17 @@ namespace St
         }
 
         if (left.size() > 1) {
-            left = this->sortTanksVectorOnKTypePosition(left, ktype);
+            left = this->sortTanksVectorOnKTypePosition(left, ktype); // O(n)
         }
         if (right.size() > 1) {
-            right = this->sortTanksVectorOnKTypePosition(right, ktype);
+            right = this->sortTanksVectorOnKTypePosition(right, ktype); // O(n)
         }
 
         std::vector<Tank*> output;
         output.insert(output.end(), left.begin(), left.end());
         output.push_back(pivot);
         output.insert(output.end(), right.begin(), right.end());
-        return output;
+        return output; // O(n + n + n) = O(n)
     }
 
     /**
@@ -137,7 +140,7 @@ namespace St
         return root;
     }
 
-    KDNode* KDTree::getClosestDistanceNodeFromDeepestNode(vec2 target_position, KDNode* deepest_node)
+    KDNode* KDTree::getClosestDistanceNodeFromDeepestNode(vec2 target_position, KDNode* deepest_node) // O(n)
     {
         float deepest_node_distance = this->getDistanceBetweenPositions(deepest_node->getTank()->get_position(), target_position);
 

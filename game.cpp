@@ -190,6 +190,12 @@ void Game::update(float deltaTime)
 //Check tank collision and nudge tanks away from each other
 void Game::setTanksPushBack()
 {
+    // de getTanksInRadius heeft een Big O van n
+    // de eerste for loops zijn loops met constant values
+    // de derde loop weet je alleen niet hoe diep die gaat zijn en dus n.
+    //
+    // In totaal komen we dan uit op een big o van O(n x n) = O(n^2).
+
     for (Tank& tank : tanks) {
         if (!tank.active) continue;
 
@@ -213,6 +219,8 @@ void Game::setTanksPushBack()
 //Check tank collision and nudge tanks away from each other
 void Game::setTanksPushBackOriginal()
 {
+    // We hebben hier te maken met een for loop (n) die de inner loop n times uitvoert, dus O(n x n) = O(n^2)
+
     for (Tank& tank : tanks)
     {
         if (tank.active)
@@ -253,10 +261,10 @@ void Game::updateTanksPositions()
     this->gamegridchangemanager->commitChanges();
 }
 
-void Game::shootRocketsToClosestTanks()
+void Game::shootRocketsToClosestTanks() // O(n * n) = O(n^2)
 {
     bool must_shoot_rockets = false;
-    for (Tank& tank : tanks) {
+    for (Tank& tank : tanks) { // O(n)
         if (!tank.active) continue;
 
         if (!tank.rocket_reloaded()) continue;
@@ -272,19 +280,21 @@ void Game::shootRocketsToClosestTanks()
 
     std::vector<Tank*> blue_tanks;
     std::vector<Tank*> red_tanks;
-    for (Tank& tank : tanks) {
+    for (Tank& tank : tanks) { // O(n)
         if (!tank.active) continue;
 
         (tank.allignment == BLUE) ? blue_tanks.push_back(&tank) : red_tanks.push_back(&tank);
     }
 
-    St::KDTree* blue_tanks_tree = new St::KDTree(blue_tanks);
-    St::KDTree* red_tanks_tree = new St::KDTree(red_tanks);
+    St::KDTree* blue_tanks_tree = new St::KDTree(blue_tanks); // O(n)
+    St::KDTree* red_tanks_tree = new St::KDTree(red_tanks); // O(n)
 
-    for (Tank& tank : tanks) {
+    // onderstaande O(n x n) is dominanter t.o.v de bovenstaande O(n) dus deze negeren en de O(n x n) gebruiken
+
+    for (Tank& tank : tanks) { // O(n)
         if (!tank.rocket_reloaded()) continue;
 
-        Tank* target = (tank.allignment == RED) ? blue_tanks_tree->getClosestTank(&tank) : red_tanks_tree->getClosestTank(&tank);
+        Tank* target = (tank.allignment == RED) ? blue_tanks_tree->getClosestTank(&tank) : red_tanks_tree->getClosestTank(&tank); // O(n)
 
         rockets.push_back(Rocket(tank.position, (target->get_position() - tank.position).normalized() * 3, rocket_radius, tank.allignment, ((tank.allignment == RED) ? &rocket_red : &rocket_blue)));
         tank.reload_rocket();
@@ -294,6 +304,16 @@ void Game::shootRocketsToClosestTanks()
 //Shoot at closest target if reloaded
 void Game::shootRocketsToClosestTanksOriginal()
 {
+    // find_closest enemey heeft O(n) omdat er 1 loop inzit door alle tanks (kan dus groter worden).
+    //   verder heeft deze alleen maar wiskunige calculaties in zich.
+    //
+    // push_back is O(1)
+    // reload_rocket is variabele assignment en dus ook O(1)
+    //
+    // for loop is O(n)
+    //
+    // Big o = O(n x n) = O(n^2)
+
     for (Tank& tank : tanks)
     {
         if (tank.active)
@@ -527,27 +547,27 @@ void Game::printTanksHierarchyWithCombinedHealth()
 }
 
 //Draw sorted health bars
-void Game::drawHealthBarsOriginal()
+void Game::drawHealthBarsOriginal() // O(1 + n^2 + n + n) = O(n^2)
 {
-    for (int t = 0; t < 2; t++)
+    for (int t = 0; t < 2; t++) // O(1)
     {
         const int NUM_TANKS = ((t < 1) ? num_tanks_blue : num_tanks_red);
 
         const int begin = ((t < 1) ? 0 : num_tanks_blue);
         std::vector<const Tank*> sorted_tanks;
-        insertion_sort_tanks_health(tanks, sorted_tanks, begin, begin + NUM_TANKS);
-        sorted_tanks.erase(std::remove_if(sorted_tanks.begin(), sorted_tanks.end(), [](const Tank* tank) { return !tank->active; }), sorted_tanks.end());
+        insertion_sort_tanks_health(tanks, sorted_tanks, begin, begin + NUM_TANKS); // O(n^2)
+        sorted_tanks.erase(std::remove_if(sorted_tanks.begin(), sorted_tanks.end(), [](const Tank* tank) { return !tank->active; }), sorted_tanks.end()); // O(n)
 
-        draw_health_bars(sorted_tanks, t);
+        draw_health_bars(sorted_tanks, t); // O(n)
     }
 }
 
 // Zowel voor de blauwe als rode kant van de tanks
-void Game::drawHealthBars()
+void Game::drawHealthBars() // O(n + n + n) = O(3n) = O(n)
 {
     std::vector<Tank*> blue_tanks;
     std::vector<Tank*> red_tanks;
-    for (Tank& tank : tanks) {
+    for (Tank& tank : tanks) { // O(n)
         if (!tank.active) continue;
 
         (tank.allignment == BLUE) ? blue_tanks.push_back(&tank) : red_tanks.push_back(&tank);
@@ -681,11 +701,11 @@ void Tmpl8::Game::insertion_sort_tanks_health(const std::vector<Tank>& original,
     sorted_tanks.reserve(NUM_TANKS);
     sorted_tanks.emplace_back(&original.at(begin));
 
-    for (int i = begin + 1; i < (begin + NUM_TANKS); i++)
+    for (int i = begin + 1; i < (begin + NUM_TANKS); i++) // O(n)
     {
         const Tank& current_tank = original.at(i);
 
-        for (int s = (int)sorted_tanks.size() - 1; s >= 0; s--)
+        for (int s = (int)sorted_tanks.size() - 1; s >= 0; s--) // O(n)
         {
             const Tank* current_checking_tank = sorted_tanks.at(s);
 
