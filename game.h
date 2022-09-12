@@ -40,7 +40,6 @@ class Game
 
     void drawHealthBarsOriginal();
     void drawHealthBars();
-    std::vector<const Tank*> getSortedTanksByHealth(std::vector<Tank*> tanks);
 
     void draw();
     void tick(float deltaTime);

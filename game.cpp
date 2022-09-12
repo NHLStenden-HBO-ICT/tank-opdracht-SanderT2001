@@ -556,61 +556,11 @@ void Game::drawHealthBars()
     //St::SortTanksHealth* tanks_sorter = new St::SortTanksHealth(new St::InsertionSortTanksHealthStrategy());
     St::SortTanksHealth* tanks_sorter = new St::SortTanksHealth(new St::CountSortTanksHealthStrategy());
 
-    //std::vector<const Tank*> sorted_blue_tanks = this->getSortedTanksByHealth(blue_tanks);
     std::vector<const Tank*> sorted_blue_tanks = tanks_sorter->getSortedTanks(blue_tanks);
     draw_health_bars(sorted_blue_tanks, 0);
 
-    //std::vector<const Tank*> sorted_red_tanks = this->getSortedTanksByHealth(red_tanks);
     std::vector<const Tank*> sorted_red_tanks = tanks_sorter->getSortedTanks(red_tanks);
     draw_health_bars(sorted_blue_tanks, 1);
-}
-
-// Uses Count Sort
-std::vector<const Tank*> Game::getSortedTanksByHealth(std::vector<Tank*> tanks_to_sort)
-{
-    std::vector<int> tanks_health_list(tanks_to_sort.size());
-    for (Tank* tank : tanks_to_sort) {
-        tanks_health_list.push_back(tank->health);
-    }
-
-    std::vector<int> tanks_health_count_list(tank_max_health);
-    for (int i = 0; i <= tanks_health_count_list.size(); i++) {
-        tanks_health_count_list[i] = 0;
-    }
-    for (int tank_health : tanks_health_list) {
-        tanks_health_count_list[tank_health] = tanks_health_count_list[tank_health]+1;
-    }
-
-    std::vector<int> tanks_health_index(tank_max_health);
-    for (int i = 0; i <= tanks_health_index.size(); i++) {
-        tanks_health_index[i] = 0;
-    }
-
-    for (int i = 0; i <= tanks_health_count_list.size(); i++) {
-        int value = tanks_health_count_list[i];
-
-        if (i == 0) {
-            tanks_health_index[i] = value;
-        } else {
-            int previous_value = tanks_health_index[i-1];
-            tanks_health_index[i] = previous_value + value;
-        }
-    }
-
-    std::vector<const Tank*> sorted_tanks(tanks_health_index[tanks_health_index.size()]);
-    for (Tank* tank : tanks_to_sort) {
-        int health = tank->health;
-        int position_in_sorted_tanks = tanks_health_index[health];
-
-        sorted_tanks[position_in_sorted_tanks] = tank;
-
-        tanks_health_index[health] = tanks_health_index[health]-1;
-    }
-
-    // Remove NULL Pointers
-    sorted_tanks.erase(std::remove(sorted_tanks.begin(), sorted_tanks.end(), nullptr), sorted_tanks.end());
-
-    return sorted_tanks;
 }
 
 // -----------------------------------------------------------
