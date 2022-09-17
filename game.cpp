@@ -196,11 +196,11 @@ void Game::setTanksPushBack()
     //
     // In totaal komen we dan uit op een big o van O(n x n) = O(n^2).
 
-    for (Tank& tank : tanks) {
+    for (Tank& tank : tanks) { // O(n x (2n)) = O(n^2)
         if (!tank.active) continue;
 
-        std::vector<Tank*> tanks_in_collision_radius = this->gamegrid->getTanksInRadius(&tank, (tank.get_collision_radius()*2));
-        for (Tank* other_tank_ptr : tanks_in_collision_radius) {
+        std::vector<Tank*> tanks_in_collision_radius = this->gamegrid->getTanksInRadius(&tank, (tank.get_collision_radius()*2)); // O(n)
+        for (Tank* other_tank_ptr : tanks_in_collision_radius) { // O(N)
             Tank other_tank = *other_tank_ptr;
 
             vec2 dir = tank.get_position() - other_tank.get_position();

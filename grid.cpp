@@ -28,7 +28,7 @@ namespace St
         }
     }
 
-    std::vector<Tank*> Grid::getTanksInRadius(Tank* tank, int radius)
+    std::vector<Tank*> Grid::getTanksInRadius(Tank* tank, int radius) // O(1 x 1 x n) = O(n)
     {
         int backward_tank_collision_radius_x = (int) (*tank).position.x - radius;
         int backward_tank_collision_radius_y = (int) (*tank).position.y - radius;
@@ -41,10 +41,10 @@ namespace St
         int forward_max_collision_cell_y = (int) forward_tank_collision_radius_y / this->getCellSize();
 
         std::vector<Tank*> tanks_in_radius;
-        for (int x = backward_max_collision_cell_x; x <= forward_max_collision_cell_x; x++) {
-            for (int y = backward_max_collision_cell_y; y <= forward_max_collision_cell_y; y++) {
+        for (int x = backward_max_collision_cell_x; x <= forward_max_collision_cell_x; x++) { // constante loop
+            for (int y = backward_max_collision_cell_y; y <= forward_max_collision_cell_y; y++) { // constante loop
                 std::vector<Tank*> tanks_in_cell = this->cells[x][y]->getTanks();
-                for (Tank* tank_in_cell : tanks_in_cell) {
+                for (Tank* tank_in_cell : tanks_in_cell) { // O(n)
                     if (tank_in_cell == tank) {
                         continue;
                     }
